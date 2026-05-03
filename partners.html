@@ -1,0 +1,2053 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Become a Bankerise Partner — Choose your region, explore partnership tiers, and join the leading digital banking ecosystem across Africa, Middle East, Europe and Central Asia.">
+  <title>Become a Partner — Bankerise®</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/logo-monogram.svg">
+
+  <!-- Tailwind CSS (CDN — centralized config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            grape: '#4C4E89',
+            'indigo-brand': '#35365F',
+            pacific: '#4DB8CD',
+            aqua: '#766CFF',
+            bell: '#4799D1',
+            dark: '#0D0F1C',
+            dark2: '#141729',
+            dark3: '#1A1D35',
+            surface: '#111827',
+            card: '#1F2937',
+          },
+          fontFamily: { montserrat: ['Montserrat', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="assets/css/shared.css">
+
+
+
+  <!-- Three.js for 3D Globe -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <link rel="stylesheet" href="assets/css/pages/partners.css">
+</head>
+
+<body class="font-montserrat bg-dark text-white">
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav class="navbar-glass fixed top-0 left-0 w-full z-50" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Logo -->
+        <a href="" class="flex items-center group" aria-label="Bankerise Home">
+          <img src="assets/images/brand/logo-white.svg" alt="Bankerise" class="h-8 site-logo" />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Product Dropdown -->
+          <div class="relative" data-dropdown>
+            <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors" aria-expanded="false" aria-haspopup="true">
+              Product
+              <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="nav-dropdown absolute top-full left-0 mt-2 w-64 glass-card p-3" role="menu">
+              <a href="product.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all" role="menuitem">
+                <svg class="w-5 h-5 text-pacific flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                Bankerise Products
+              </a>
+              <div class="border-t border-white/10 my-2"></div>
+              <div class="relative" data-submenu>
+                <a href="#" class="flex items-center justify-between gap-3 px-4 py-3 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all" role="menuitem">
+                  <span class="flex items-center gap-3">
+                    <svg class="w-5 h-5 text-aqua flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    Solutions
+                  </span>
+                  <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+                <div class="nav-submenu absolute left-full top-0 ml-2 w-56 glass-card p-3" role="menu">
+                  <a href="solutions/retail.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all" role="menuitem">
+                    <svg class="w-5 h-5 text-pacific flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    Retail Banking
+                  </a>
+                  <a href="solutions/corporate.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all" role="menuitem">
+                    <svg class="w-5 h-5 text-aqua flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    Corporate Banking
+                  </a>
+                  <a href="solutions/micro.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all" role="menuitem">
+                    <svg class="w-5 h-5 text-[#4799D1] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    Microfinance
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Use Cases -->
+          <a href="use-cases.html" class="nav-link px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">Use Cases</a>
+
+          <!-- Partners Dropdown -->
+          <div class="relative" data-dropdown>
+            <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors" aria-expanded="false" aria-haspopup="true">
+              Partners
+              <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="nav-dropdown absolute top-full left-0 mt-2 w-64 glass-card p-3" role="menu">
+              <a href="partners.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all" role="menuitem">
+                <svg class="w-5 h-5 text-pacific flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                Why Become a Partner
+              </a>
+              <a href="academy.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all" role="menuitem">
+                <svg class="w-5 h-5 text-pacific flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
+                Academy
+              </a>
+              <div class="border-t border-white/10 my-2"></div>
+              <a href="partners/apply.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-pacific font-semibold hover:bg-pacific/10 transition-all" role="menuitem">
+                <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                Apply Now
+              </a>
+            </div>
+          </div>
+
+          <!-- About -->
+          <a href="about.html" class="nav-link px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">About</a>
+
+          <!-- Contact -->
+          <a href="contact.html" class="nav-link px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">Contact</a>
+        </div>
+
+        <!-- Desktop CTA + Mobile Hamburger -->
+        <div class="flex items-center gap-3">
+          <a href="partners/login.html" class="hidden lg:inline-flex items-center gap-2 text-sm font-semibold py-3 px-6 rounded-full border border-pacific/40 text-pacific hover:bg-pacific/10 transition-all">
+            Partner Area          </a>
+          <a href="contact.html" class="hidden lg:inline-flex btn-primary text-sm !py-3 !px-6">
+            Request Demo
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+          <button class="lg:hidden text-white p-2" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed inset-0 top-0 bg-dark z-50 lg:hidden" id="mobile-menu" aria-hidden="true">
+      <div class="flex items-center justify-between h-20 px-4 sm:px-6">
+        <a href="" class="flex items-center">
+          <img src="assets/images/brand/logo-white.svg" alt="Bankerise" class="h-8 site-logo" />
+        </a>
+        <button class="text-white p-2" id="mobile-menu-close" aria-label="Close menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="px-4 sm:px-6 py-6 space-y-2 overflow-y-auto max-h-[calc(100vh-80px)]">
+        <!-- Mobile: Product -->
+        <div class="mobile-accordion">
+          <button class="w-full flex items-center justify-between py-3 text-white font-semibold text-lg">
+            Product
+            <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300">
+            <div class="pl-4 pb-3 space-y-2">
+              <a href="product.html" class="flex items-center gap-2 py-2 text-gray-400 hover:text-pacific transition-colors">
+                <svg class="w-4 h-4 text-pacific flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                Bankerise Products
+              </a>
+              <div class="border-t border-white/10 my-2"></div>
+              <p class="text-xs text-gray-600 uppercase tracking-wider font-semibold pt-1 flex items-center gap-2">
+                <svg class="w-4 h-4 text-aqua flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                Solutions
+              </p>
+              <a href="solutions/retail.html" class="block py-2 pl-6 text-gray-400 hover:text-pacific transition-colors">Retail Banking</a>
+              <a href="solutions/corporate.html" class="block py-2 pl-6 text-gray-400 hover:text-pacific transition-colors">Corporate Banking</a>
+              <a href="solutions/micro.html" class="block py-2 pl-6 text-gray-400 hover:text-pacific transition-colors">Microfinance</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="use-cases.html" class="block py-3 text-white font-semibold text-lg">Use Cases</a>
+
+        <!-- Mobile: Partners -->
+        <div class="mobile-accordion">
+          <button class="w-full flex items-center justify-between py-3 text-white font-semibold text-lg">
+            Partners
+            <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300">
+            <div class="pl-4 pb-3 space-y-2">
+              <a href="partners.html" class="block py-2 text-gray-400 hover:text-pacific transition-colors">Why Become a Partner</a>
+              <a href="academy.html" class="block py-2 text-gray-400 hover:text-pacific transition-colors">Academy</a>
+
+              <a href="partners/apply.html" class="block py-2 text-pacific font-semibold hover:text-white transition-colors">Apply Now &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="about.html" class="block py-3 text-white font-semibold text-lg">About</a>
+        <a href="contact.html" class="block py-3 text-white font-semibold text-lg">Contact</a>
+
+        <div class="pt-6 space-y-3">
+          <a href="partners/login.html" class="flex items-center justify-center gap-2 w-full py-3 rounded-full border border-pacific/40 text-pacific font-semibold text-base hover:bg-pacific/10 transition-all">
+            Partner Area          </a>
+          <a href="contact.html" class="btn-primary w-full justify-center text-base">
+            Request Demo
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 0: HERO / PAGE OVERVIEW
+         ═══════════════════════════════════════════ -->
+    <section class="relative min-h-[70vh] flex items-center overflow-hidden noise-overlay">
+      <div class="mesh-gradient">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
+      <canvas id="hero-particles"></canvas>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+
+          <!-- LEFT: Copy -->
+          <div class="lg:col-span-6">
+            <!-- Profile banner (populated by JS from query param) -->
+            <div id="profile-banner-container" class="mb-8" data-animate>
+              <!-- Injected by JS -->
+            </div>
+
+            <p class="eyebrow" data-animate data-animate-delay="1">BECOME A PARTNER</p>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6" data-animate
+              data-animate-delay="2">
+              Build the future of<br>
+              <span class="gradient-text">digital banking — together.</span>
+            </h1>
+            <p class="text-lg text-gray-400 max-w-xl leading-relaxed mb-10" data-animate data-animate-delay="3">
+              Join the Bankerise partner ecosystem and unlock new revenue streams, cutting-edge tools, and regional
+              exclusivity across the world's fastest-growing financial markets.
+            </p>
+            <div class="flex flex-wrap gap-4" data-animate data-animate-delay="4">
+              <a href="#globe-section" class="cta-glow-btn">
+                Explore Regions
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </a>
+              <a href="#tiers-section" class="btn-ghost">
+                View Partnership Tiers
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT: Hero Video Card -->
+          <div class="lg:col-span-6" data-animate data-animate-delay="3">
+            <div id="heroVideoCard" class="hero-video-card" role="button" tabindex="0"
+                 aria-label="Watch Bankerise partner overview">
+              <!-- Orbital ring decor -->
+              <span class="hero-video-card__orbit hero-video-card__orbit--1"></span>
+              <span class="hero-video-card__orbit hero-video-card__orbit--2"></span>
+
+              <div class="hero-video-card__frame">
+                <video id="heroVideoPreview" class="hero-video-card__media"
+                       autoplay loop muted playsinline preload="metadata"
+                       src="assets/videos/partners-hero.mp4"></video>
+
+                <!-- Gradient overlay -->
+                <div class="hero-video-card__overlay"></div>
+
+                <!-- Top chip: LIVE -->
+                <div class="hero-video-card__top">
+                  <span class="hero-video-card__chip">
+                    <span class="hero-video-card__chip-dot"></span>
+                    PARTNER OVERVIEW · 60s
+                  </span>
+                  <span class="hero-video-card__quality">4K · UHD</span>
+                </div>
+
+                <!-- Center play -->
+                <div class="hero-video-card__play-wrap">
+                  <span class="hero-video-card__play">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M9 6.5v11a1 1 0 0 0 1.55.83l8.5-5.5a1 1 0 0 0 0-1.66l-8.5-5.5A1 1 0 0 0 9 6.5z"/>
+                    </svg>
+                  </span>
+                  <span class="hero-video-card__play-hint">Click to watch with sound</span>
+                </div>
+
+                <!-- Bottom stats -->
+                <div class="hero-video-card__bottom">
+                  <div class="hero-video-card__stat">
+                    <strong>150+</strong><span>Banks live</span>
+                  </div>
+                  <div class="hero-video-card__stat">
+                    <strong>26</strong><span>Countries</span>
+                  </div>
+                  <div class="hero-video-card__stat">
+                    <strong>4×</strong><span>Avg. revenue</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Reflection/glow -->
+              <span class="hero-video-card__reflection"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Video Lightbox -->
+      <div id="heroVideoModal" class="hero-video-modal" aria-hidden="true" role="dialog" aria-label="Partner overview video">
+        <div class="hero-video-modal__backdrop" data-hv-close></div>
+        <div class="hero-video-modal__dialog">
+          <button type="button" class="hero-video-modal__close" aria-label="Close" data-hv-close>&times;</button>
+          <div class="hero-video-modal__frame">
+            <video id="heroVideoPlayer" controls playsinline preload="none" src="assets/videos/partners-hero.mp4"></video>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        /* ─── Hero Video Card ─── */
+        .hero-video-card {
+          position: relative;
+          width: 100%;
+          cursor: pointer;
+          display: block;
+          isolation: isolate;
+        }
+        .hero-video-card:focus-visible { outline: none; }
+        .hero-video-card:focus-visible .hero-video-card__frame {
+          box-shadow: 0 0 0 3px #00d2ff, 0 30px 80px rgba(0, 0, 0, .55), 0 0 60px rgba(77, 184, 205, .25);
+        }
+
+        .hero-video-card__frame {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16/10;
+          border-radius: 22px;
+          overflow: hidden;
+          background: #0A0C18;
+          border: 1px solid rgba(255, 255, 255, .08);
+          box-shadow:
+            0 30px 80px rgba(0, 0, 0, .55),
+            0 0 0 1px rgba(77, 184, 205, .15),
+            0 0 60px rgba(77, 184, 205, .12);
+          transition: transform .6s cubic-bezier(.19, 1, .22, 1), box-shadow .4s ease;
+          transform: perspective(1200px) rotateX(1.5deg) rotateY(-2deg);
+        }
+        .hero-video-card:hover .hero-video-card__frame {
+          transform: perspective(1200px) rotateX(0) rotateY(0) translateY(-4px);
+          box-shadow:
+            0 40px 100px rgba(0, 0, 0, .65),
+            0 0 0 1px rgba(77, 184, 205, .35),
+            0 0 90px rgba(77, 184, 205, .22);
+        }
+
+        .hero-video-card__media {
+          position: absolute; inset: 0;
+          width: 100%; height: 100%;
+          object-fit: cover;
+          transition: transform 1.2s ease, filter .5s ease;
+          filter: saturate(1.05) contrast(1.02);
+        }
+        .hero-video-card:hover .hero-video-card__media {
+          transform: scale(1.06);
+          filter: saturate(1.2) contrast(1.05);
+        }
+
+        .hero-video-card__overlay {
+          position: absolute; inset: 0;
+          background:
+            radial-gradient(ellipse at 50% 60%, transparent 0%, rgba(10, 12, 24, .55) 70%, rgba(10, 12, 24, .85) 100%),
+            linear-gradient(180deg, rgba(10, 12, 24, .25) 0%, transparent 25%, transparent 55%, rgba(10, 12, 24, .8) 100%);
+          pointer-events: none;
+        }
+
+        .hero-video-card__top {
+          position: absolute; top: 18px; left: 18px; right: 18px;
+          display: flex; justify-content: space-between; align-items: center;
+          gap: 12px; z-index: 2;
+        }
+        .hero-video-card__chip {
+          display: inline-flex; align-items: center; gap: 8px;
+          padding: 6px 12px; border-radius: 999px;
+          background: rgba(10, 12, 24, .6);
+          backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+          border: 1px solid rgba(77, 184, 205, .3);
+          color: #4DB8CD;
+          font-size: 10.5px; font-weight: 700; letter-spacing: 1.8px;
+        }
+        .hero-video-card__chip-dot {
+          width: 7px; height: 7px; border-radius: 50%;
+          background: #4DB8CD; box-shadow: 0 0 10px #4DB8CD;
+          animation: hvcPulse 1.6s ease-in-out infinite;
+        }
+        @keyframes hvcPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.85)} }
+        .hero-video-card__quality {
+          padding: 6px 12px; border-radius: 999px;
+          background: rgba(255, 255, 255, .08);
+          border: 1px solid rgba(255, 255, 255, .15);
+          color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px;
+          backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        }
+
+        .hero-video-card__play-wrap {
+          position: absolute; inset: 0;
+          display: flex; flex-direction: column; align-items: center; justify-content: center;
+          gap: 14px; z-index: 2; pointer-events: none;
+        }
+        .hero-video-card__play {
+          position: relative;
+          width: 76px; height: 76px; border-radius: 50%;
+          display: flex; align-items: center; justify-content: center;
+          background: linear-gradient(135deg, rgba(255,255,255,.2), rgba(255,255,255,.08));
+          border: 1.5px solid rgba(255,255,255,.4);
+          backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+          color: #fff;
+          box-shadow:
+            0 20px 45px rgba(0,0,0,.5),
+            inset 0 1px 0 rgba(255,255,255,.35);
+          transition: transform .4s cubic-bezier(.19,1,.22,1), background .4s, border-color .4s, box-shadow .4s;
+        }
+        .hero-video-card__play::before {
+          content: ''; position: absolute; inset: -8px; border-radius: 50%;
+          background: rgba(77, 184, 205, .25);
+          animation: hvcPing 2.4s ease-out infinite;
+          z-index: -1;
+        }
+        @keyframes hvcPing {
+          0% { transform: scale(1); opacity: .7; }
+          80% { transform: scale(1.7); opacity: 0; }
+          100% { transform: scale(1.7); opacity: 0; }
+        }
+        .hero-video-card__play svg {
+          width: 28px; height: 28px; transform: translateX(2px);
+          filter: drop-shadow(0 2px 4px rgba(0,0,0,.5));
+        }
+        .hero-video-card:hover .hero-video-card__play {
+          transform: scale(1.12);
+          background: linear-gradient(135deg, rgba(0,210,255,.45), rgba(58,123,213,.3));
+          border-color: rgba(0, 210, 255, .7);
+          box-shadow:
+            0 25px 55px rgba(0, 210, 255, .35),
+            inset 0 1px 0 rgba(255,255,255,.4);
+        }
+
+        .hero-video-card__play-hint {
+          padding: 5px 12px; border-radius: 999px;
+          background: rgba(10, 12, 24, .55);
+          backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+          border: 1px solid rgba(255,255,255,.1);
+          color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .5px;
+          opacity: 0; transform: translateY(8px);
+          transition: opacity .35s, transform .35s;
+        }
+        .hero-video-card:hover .hero-video-card__play-hint {
+          opacity: 1; transform: translateY(0);
+        }
+
+        .hero-video-card__bottom {
+          position: absolute; bottom: 18px; left: 18px; right: 18px;
+          display: grid; grid-template-columns: repeat(3, 1fr);
+          gap: 10px; z-index: 2;
+        }
+        .hero-video-card__stat {
+          padding: 10px 12px; border-radius: 12px;
+          background: rgba(10, 12, 24, .55);
+          backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+          border: 1px solid rgba(255, 255, 255, .08);
+          display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
+        }
+        .hero-video-card__stat strong {
+          font-size: 18px; font-weight: 800; color: #fff;
+          background: linear-gradient(135deg, #fff 0%, #4DB8CD 100%);
+          -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+          line-height: 1;
+        }
+        .hero-video-card__stat span {
+          font-size: 10px; color: rgba(255,255,255,.55);
+          text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
+        }
+
+        .hero-video-card__reflection {
+          position: absolute; left: 10%; right: 10%; bottom: -28px; height: 30px;
+          background: radial-gradient(ellipse at center, rgba(77, 184, 205, .35), transparent 70%);
+          filter: blur(22px);
+          pointer-events: none; z-index: -1;
+        }
+
+        .hero-video-card__orbit {
+          position: absolute; border-radius: 50%;
+          border: 1px dashed rgba(77, 184, 205, .12);
+          pointer-events: none; z-index: -1;
+        }
+        .hero-video-card__orbit--1 {
+          width: 120%; aspect-ratio: 1;
+          top: 50%; left: 50%; transform: translate(-50%, -50%);
+          animation: hvcSpin 60s linear infinite;
+        }
+        .hero-video-card__orbit--2 {
+          width: 150%; aspect-ratio: 1;
+          top: 50%; left: 50%; transform: translate(-50%, -50%);
+          animation: hvcSpin 90s linear reverse infinite;
+          border-color: rgba(118, 108, 255, .1);
+        }
+        @keyframes hvcSpin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+        @media (max-width: 1024px) {
+          .hero-video-card__frame { transform: none; aspect-ratio: 16/9; }
+        }
+        @media (max-width: 640px) {
+          .hero-video-card__play { width: 60px; height: 60px; }
+          .hero-video-card__play svg { width: 22px; height: 22px; }
+          .hero-video-card__stat strong { font-size: 15px; }
+          .hero-video-card__stat span { font-size: 9px; }
+          .hero-video-card__top { top: 12px; left: 12px; right: 12px; }
+          .hero-video-card__bottom { bottom: 12px; left: 12px; right: 12px; }
+        }
+
+        /* ─── Hero Video Modal ─── */
+        .hero-video-modal {
+          position: fixed; inset: 0; z-index: 10002;
+          display: flex; align-items: center; justify-content: center;
+          padding: 1.5rem;
+          opacity: 0; visibility: hidden;
+          transition: opacity .3s ease, visibility .3s ease;
+        }
+        .hero-video-modal.is-open { opacity: 1; visibility: visible; }
+        .hero-video-modal__backdrop {
+          position: absolute; inset: 0;
+          background: radial-gradient(ellipse at center, rgba(15,20,40,.88), rgba(5,8,20,.96));
+          backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        }
+        .hero-video-modal__dialog {
+          position: relative; width: 100%; max-width: 1200px;
+          transform: scale(.94); transition: transform .4s cubic-bezier(.19,1,.22,1);
+        }
+        .hero-video-modal.is-open .hero-video-modal__dialog { transform: scale(1); }
+        .hero-video-modal__frame {
+          position: relative; width: 100%; aspect-ratio: 16/9;
+          border-radius: 18px; overflow: hidden; background: #000;
+          box-shadow:
+            0 40px 100px rgba(0,0,0,.7),
+            0 0 0 1px rgba(77,184,205,.25),
+            0 0 80px rgba(77,184,205,.15);
+        }
+        .hero-video-modal__frame video { width: 100%; height: 100%; display: block; object-fit: contain; background:#000; }
+        .hero-video-modal__close {
+          position: absolute; top: -52px; right: 0;
+          width: 42px; height: 42px; border-radius: 50%;
+          background: rgba(255,255,255,.1); color: #fff;
+          border: 1px solid rgba(255,255,255,.2);
+          font-size: 24px; line-height: 1; cursor: pointer;
+          display: flex; align-items: center; justify-content: center;
+          backdrop-filter: blur(10px);
+          transition: transform .25s, background .25s;
+          z-index: 2;
+        }
+        .hero-video-modal__close:hover {
+          transform: rotate(90deg) scale(1.05);
+          background: #00d2ff; color: #0A0C18; border-color: #00d2ff;
+        }
+        @media (max-width: 640px) {
+          .hero-video-modal { padding: 1rem; }
+          .hero-video-modal__close { top: -46px; right: 4px; width: 36px; height: 36px; font-size: 20px; }
+        }
+        body.hero-video-open { overflow: hidden; }
+      </style>
+
+      <script>
+        (function () {
+          var card = document.getElementById('heroVideoCard');
+          var preview = document.getElementById('heroVideoPreview');
+          var modal = document.getElementById('heroVideoModal');
+          var player = document.getElementById('heroVideoPlayer');
+          if (!card || !modal || !player) return;
+
+          function open() {
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('hero-video-open');
+            if (preview) { try { preview.pause(); } catch(e){} }
+            player.currentTime = 0;
+            player.muted = false;
+            var p = player.play();
+            if (p && p.catch) p.catch(function(){ player.muted = true; player.play(); });
+          }
+          function close() {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('hero-video-open');
+            try { player.pause(); } catch(e){}
+            if (preview) { try { preview.play(); } catch(e){} }
+          }
+
+          card.addEventListener('click', open);
+          card.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+          });
+          modal.querySelectorAll('[data-hv-close]').forEach(function (el) {
+            el.addEventListener('click', close);
+          });
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
+          });
+        })();
+      </script>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 1: WHY PARTNER — KEY BENEFITS
+         ═══════════════════════════════════════════ -->
+    <section class="section-spacing-lg bg-dark2">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+          <p class="eyebrow">WHY BANKERISE</p>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">A partnership built for growth</h2>
+          <p class="text-gray-400 text-lg">Access the tools, support, and market reach you need to scale your business
+            in
+            the digital banking revolution.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="benefit-card" data-animate data-animate-delay="1">
+            <div class="w-12 h-12 rounded-xl bg-pacific/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-pacific" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Recurring Revenue</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Earn commissions on every deal — with growing residuals as
+              your portfolio scales.</p>
+          </div>
+          <div class="benefit-card" data-animate data-animate-delay="2">
+            <div class="w-12 h-12 rounded-xl bg-aqua/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-aqua" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Sandbox & Demo</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">A white-labeled demo environment to showcase the platform
+              live to prospects.</p>
+          </div>
+          <div class="benefit-card" data-animate data-animate-delay="3">
+            <div class="w-12 h-12 rounded-xl bg-bell/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-bell" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Training & Certification</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Bankerise Academy courses, certifications, and ongoing
+              enablement for your team.</p>
+          </div>
+          <div class="benefit-card" data-animate data-animate-delay="4">
+            <div class="w-12 h-12 rounded-xl bg-grape/10 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-grape" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg mb-2">Regional Exclusivity</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Secure territory rights in high-growth emerging markets
+              across 4 continents.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 2: INTERACTIVE 3D GLOBE
+         ═══════════════════════════════════════════ -->
+    <section id="globe-section" class="section-spacing-lg relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-pacific/5 blur-[150px]">
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-12" data-animate>
+          <p class="eyebrow">YOUR MARKET</p>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Choose your region</h2>
+          <p class="text-gray-400 text-lg">Explore our active markets. Click a region on the globe or pick one from the
+            list to see partnership opportunities tailored to your territory.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Globe -->
+          <div data-animate data-animate-delay="1">
+            <div id="globe-wrapper">
+              <canvas id="globe-canvas"></canvas>
+            </div>
+            <!-- Selected region display -->
+            <div class="text-center mt-6" id="selected-region-display" style="opacity:0; transition:opacity 0.4s">
+              <div class="region-selected-badge">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span id="selected-region-text">Select a region</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Region list -->
+          <div class="space-y-3" data-animate data-animate-delay="2">
+            <p class="text-gray-500 text-xs font-semibold uppercase tracking-widest mb-4">Available regions</p>
+
+            <button class="region-list-btn" data-region="north-africa" data-lat="33" data-lng="3">
+              <span class="region-dot" style="border-color:#4DB8CD; background: rgba(77,184,205,0.2)"></span>
+              <div class="flex-1">
+                <p class="font-semibold text-sm">North Africa</p>
+                <p class="text-xs text-gray-500 mt-0.5">Tunisia, Morocco, Algeria, Libya</p>
+              </div>
+              <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <button class="region-list-btn" data-region="egypt" data-lat="26.8" data-lng="30.8">
+              <span class="region-dot" style="border-color:#766CFF; background: rgba(118,108,255,0.2)"></span>
+              <div class="flex-1">
+                <p class="font-semibold text-sm">Egypt</p>
+                <p class="text-xs text-gray-500 mt-0.5">Cairo, Alexandria & greater region</p>
+              </div>
+              <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <button class="region-list-btn" data-region="middle-east" data-lat="24" data-lng="45">
+              <span class="region-dot" style="border-color:#4799D1; background: rgba(71,153,209,0.2)"></span>
+              <div class="flex-1">
+                <p class="font-semibold text-sm">Middle East</p>
+                <p class="text-xs text-gray-500 mt-0.5">Saudi Arabia, UAE, Qatar, Bahrain, Jordan, Iraq</p>
+              </div>
+              <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <button class="region-list-btn" data-region="france" data-lat="46.6" data-lng="2.3">
+              <span class="region-dot" style="border-color:#4C4E89; background: rgba(76,78,137,0.2)"></span>
+              <div class="flex-1">
+                <p class="font-semibold text-sm">France</p>
+                <p class="text-xs text-gray-500 mt-0.5">Paris, Lyon, Marseille & metropolitan</p>
+              </div>
+              <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <button class="region-list-btn region-list-btn--has-video" data-region="central-asia" data-lat="41" data-lng="65" data-video="assets/videos/region-central-asia.mp4">
+              <span class="region-dot" style="border-color:#FFD700; background: rgba(255,215,0,0.2)"></span>
+              <div class="flex-1">
+                <p class="font-semibold text-sm flex items-center flex-wrap gap-2">
+                  Central Asia
+                  <span class="text-[10px] font-bold uppercase tracking-wider bg-gradient-to-r from-yellow-400/20 to-amber-400/20 text-yellow-400 px-2 py-0.5 rounded-full border border-yellow-400/20">★ Featured</span>
+                  <span class="region-video-pill" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Watch story
+                  </span>
+                </p>
+                <p class="text-xs text-gray-500 mt-0.5">Kazakhstan, Uzbekistan, Kyrgyzstan, Tajikistan</p>
+                <p class="text-[11px] text-yellow-400/80 mt-1 italic">Click to watch our Central Asia expansion story →</p>
+              </div>
+              <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <p class="text-gray-600 text-xs mt-4 pl-1">Drag, scroll to zoom, or click bullets on the globe to select.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Central Asia Video Modal -->
+      <div id="regionVideoModal" class="region-video-modal" aria-hidden="true" role="dialog" aria-label="Central Asia story">
+        <div class="region-video-modal__backdrop" data-rv-close></div>
+        <div class="region-video-modal__dialog">
+          <button type="button" class="region-video-modal__close" aria-label="Close" data-rv-close>&times;</button>
+          <div class="region-video-modal__header">
+            <span class="region-video-modal__badge">
+              <span class="region-video-modal__dot"></span>
+              CENTRAL ASIA · FEATURED MARKET
+            </span>
+            <h3 class="region-video-modal__title">Our story in Central Asia</h3>
+            <p class="region-video-modal__subtitle">Watch how Bankerise is transforming banking across Kazakhstan, Uzbekistan, Kyrgyzstan &amp; Tajikistan.</p>
+          </div>
+          <div class="region-video-modal__frame">
+            <video id="regionVideoPlayer" playsinline preload="none"></video>
+            <div id="regionVideoLoader" class="region-video-modal__loader">
+              <span class="region-video-modal__spinner"></span>
+              Loading story…
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        /* ── Video hint pill on the Central Asia button ── */
+        .region-video-pill {
+          display: inline-flex; align-items: center; gap: 4px;
+          font-size: 10px; font-weight: 700; letter-spacing: .5px;
+          text-transform: uppercase;
+          padding: 3px 8px 3px 6px;
+          border-radius: 999px;
+          background: linear-gradient(135deg, rgba(255,215,0,.22), rgba(255,165,0,.18));
+          border: 1px solid rgba(255,215,0,.4);
+          color: #FFD700;
+          box-shadow: 0 0 12px rgba(255,215,0,.15);
+        }
+        .region-video-pill svg { width: 10px; height: 10px; }
+        .region-list-btn--has-video {
+          position: relative;
+          background: linear-gradient(135deg, rgba(255,215,0,.05), transparent 60%);
+          border-color: rgba(255,215,0,.25) !important;
+        }
+        .region-list-btn--has-video::before {
+          content: '';
+          position: absolute; inset: 0;
+          border-radius: inherit;
+          background: linear-gradient(135deg, rgba(255,215,0,.08), transparent);
+          opacity: 0;
+          transition: opacity .3s ease;
+          pointer-events: none;
+        }
+        .region-list-btn--has-video:hover::before { opacity: 1; }
+        .region-list-btn--has-video:hover { border-color: rgba(255,215,0,.55) !important; }
+
+        /* ── Modal ── */
+        .region-video-modal {
+          position: fixed; inset: 0; z-index: 10001;
+          display: flex; align-items: center; justify-content: center;
+          padding: 1.5rem;
+          opacity: 0; visibility: hidden;
+          transition: opacity .3s ease, visibility .3s ease;
+        }
+        .region-video-modal.is-open { opacity: 1; visibility: visible; }
+        .region-video-modal__backdrop {
+          position: absolute; inset: 0;
+          background: radial-gradient(ellipse at center, rgba(20,25,50,.85), rgba(5,8,20,.95));
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+        }
+        .region-video-modal__dialog {
+          position: relative; width: 100%; max-width: 1100px;
+          transform: scale(.94) translateY(12px);
+          transition: transform .45s cubic-bezier(.19,1,.22,1);
+        }
+        .region-video-modal.is-open .region-video-modal__dialog { transform: scale(1) translateY(0); }
+
+        .region-video-modal__header {
+          text-align: center;
+          margin-bottom: 1.25rem;
+        }
+        .region-video-modal__badge {
+          display: inline-flex; align-items: center; gap: 8px;
+          font-size: 10.5px; font-weight: 700; letter-spacing: 2.5px;
+          padding: 6px 14px; border-radius: 999px;
+          background: rgba(255,215,0,.1);
+          border: 1px solid rgba(255,215,0,.35);
+          color: #FFD700;
+          margin-bottom: 12px;
+        }
+        .region-video-modal__dot {
+          width: 6px; height: 6px; border-radius: 50%;
+          background: #FFD700; box-shadow: 0 0 10px #FFD700;
+          animation: rvmPulse 1.6s ease-in-out infinite;
+        }
+        @keyframes rvmPulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+        .region-video-modal__title {
+          font-size: clamp(22px, 3vw, 32px); font-weight: 700;
+          color: #fff; margin: 0 0 6px;
+          background: linear-gradient(135deg, #fff 0%, #FFD700 100%);
+          -webkit-background-clip: text; background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .region-video-modal__subtitle {
+          color: rgba(255,255,255,.65); font-size: 14px;
+          max-width: 600px; margin: 0 auto;
+        }
+        .region-video-modal__frame {
+          position: relative; width: 100%; aspect-ratio: 16/9;
+          border-radius: 18px; overflow: hidden;
+          background: #000;
+          box-shadow:
+            0 40px 100px rgba(0,0,0,.7),
+            0 0 0 1px rgba(255,215,0,.25),
+            0 0 80px rgba(255,215,0,.12);
+        }
+        .region-video-modal__frame video {
+          width: 100%; height: 100%; display: block;
+          object-fit: cover; background: #000;
+        }
+        .region-video-modal__loader {
+          position: absolute; inset: 0;
+          display: flex; align-items: center; justify-content: center; gap: 10px;
+          color: rgba(255,255,255,.7); font-size: 13px; letter-spacing: 1px;
+          background: #000;
+          pointer-events: none;
+          transition: opacity .3s ease;
+        }
+        .region-video-modal__loader.is-hidden { opacity: 0; }
+        .region-video-modal__spinner {
+          width: 18px; height: 18px; border-radius: 50%;
+          border: 2px solid rgba(255,215,0,.25);
+          border-top-color: #FFD700;
+          animation: rvmSpin .9s linear infinite;
+        }
+        @keyframes rvmSpin { to { transform: rotate(360deg); } }
+
+        .region-video-modal__close {
+          position: absolute; top: -52px; right: 0;
+          width: 42px; height: 42px; border-radius: 50%;
+          background: rgba(255,255,255,.1);
+          color: #fff; border: 1px solid rgba(255,255,255,.2);
+          font-size: 24px; line-height: 1; cursor: pointer;
+          display: flex; align-items: center; justify-content: center;
+          backdrop-filter: blur(10px);
+          transition: transform .25s, background .25s, border-color .25s;
+          z-index: 2;
+        }
+        .region-video-modal__close:hover {
+          transform: rotate(90deg) scale(1.05);
+          background: #FFD700; color: #0A0C18;
+          border-color: #FFD700;
+        }
+
+        @media (max-width: 640px) {
+          .region-video-modal { padding: 1rem; }
+          .region-video-modal__close { top: -46px; right: 4px; width: 36px; height: 36px; font-size: 20px; }
+        }
+        body.region-video-open { overflow: hidden; }
+      </style>
+
+      <script>
+        (function () {
+          var modal = document.getElementById('regionVideoModal');
+          var player = document.getElementById('regionVideoPlayer');
+          var loader = document.getElementById('regionVideoLoader');
+          if (!modal || !player) return;
+
+          function openRegionVideo(src) {
+            if (!player.src || !player.src.endsWith(src.split('/').pop())) {
+              player.src = src;
+            }
+            loader.classList.remove('is-hidden');
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('region-video-open');
+
+            // Try unmuted first; fallback to muted (browser autoplay policy).
+            player.muted = false;
+            player.controls = true;
+            player.currentTime = 0;
+            var p = player.play();
+            if (p && p.catch) {
+              p.catch(function () {
+                player.muted = true;
+                player.play();
+              });
+            }
+            player.addEventListener('playing', function onPlay() {
+              loader.classList.add('is-hidden');
+              player.removeEventListener('playing', onPlay);
+            });
+          }
+          function closeRegionVideo() {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('region-video-open');
+            try { player.pause(); } catch (e) {}
+          }
+
+          modal.querySelectorAll('[data-rv-close]').forEach(function (el) {
+            el.addEventListener('click', closeRegionVideo);
+          });
+          document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.classList.contains('is-open')) closeRegionVideo();
+          });
+
+          // Expose globally so selectRegionById can call it on both list + globe click
+          window.__openRegionVideo = openRegionVideo;
+        })();
+      </script>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 3: WHAT YOU GET — ENABLEMENT
+         ═══════════════════════════════════════════ -->
+    <section id="enablement" class="section-spacing-lg bg-dark2">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+          <p class="eyebrow">PARTNER ENABLEMENT</p>
+          <h2 class="text-3xl sm:text-4xl font-bold mb-6">Everything you need to succeed</h2>
+          <p class="text-gray-400 text-lg">From sales collateral to technical training, we arm you with what you need to
+            close deals and delight customers.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="glass-card p-8" data-animate data-animate-delay="1">
+            <div class="w-14 h-14 rounded-2xl bg-pacific/10 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-pacific" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Sales Playbook</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">Pitch decks, battle cards, ROI calculators, and competitive
+              positioning guides — ready to customize and deploy.</p>
+          </div>
+          <div class="glass-card p-8" data-animate data-animate-delay="2">
+            <div class="w-14 h-14 rounded-2xl bg-aqua/10 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-aqua" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Technical Resources</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">API documentation, integration guides, sandbox access, and
+              architecture workshops with our engineering team.</p>
+          </div>
+          <div class="glass-card p-8" data-animate data-animate-delay="3">
+            <div class="w-14 h-14 rounded-2xl bg-bell/10 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-bell" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Dedicated Support</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">A named partner manager, co-marketing campaigns, joint
+              go-to-market planning, and quarterly business reviews.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 4: PARTNERSHIP TIERS
+         ═══════════════════════════════════════════ -->
+    <section id="tiers-section" class="section-spacing-lg relative overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full bg-pacific/3 blur-[120px]"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-aqua/3 blur-[120px]"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+          <p class="eyebrow">PARTNERSHIP TIERS</p>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Choose the tier that<br>matches your ambition</h2>
+          <p class="text-gray-400 text-lg">Three levels of partnership designed to scale with your business — from
+            getting
+            started to market leadership.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
+
+          <!-- Bronze Tier -->
+          <div class="tier-card tier-bronze" data-animate data-animate-delay="1">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-xl bg-[#CD7F32]/10 flex items-center justify-center">
+                <span class="text-lg">🥉</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg" style="color:#CD7F32">Bronze</h3>
+                <p class="text-xs text-gray-500">Entry-level partnership</p>
+              </div>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">Perfect for consultants, advisors, and firms exploring
+              the digital banking opportunity. Low commitment, high potential.</p>
+
+            <div class="flex items-baseline gap-1 mb-6">
+              <span class="text-3xl font-extrabold" style="color:#CD7F32">10%</span>
+              <span class="text-sm text-gray-500">commission</span>
+            </div>
+
+            <ul class="tier-features mb-8">
+              <li><span class="check bg-[#CD7F32]/15 text-[#CD7F32]">✓</span>Partner portal access</li>
+              <li><span class="check bg-[#CD7F32]/15 text-[#CD7F32]">✓</span>Sales collateral library</li>
+              <li><span class="check bg-[#CD7F32]/15 text-[#CD7F32]">✓</span>Deal registration</li>
+              <li><span class="check bg-[#CD7F32]/15 text-[#CD7F32]">✓</span>Online training modules</li>
+              <li><span class="check bg-[#CD7F32]/15 text-[#CD7F32]">✓</span>Community support</li>
+            </ul>
+
+            <a href="partners/apply.html"
+              class="block w-full text-center py-3.5 rounded-full border font-semibold text-sm transition-all hover:scale-[1.02]"
+              style="border-color: rgba(205,127,50,0.3); color:#CD7F32;"
+              onmouseover="this.style.background='rgba(205,127,50,0.1)'"
+              onmouseout="this.style.background='transparent'">
+              Get Started →
+            </a>
+          </div>
+
+          <!-- Gold Tier (FEATURED) -->
+          <div class="tier-card tier-gold" data-animate data-animate-delay="2">
+            <div class="popular-badge">Most Popular</div>
+
+            <div class="flex items-center gap-3 mb-6 mt-4">
+              <div class="w-10 h-10 rounded-xl bg-[#FFD700]/15 flex items-center justify-center">
+                <span class="text-lg">🏆</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg gold-shimmer">Gold</h3>
+                <p class="text-xs text-gray-400">Strategic partnership</p>
+              </div>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed mb-6">For high-performing partners ready for market
+              leadership. Full enablement, dedicated resources, and premium support.</p>
+
+            <div class="flex items-baseline gap-1 mb-6">
+              <span class="text-4xl font-extrabold gold-shimmer">25%</span>
+              <span class="text-sm text-gray-400">commission</span>
+            </div>
+
+            <ul class="tier-features mb-8">
+              <li><span class="check bg-[#FFD700]/15 text-[#FFD700]">✓</span><span class="text-white">Everything in
+                  Silver</span></li>
+              <li><span class="check bg-[#FFD700]/15 text-[#FFD700]">✓</span><span class="text-white">Dedicated partner
+                  manager</span></li>
+              <li><span class="check bg-[#FFD700]/15 text-[#FFD700]">✓</span><span class="text-white">White-label
+                  sandbox</span></li>
+              <li><span class="check bg-[#FFD700]/15 text-[#FFD700]">✓</span><span class="text-white">Co-marketing
+                  campaigns</span></li>
+              <li><span class="check bg-[#FFD700]/15 text-[#FFD700]">✓</span><span class="text-white">Regional
+                  exclusivity</span></li>
+              <li><span class="check bg-[#FFD700]/15 text-[#FFD700]">✓</span><span class="text-white">Revenue sharing
+                  roadmap</span></li>
+              <li><span class="check bg-[#FFD700]/15 text-[#FFD700]">✓</span><span class="text-white">Priority deal
+                  registration</span></li>
+            </ul>
+
+            <a href="partners/apply.html"
+              class="block w-full text-center py-3.5 rounded-full font-bold text-sm text-dark transition-all hover:scale-[1.02]"
+              style="background: linear-gradient(90deg, #FFD700, #FFB300); box-shadow: 0 6px 20px rgba(255,215,0,0.25);">
+              Become a Gold Partner →
+            </a>
+          </div>
+
+          <!-- Silver Tier -->
+          <div class="tier-card tier-silver" data-animate data-animate-delay="3">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-xl bg-[#C0C0C0]/10 flex items-center justify-center">
+                <span class="text-lg">🥈</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg" style="color:#C0C0C0">Silver</h3>
+                <p class="text-xs text-gray-500">Growth partnership</p>
+              </div>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">Ideal for system integrators and tech firms actively
+              selling to financial institutions. More tools, more support.</p>
+
+            <div class="flex items-baseline gap-1 mb-6">
+              <span class="text-3xl font-extrabold" style="color:#C0C0C0">18%</span>
+              <span class="text-sm text-gray-500">commission</span>
+            </div>
+
+            <ul class="tier-features mb-8">
+              <li><span class="check bg-[#C0C0C0]/15 text-[#C0C0C0]">✓</span>Everything in Bronze</li>
+              <li><span class="check bg-[#C0C0C0]/15 text-[#C0C0C0]">✓</span>Sandbox environment</li>
+              <li><span class="check bg-[#C0C0C0]/15 text-[#C0C0C0]">✓</span>Technical certification</li>
+              <li><span class="check bg-[#C0C0C0]/15 text-[#C0C0C0]">✓</span>Lead sharing program</li>
+              <li><span class="check bg-[#C0C0C0]/15 text-[#C0C0C0]">✓</span>Quarterly business reviews</li>
+              <li><span class="check bg-[#C0C0C0]/15 text-[#C0C0C0]">✓</span>Priority support</li>
+            </ul>
+
+            <a href="partners/apply.html"
+              class="block w-full text-center py-3.5 rounded-full border font-semibold text-sm transition-all hover:scale-[1.02]"
+              style="border-color: rgba(192,192,192,0.3); color:#C0C0C0;"
+              onmouseover="this.style.background='rgba(192,192,192,0.1)'"
+              onmouseout="this.style.background='transparent'">
+              Apply for Silver →
+            </a>
+          </div>
+        </div>
+
+        <!-- Tier comparison note -->
+        <p class="text-center text-gray-600 text-sm mt-12" data-animate>
+          All tiers include the partner portal, deal registration, and access to the Bankerise Academy.
+          <a href="partners/apply.html" class="text-pacific hover:underline ml-1">Compare full feature set →</a>
+        </p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 5: SUCCESS STORIES
+         ═══════════════════════════════════════════ -->
+    <section id="success-stories" class="section-spacing-lg bg-dark2">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="glass-card p-8 sm:p-12 text-center" data-animate>
+          <svg class="w-12 h-12 text-pacific/30 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151C7.563 6.068 6 8.789 6 11h4.017v10H0z" />
+          </svg>
+          <blockquote class="text-xl sm:text-2xl font-medium leading-relaxed mb-8 text-gray-200">
+            "Joining the Bankerise Gold tier transformed our business. Within 12 months, we deployed
+            the platform across 3 banks in Central Asia and grew our revenue by 4x. The dedicated
+            partner manager and sandbox were game-changers."
+          </blockquote>
+          <div class="flex items-center justify-center gap-4">
+            <div class="avatar-placeholder">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </div>
+            <div class="text-left">
+              <p class="font-bold text-white">Rustam Karimov</p>
+              <p class="text-gray-400 text-sm">CEO, DigitalBridge Finance — Tashkent, Uzbekistan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 6: FINAL CTA
+         ═══════════════════════════════════════════ -->
+    <section class="section-spacing-lg relative overflow-hidden noise-overlay">
+      <div class="mesh-gradient">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+      </div>
+      <div class="absolute inset-0 bg-dark/60 pointer-events-none"></div>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative" data-animate>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Ready to grow with Bankerise?</h2>
+        <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-10">
+          Submit your application today and our partner team will be in touch within 48 hours.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="partners/apply.html" class="cta-glow-btn text-lg !py-4 !px-10">
+            Apply Now
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a href="contact.html" class="btn-ghost">Contact Partner Team</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+    <footer class="bg-[#0A0C18] border-t border-white/5 pt-16 pb-8" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <a href="" class="flex items-center mb-6">
+            <img src="assets/images/brand/logo-white.svg" alt="Bankerise" class="h-7 site-logo" />
+          </a>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">Experience Banking beyond Transactions. A product by Proxym Group.</p>
+          <div class="flex gap-4">
+            <a href="#" class="text-gray-500 hover:text-pacific transition-colors" aria-label="LinkedIn">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-pacific transition-colors" aria-label="X (Twitter)">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-pacific transition-colors" aria-label="GitHub">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Product & Solutions -->
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-6">Product</h4>
+          <ul class="space-y-3">
+            <li><a href="product.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Platform Overview</a></li>
+            <li><a href="use-cases.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Use Cases</a></li>
+          </ul>
+          <h4 class="text-white font-semibold text-sm mt-6 mb-4">Solutions</h4>
+          <ul class="space-y-3">
+            <li><a href="solutions/retail.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Retail Banking</a></li>
+            <li><a href="solutions/corporate.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Corporate Banking</a></li>
+            <li><a href="solutions/micro.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Microfinance</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Partners -->
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-6">Partners</h4>
+          <ul class="space-y-3">
+            <li><a href="partners.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Why Partner</a></li>
+            <li><a href="partners/apply.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Apply Now</a></li>
+            <li><a href="academy.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Academy</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-6">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="about.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">About Us</a></li>
+            <li><a href="contact.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Contact</a></li>
+            <li><a href="#" class="text-gray-500 text-sm hover:text-pacific transition-colors">Careers</a></li>
+            <li><a href="#" class="text-gray-500 text-sm hover:text-pacific transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-500 text-sm hover:text-pacific transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-gray-600 text-sm">&copy; 2026 Bankerise&reg; by Proxym Group. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Privacy</a>
+          <a href="#" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Terms</a>
+          <a href="#" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot Component -->
+    <link rel="stylesheet" href="assets/css/components/chatbot.css?v=1776971546" />
+  
+<!-- Chatbot Floating Trigger Button & Tooltip -->
+<div class="chatbot-trigger-container">
+  <div id="chatbotTooltip" class="chatbot-tooltip">
+    <button type="button" class="chatbot-tooltip-close" id="chatbotTooltipClose" aria-label="Dismiss">&times;</button>
+    <span class="chatbot-tooltip-text">Hello 👋 Need any help?</span>
+  </div>
+  <div id="chatbotTrigger" class="chatbot-trigger" role="button" aria-label="Open Chat Assistant">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="bot-svg-icon">
+      <!-- Antenna -->
+      <line x1="50" y1="18" x2="50" y2="30" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="50" cy="12" r="6" fill="currentColor"/>
+      <!-- Head / Speech Bubble -->
+      <path d="M 15 55 C 15 30, 85 30, 85 55 C 85 75, 65 85, 50 85 C 45 85, 40 88, 32 95 L 32 82 C 20 78, 15 68, 15 55 Z" fill="currentColor"/>
+      <!-- Visor -->
+      <rect x="28" y="42" width="44" height="22" rx="11" fill="#0A0C18"/>
+      <!-- Eyes -->
+      <circle cx="40" cy="53" r="4.5" fill="#00ffff"/>
+      <circle cx="60" cy="53" r="4.5" fill="#00ffff"/>
+    </svg>
+  </div>
+</div>
+
+<!-- Chatbot Window -->
+<div id="chatbotWindow" class="chatbot-window shadow-2xl">
+  <!-- Header -->
+  <div class="chatbot-header">
+    <div class="chatbot-avatar">
+      <img src="assets/images/brand/icon-mark.svg" alt="Bankerise Logo" class="chatbot-header-logo" />
+    </div>
+    <div class="chatbot-header-info">
+      <h3>Bankerise Bot</h3>
+      <p><span class="status-dot"></span> Online & Ready</p>
+    </div>
+  </div>
+
+  <!-- Messages Container -->
+  <div id="chatbotMessages" class="chatbot-messages">
+    <!-- Messages will be injected here via JS -->
+    <div id="chatbotScrollAnchor"></div>
+  </div>
+
+  <!-- Quick Replies (dynamically populated) -->
+  <div style="padding: 0 1.5rem 0.5rem 1.5rem;">
+    <div id="quickReplies" class="quick-replies"></div>
+  </div>
+
+  <!-- Input Area -->
+  <div class="chatbot-input">
+    <input type="text" id="chatbotInput" placeholder="Ask about solutions, partners, or vision..." autocomplete="off" />
+    <button id="chatbotSend" class="chatbot-send" aria-label="Send Message">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path fill="currentColor" d="M3.4 20.4 21.5 12.8c.8-.3.8-1.4 0-1.7L3.4 3.6c-.7-.3-1.4.4-1.2 1.1L4 11c.1.3.3.5.6.6l7.8 1c.3 0 .3.5 0 .5l-7.8 1c-.3.1-.5.3-.6.6l-1.8 6.3c-.2.7.5 1.4 1.2 1.1z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+  <script src="assets/js/components/chatbot.js?v=1776971546" defer></script>
+
+
+  <!-- Globe tooltip -->
+  <div class="globe-tooltip" id="globe-tooltip">
+    <span id="tooltip-name"></span>
+    <span class="tooltip-sub" id="tooltip-sub"></span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/shared.js"></script>
+
+  <script>
+      (function () {
+        'use strict';
+
+        /* ══════════════════════════════════════════════
+           PROFILE BANNER FROM QUERY PARAM
+           ══════════════════════════════════════════════ */
+        const profiles = {
+          'decision-maker': {
+            label: 'Banking Decision Maker',
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/>'
+          },
+          'it-manager': {
+            label: 'IT Banking Manager',
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M16 3v1.5m0 15V21m-8-9h8m-8 4h8M7.5 7.5h9v9h-9v-9z"/>'
+          },
+          'integrator': {
+            label: 'Local Partner & Integrator',
+            icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/>'
+          }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const profileKey = params.get('profile');
+        const container = document.getElementById('profile-banner-container');
+        if (profileKey && profiles[profileKey] && container) {
+          const p = profiles[profileKey];
+          container.innerHTML = `
+        <div class="profile-banner">
+          <div class="profile-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">${p.icon}</svg></div>
+          You're exploring as: <strong class="text-white ml-1">${p.label}</strong>
+        </div>`;
+        }
+
+        /* ══════════════════════════════════════════════
+           HERO PARTICLES
+           ══════════════════════════════════════════════ */
+        function initHeroParticles() {
+          var canvas = document.getElementById('hero-particles');
+          if (!canvas) return;
+          var ctx = canvas.getContext('2d');
+          var particles = [];
+          var count = 50;
+
+          function resize() {
+            var sec = canvas.parentElement;
+            canvas.width = sec.offsetWidth;
+            canvas.height = sec.offsetHeight;
+          }
+
+          function create() {
+            return {
+              x: Math.random() * canvas.width,
+              y: Math.random() * canvas.height,
+              r: Math.random() * 1.5 + 0.5,
+              dx: (Math.random() - 0.5) * 0.3,
+              dy: (Math.random() - 0.5) * 0.3,
+              o: Math.random() * 0.4 + 0.1,
+            };
+          }
+
+          resize();
+          for (var i = 0; i < count; i++) particles.push(create());
+
+          function tick() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(function (p) {
+              p.x += p.dx; p.y += p.dy;
+              if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+              if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+              ctx.fillStyle = 'rgba(77,184,205,' + p.o + ')';
+              ctx.fill();
+            });
+            // connections
+            for (var a = 0; a < particles.length; a++) {
+              for (var b = a + 1; b < particles.length; b++) {
+                var dx = particles[a].x - particles[b].x;
+                var dy = particles[a].y - particles[b].y;
+                var d = Math.sqrt(dx * dx + dy * dy);
+                if (d < 100) {
+                  ctx.beginPath();
+                  ctx.moveTo(particles[a].x, particles[a].y);
+                  ctx.lineTo(particles[b].x, particles[b].y);
+                  ctx.strokeStyle = 'rgba(77,184,205,' + (0.06 * (1 - d / 100)) + ')';
+                  ctx.lineWidth = 0.5;
+                  ctx.stroke();
+                }
+              }
+            }
+            requestAnimationFrame(tick);
+          }
+
+          window.addEventListener('resize', resize);
+          tick();
+        }
+
+        /* ══════════════════════════════════════════════
+           3D GLOBE — Three.js
+           ══════════════════════════════════════════════ */
+        var selectedRegion = null;
+        var globeMarkers = [];
+
+        var REGIONS = [
+          { id: 'north-africa', name: 'North Africa', sub: 'Tunisia · Morocco · Algeria · Libya', lat: 33, lng: 3, color: 0x4DB8CD, size: 1.0 },
+          { id: 'egypt', name: 'Egypt', sub: 'Cairo · Alexandria', lat: 26.8, lng: 30.8, color: 0x766CFF, size: 1.0 },
+          { id: 'middle-east', name: 'Middle East', sub: 'Saudi Arabia · UAE · Qatar', lat: 24, lng: 45, color: 0x4799D1, size: 1.0 },
+          { id: 'france', name: 'France', sub: 'Paris · Lyon · Marseille', lat: 46.6, lng: 2.3, color: 0x4C4E89, size: 1.0 },
+          { id: 'central-asia', name: 'Central Asia', sub: 'Kazakhstan · Uzbekistan · Kyrgyzstan', lat: 41, lng: 65, color: 0xFFD700, size: 1.6 },
+        ];
+
+        function latLngToVec3(lat, lng, r) {
+          var phi = (90 - lat) * Math.PI / 180;
+          var theta = (lng + 180) * Math.PI / 180;
+          return new THREE.Vector3(
+            -r * Math.sin(phi) * Math.cos(theta),
+            r * Math.cos(phi),
+            r * Math.sin(phi) * Math.sin(theta)
+          );
+        }
+
+        function initGlobe() {
+          var wrapper = document.getElementById('globe-wrapper');
+          var canvas = document.getElementById('globe-canvas');
+          if (!wrapper || !canvas || typeof THREE === 'undefined') return;
+
+          var W = wrapper.offsetWidth;
+          var H = wrapper.offsetHeight;
+
+          // Renderer
+          var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+          renderer.setSize(W, H);
+
+          // Scene & Camera
+          var scene = new THREE.Scene();
+          var camera = new THREE.PerspectiveCamera(45, W / H, 0.1, 1000);
+          camera.position.z = 3.2;
+
+          // Lighting
+          var ambient = new THREE.AmbientLight(0xffffff, 0.4);
+          scene.add(ambient);
+          var dirLight = new THREE.DirectionalLight(0xffffff, 0.7);
+          dirLight.position.set(5, 3, 5);
+          scene.add(dirLight);
+
+          // Globe sphere — receives canvas texture with continents
+          var globeGeo = new THREE.SphereGeometry(1, 64, 64);
+          var globeMat = new THREE.MeshPhongMaterial({
+            color: 0xffffff,
+            emissive: 0xffffff,
+            emissiveIntensity: 0.55,
+            shininess: 3
+          });
+          var globe = new THREE.Mesh(globeGeo, globeMat);
+          scene.add(globe);
+
+          // Continent outlines group (3D lines for parallax depth)
+          var continentsGroup = new THREE.Group();
+          scene.add(continentsGroup);
+
+          function geoToVec3(coords, radius) {
+            var lon = coords[0];
+            var lat = coords[1];
+            var phi = (90 - lat) * Math.PI / 180;
+            var theta = (lon + 180) * Math.PI / 180;
+            return new THREE.Vector3(
+              -radius * Math.sin(phi) * Math.cos(theta),
+              radius * Math.cos(phi),
+              radius * Math.sin(phi) * Math.sin(theta)
+            );
+          }
+
+          function drawLineString(coords, radius) {
+            var points = [];
+            for (var i = 0; i < coords.length; i++) {
+              points.push(geoToVec3(coords[i], radius));
+            }
+            var geometry = new THREE.BufferGeometry().setFromPoints(points);
+            var material = new THREE.LineBasicMaterial({
+              color: 0x4DB8CD,
+              transparent: true,
+              opacity: 0.45,
+              depthWrite: false
+            });
+            return new THREE.Line(geometry, material);
+          }
+
+          function loadContinents() {
+            var url = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.onload = function () {
+              if (xhr.status !== 200) return;
+              var topo = JSON.parse(xhr.responseText);
+              var arcsData = topo.arcs;
+              var trData = topo.transform;
+
+              function decodeArc(arcIdx) {
+                var arc = arcsData[arcIdx < 0 ? ~arcIdx : arcIdx];
+                var coords = [];
+                var x = 0, y = 0;
+                for (var i = 0; i < arc.length; i++) {
+                  x += arc[i][0];
+                  y += arc[i][1];
+                  coords.push([
+                    x * trData.scale[0] + trData.translate[0],
+                    y * trData.scale[1] + trData.translate[1]
+                  ]);
+                }
+                if (arcIdx < 0) coords.reverse();
+                return coords;
+              }
+
+              function decodeRing(arcIndices) {
+                var coords = [];
+                for (var i = 0; i < arcIndices.length; i++) {
+                  var decoded = decodeArc(arcIndices[i]);
+                  for (var j = (i === 0 ? 0 : 1); j < decoded.length; j++) {
+                    coords.push(decoded[j]);
+                  }
+                }
+                return coords;
+              }
+
+              function getRings(geom) {
+                var rings = [];
+                if (geom.type === 'Polygon') {
+                  geom.arcs.forEach(function (r) { rings.push(decodeRing(r)); });
+                } else if (geom.type === 'MultiPolygon') {
+                  geom.arcs.forEach(function (p) {
+                    p.forEach(function (r) { rings.push(decodeRing(r)); });
+                  });
+                }
+                return rings;
+              }
+
+              // Collect land outline rings and individual country rings
+              var landRings = getRings(topo.objects.land);
+              var countryRings = [];
+              if (topo.objects.countries) {
+                topo.objects.countries.geometries.forEach(function (g) {
+                  countryRings = countryRings.concat(getRings(g));
+                });
+              }
+
+              // ═══ Build 2048×1024 equirectangular canvas texture ═══
+              var TW = 2048, TH = 1024;
+              var tc = document.createElement('canvas');
+              tc.width = TW; tc.height = TH;
+              var tx = tc.getContext('2d');
+
+              function toXY(lon, lat) {
+                return [TW * (lon + 180) / 360, TH * (1 - (lat + 90) / 180)];
+              }
+
+              function fillRings(rings) {
+                rings.forEach(function (ring) {
+                  tx.beginPath();
+                  ring.forEach(function (c, i) {
+                    var xy = toXY(c[0], c[1]);
+                    if (i === 0) tx.moveTo(xy[0], xy[1]);
+                    else tx.lineTo(xy[0], xy[1]);
+                  });
+                  tx.closePath();
+                  tx.fill();
+                });
+              }
+
+              function strokeRings(rings) {
+                rings.forEach(function (ring) {
+                  tx.beginPath();
+                  ring.forEach(function (c, i) {
+                    var xy = toXY(c[0], c[1]);
+                    if (i === 0) tx.moveTo(xy[0], xy[1]);
+                    else tx.lineTo(xy[0], xy[1]);
+                  });
+                  tx.closePath();
+                  tx.stroke();
+                });
+              }
+
+              // Layer 1 — Deep ocean background
+              tx.fillStyle = '#050A12';
+              tx.fillRect(0, 0, TW, TH);
+
+              // Layer 2 — Lat/lng grid across entire globe
+              tx.strokeStyle = 'rgba(77, 184, 205, 0.045)';
+              tx.lineWidth = 0.5;
+              for (var gLat = -75; gLat <= 75; gLat += 15) {
+                var gy = toXY(0, gLat)[1];
+                tx.beginPath(); tx.moveTo(0, gy); tx.lineTo(TW, gy); tx.stroke();
+              }
+              for (var gLng = -180; gLng < 180; gLng += 15) {
+                var gx = toXY(gLng, 0)[0];
+                tx.beginPath(); tx.moveTo(gx, 0); tx.lineTo(gx, TH); tx.stroke();
+              }
+
+              // Layer 3 — Land fill (visibly lighter than ocean/page bg)
+              tx.fillStyle = '#182A3A';
+              fillRings(landRings);
+
+              // Layer 4 — Dot-matrix pattern on land (digital grid effect)
+              var dotTile = document.createElement('canvas');
+              dotTile.width = 4; dotTile.height = 4;
+              var dc = dotTile.getContext('2d');
+              dc.fillStyle = 'rgba(77, 184, 205, 0.4)';
+              dc.fillRect(1, 1, 1.5, 1.5);
+              tx.fillStyle = tx.createPattern(dotTile, 'repeat');
+              fillRings(landRings);
+
+              // Layer 5 — Country borders (thin, subtle)
+              tx.strokeStyle = 'rgba(77, 184, 205, 0.25)';
+              tx.lineWidth = 0.5;
+              strokeRings(countryRings);
+
+              // Layer 6 — Continent outlines (brighter, hero strokes)
+              tx.strokeStyle = 'rgba(77, 184, 205, 0.75)';
+              tx.lineWidth = 1.2;
+              strokeRings(landRings);
+
+              // Apply texture to globe as both diffuse and emissive map
+              var texture = new THREE.CanvasTexture(tc);
+              globe.material.map = texture;
+              globe.material.emissiveMap = texture;
+              globe.material.needsUpdate = true;
+
+              // Also add 3D continent outline lines for parallax depth
+              var RADIUS = 1.004;
+              landRings.forEach(function (ring) {
+                continentsGroup.add(drawLineString(ring, RADIUS));
+              });
+            };
+            xhr.send();
+          }
+
+          loadContinents();
+
+          // Wireframe overlay — subtle visible grid
+          var wireGeo = new THREE.SphereGeometry(1.006, 36, 18);
+          var wireMat = new THREE.MeshBasicMaterial({
+            color: 0x4DB8CD,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.06,
+            depthWrite: false
+          });
+          var wire = new THREE.Mesh(wireGeo, wireMat);
+          scene.add(wire);
+
+          // Atmosphere glow — inner layer (brand accent)
+          var glowGeo = new THREE.SphereGeometry(1.08, 32, 32);
+          var glowMat = new THREE.MeshBasicMaterial({
+            color: 0x4DB8CD,
+            transparent: true,
+            opacity: 0.08,
+            side: THREE.BackSide,
+            depthWrite: false
+          });
+          var glow = new THREE.Mesh(glowGeo, glowMat);
+          scene.add(glow);
+
+          // Atmosphere glow — outer layer (softer, wider halo)
+          var glowOuterGeo = new THREE.SphereGeometry(1.2, 32, 32);
+          var glowOuterMat = new THREE.MeshBasicMaterial({
+            color: 0x766CFF,
+            transparent: true,
+            opacity: 0.03,
+            side: THREE.BackSide,
+            depthWrite: false
+          });
+          var glowOuter = new THREE.Mesh(glowOuterGeo, glowOuterMat);
+          scene.add(glowOuter);
+
+          // Markers group
+          var markersGroup = new THREE.Group();
+          scene.add(markersGroup);
+
+          REGIONS.forEach(function (r) {
+            var pos = latLngToVec3(r.lat, r.lng, 1.01);
+            var markerSize = 0.025 * r.size;
+
+            // Outer ring
+            var ringGeo = new THREE.RingGeometry(markerSize * 1.4, markerSize * 1.8, 32);
+            var ringMat = new THREE.MeshBasicMaterial({ color: r.color, side: THREE.DoubleSide, transparent: true, opacity: 0.5 });
+            var ring = new THREE.Mesh(ringGeo, ringMat);
+            ring.position.copy(pos);
+            ring.lookAt(new THREE.Vector3(0, 0, 0));
+            markersGroup.add(ring);
+
+            // Inner dot
+            var dotGeo = new THREE.CircleGeometry(markerSize, 32);
+            var dotMat = new THREE.MeshBasicMaterial({ color: r.color, side: THREE.DoubleSide });
+            var dot = new THREE.Mesh(dotGeo, dotMat);
+            dot.position.copy(pos);
+            dot.lookAt(new THREE.Vector3(0, 0, 0));
+            markersGroup.add(dot);
+
+            // Pulse ring
+            var pulseGeo = new THREE.RingGeometry(markerSize * 1.8, markerSize * 2.2, 32);
+            var pulseMat = new THREE.MeshBasicMaterial({ color: r.color, side: THREE.DoubleSide, transparent: true, opacity: 0.3 });
+            var pulse = new THREE.Mesh(pulseGeo, pulseMat);
+            pulse.position.copy(pos);
+            pulse.lookAt(new THREE.Vector3(0, 0, 0));
+            markersGroup.add(pulse);
+
+            globeMarkers.push({
+              region: r,
+              dot: dot,
+              ring: ring,
+              pulse: pulse,
+              pos: pos
+            });
+          });
+
+          // Raycaster for interaction
+          var raycaster = new THREE.Raycaster();
+          var mouse = new THREE.Vector2();
+          var tooltip = document.getElementById('globe-tooltip');
+          var tooltipName = document.getElementById('tooltip-name');
+          var tooltipSub = document.getElementById('tooltip-sub');
+
+          // Drag controls
+          var isDragging = false;
+          var prevMouse = { x: 0, y: 0 };
+          var rotVel = { x: 0, y: 0 };
+          var autoRotateSpeed = 0.002;
+          var targetRotY = 0;
+          var targetRotX = 0.3;
+
+          // Set initial rotation toward Africa & Europe
+          targetRotY = -((20 + 180) * Math.PI / 180) + Math.PI;
+          targetRotX = (90 - 10) * Math.PI / 180 - Math.PI / 2;
+          globe.rotation.y = targetRotY;
+          globe.rotation.x = targetRotX;
+          wire.rotation.y = targetRotY;
+          wire.rotation.x = targetRotX;
+          continentsGroup.rotation.y = targetRotY;
+          continentsGroup.rotation.x = targetRotX;
+          markersGroup.rotation.y = targetRotY;
+          markersGroup.rotation.x = targetRotX;
+
+          canvas.addEventListener('mousedown', function (e) {
+            isDragging = true;
+            prevMouse = { x: e.clientX, y: e.clientY };
+            autoRotateSpeed = 0;
+          });
+
+          canvas.addEventListener('mousemove', function (e) {
+            // Update mouse for raycasting
+            var rect = canvas.getBoundingClientRect();
+            mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+            mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+
+            if (isDragging) {
+              var dx = e.clientX - prevMouse.x;
+              var dy = e.clientY - prevMouse.y;
+              rotVel.x = dy * 0.005;
+              rotVel.y = dx * 0.005;
+              prevMouse = { x: e.clientX, y: e.clientY };
+            }
+
+            // Tooltip on hover
+            raycaster.setFromCamera(mouse, camera);
+            var hovered = null;
+            globeMarkers.forEach(function (m) {
+              var intersects = raycaster.intersectObject(m.dot);
+              if (intersects.length > 0 && intersects[0].distance < 5) {
+                hovered = m;
+              }
+            });
+
+            if (hovered) {
+              tooltipName.textContent = hovered.region.name;
+              tooltipSub.textContent = hovered.region.sub;
+              tooltip.style.left = (e.clientX + 16) + 'px';
+              tooltip.style.top = (e.clientY - 16) + 'px';
+              tooltip.classList.add('visible');
+              canvas.style.cursor = 'pointer';
+            } else {
+              tooltip.classList.remove('visible');
+              canvas.style.cursor = isDragging ? 'grabbing' : 'grab';
+            }
+          });
+
+          canvas.addEventListener('mouseup', function (e) {
+            if (!isDragging) return;
+            isDragging = false;
+            // Resume auto rotate after a while
+            setTimeout(function () { autoRotateSpeed = 0.001; }, 3000);
+
+            // Check for click on marker
+            raycaster.setFromCamera(mouse, camera);
+            globeMarkers.forEach(function (m) {
+              var intersects = raycaster.intersectObject(m.dot);
+              if (intersects.length > 0 && intersects[0].distance < 5) {
+                selectRegionById(m.region.id);
+              }
+            });
+          });
+
+          canvas.addEventListener('mouseleave', function () {
+            isDragging = false;
+            tooltip.classList.remove('visible');
+            setTimeout(function () { autoRotateSpeed = 0.001; }, 1000);
+          });
+
+          // Zoom via scroll
+          canvas.addEventListener('wheel', function (e) {
+            e.preventDefault();
+            camera.position.z = Math.max(2.2, Math.min(5, camera.position.z + e.deltaY * 0.002));
+          }, { passive: false });
+
+          // Touch support
+          var touchPrev = null;
+          canvas.addEventListener('touchstart', function (e) {
+            if (e.touches.length === 1) {
+              isDragging = true;
+              touchPrev = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+              autoRotateSpeed = 0;
+            }
+          }, { passive: true });
+          canvas.addEventListener('touchmove', function (e) {
+            if (isDragging && e.touches.length === 1) {
+              var dx = e.touches[0].clientX - touchPrev.x;
+              var dy = e.touches[0].clientY - touchPrev.y;
+              rotVel.x = dy * 0.005;
+              rotVel.y = dx * 0.005;
+              touchPrev = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+            }
+          }, { passive: true });
+          canvas.addEventListener('touchend', function () {
+            isDragging = false;
+            setTimeout(function () { autoRotateSpeed = 0.001; }, 2000);
+          });
+
+          // Animate
+          var clock = new THREE.Clock();
+          function animate() {
+            requestAnimationFrame(animate);
+            var t = clock.getElapsedTime();
+
+            // Auto rotate
+            globe.rotation.y += autoRotateSpeed;
+            wire.rotation.y = globe.rotation.y;
+            continentsGroup.rotation.y = globe.rotation.y;
+            markersGroup.rotation.y = globe.rotation.y;
+
+            // Apply drag velocity
+            globe.rotation.y += rotVel.y;
+            globe.rotation.x += rotVel.x;
+            globe.rotation.x = Math.max(-Math.PI / 2.5, Math.min(Math.PI / 2.5, globe.rotation.x));
+            wire.rotation.x = globe.rotation.x;
+            wire.rotation.y = globe.rotation.y;
+            continentsGroup.rotation.x = globe.rotation.x;
+            continentsGroup.rotation.y = globe.rotation.y;
+            markersGroup.rotation.x = globe.rotation.x;
+            markersGroup.rotation.y = globe.rotation.y;
+
+            // Damping
+            rotVel.x *= 0.92;
+            rotVel.y *= 0.92;
+
+            // Pulse animation
+            globeMarkers.forEach(function (m) {
+              var s = 1 + Math.sin(t * 2.5 + m.region.lat) * 0.15;
+              m.pulse.scale.set(s, s, 1);
+              m.pulse.material.opacity = 0.3 * (1 - (s - 1) / 0.15);
+            });
+
+            renderer.render(scene, camera);
+          }
+          animate();
+
+          // Resize
+          function onResize() {
+            W = wrapper.offsetWidth;
+            H = wrapper.offsetHeight;
+            camera.aspect = W / H;
+            camera.updateProjectionMatrix();
+            renderer.setSize(W, H);
+          }
+          window.addEventListener('resize', onResize);
+        }
+
+        /* ══════════════════════════════════════════════
+           REGION SELECTION
+           ══════════════════════════════════════════════ */
+        function selectRegionById(id) {
+          // Update list buttons
+          document.querySelectorAll('.region-list-btn').forEach(function (btn) {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-region') === id) {
+              btn.classList.add('active');
+            }
+          });
+
+          // Update selected display
+          var display = document.getElementById('selected-region-display');
+          var text = document.getElementById('selected-region-text');
+          REGIONS.forEach(function (r) {
+            if (r.id === id) {
+              text.textContent = r.name;
+              display.style.opacity = '1';
+              selectedRegion = id;
+            }
+          });
+
+          // Auto-play regional story video if region has one (e.g., Central Asia)
+          var btn = document.querySelector('.region-list-btn[data-region="' + id + '"]');
+          var src = btn && btn.getAttribute('data-video');
+          if (src && typeof window.__openRegionVideo === 'function') {
+            setTimeout(function () { window.__openRegionVideo(src); }, 250);
+          }
+        }
+
+        // Region list click handler
+        document.querySelectorAll('.region-list-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            selectRegionById(btn.getAttribute('data-region'));
+          });
+        });
+
+        /* ══════════════════════════════════════════════
+           INIT
+           ══════════════════════════════════════════════ */
+        document.addEventListener('DOMContentLoaded', function () {
+          initHeroParticles();
+          initGlobe();
+        });
+
+      })();
+  </script>
+
+</body>
+
+</html>

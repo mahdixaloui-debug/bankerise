@@ -1,0 +1,321 @@
+/* ============================================
+   Partners Page — Custom Styles
+   ============================================ */
+
+/* Globe canvas wrapper */
+#globe-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 640px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: grab;
+  animation: globe-entrance 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+}
+
+@keyframes globe-entrance {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+#globe-wrapper:active { cursor: grabbing; }
+
+#globe-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Globe tooltip — glassmorphism fintech style */
+.globe-tooltip {
+  position: fixed;
+  padding: 8px 16px;
+  background: rgba(10, 14, 26, 0.88);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgba(77, 184, 205, 0.25);
+  border-radius: 10px;
+  color: #e2e8f0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(77, 184, 205, 0.06);
+}
+.globe-tooltip.visible { opacity: 1; transform: translateY(0); }
+.globe-tooltip .tooltip-sub {
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+  color: #64748b;
+  margin-top: 3px;
+  letter-spacing: 0.04em;
+}
+
+/* Globe selected region indicator */
+.region-selected-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(77, 184, 205, 0.1);
+  border: 1px solid rgba(77, 184, 205, 0.3);
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4DB8CD;
+  transition: all 0.3s ease;
+}
+.region-selected-badge svg { width: 18px; height: 18px; }
+
+/* Tier card styles */
+.tier-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+.tier-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.25rem;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent, transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.tier-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+}
+.tier-card:hover::before { opacity: 1; }
+
+/* Bronze tier accent */
+.tier-bronze { border-color: rgba(205, 127, 50, 0.15); }
+.tier-bronze:hover {
+  border-color: rgba(205, 127, 50, 0.4);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3), 0 0 30px rgba(205, 127, 50, 0.05);
+}
+.tier-bronze::before {
+  background: linear-gradient(135deg, rgba(205, 127, 50, 0.4), rgba(205, 127, 50, 0.1));
+}
+
+/* Silver tier accent */
+.tier-silver { border-color: rgba(192, 192, 192, 0.15); }
+.tier-silver:hover {
+  border-color: rgba(192, 192, 192, 0.4);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3), 0 0 30px rgba(192, 192, 192, 0.05);
+}
+.tier-silver::before {
+  background: linear-gradient(135deg, rgba(192, 192, 192, 0.4), rgba(192, 192, 192, 0.1));
+}
+
+/* Gold tier — featured */
+.tier-gold {
+  background: linear-gradient(160deg, rgba(255, 215, 0, 0.06), rgba(255, 179, 0, 0.02), rgba(255, 255, 255, 0.03));
+  border-color: rgba(255, 215, 0, 0.25);
+  transform: scale(1.04);
+  box-shadow: 0 0 80px rgba(255, 215, 0, 0.06), 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+.tier-gold::before {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.5), rgba(255, 179, 0, 0.2));
+  opacity: 1;
+}
+.tier-gold::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FFD700, #FFB300, #FFD700);
+  border-radius: 0 0 3px 3px;
+}
+.tier-gold:hover {
+  transform: scale(1.04) translateY(-8px);
+  box-shadow: 0 0 100px rgba(255, 215, 0, 0.1), 0 30px 70px rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 215, 0, 0.45);
+}
+
+/* Gold shimmer effect */
+@keyframes gold-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.gold-shimmer {
+  background: linear-gradient(90deg, #FFD700, #FFF8DC, #FFD700);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gold-shimmer 3s linear infinite;
+}
+
+/* Tier feature list */
+.tier-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #94A3B8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.tier-features li:last-child { border-bottom: none; }
+.tier-features li .check {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+/* Most popular badge */
+.popular-badge {
+  position: absolute;
+  top: -1px;
+  right: 2rem;
+  padding: 6px 18px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #0D0F1C;
+  background: linear-gradient(90deg, #FFD700, #FFB300);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Profile banner */
+.profile-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: rgba(77, 184, 205, 0.08);
+  border: 1px solid rgba(77, 184, 205, 0.2);
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4DB8CD;
+  transition: all 0.3s ease;
+}
+.profile-banner .profile-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(77, 184, 205, 0.2), rgba(118, 108, 255, 0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-banner .profile-icon svg { width: 16px; height: 16px; color: #4DB8CD; }
+
+/* Section scroll-linked accent */
+.section-accent-line {
+  width: 60px;
+  height: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #4DB8CD, #766CFF);
+  margin-bottom: 1.5rem;
+}
+
+/* Particle canvas */
+#hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Benefits card */
+.benefit-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+.benefit-card:hover {
+  border-color: rgba(77, 184, 205, 0.25);
+  background: rgba(77, 184, 205, 0.04);
+  transform: translateY(-4px);
+}
+
+/* CTA gradient button */
+.cta-glow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  background: linear-gradient(135deg, #4DB8CD, #766CFF);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 30px rgba(77, 184, 205, 0.25);
+}
+.cta-glow-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 40px rgba(77, 184, 205, 0.35);
+  filter: brightness(1.08);
+}
+.cta-glow-btn svg { width: 18px; height: 18px; }
+
+/* Region list button */
+.region-list-btn {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+.region-list-btn:hover {
+  border-color: rgba(77, 184, 205, 0.3);
+  background: rgba(77, 184, 205, 0.05);
+}
+.region-list-btn.active {
+  border-color: #4DB8CD;
+  background: rgba(77, 184, 205, 0.08);
+  box-shadow: 0 0 20px rgba(77, 184, 205, 0.08);
+}
+.region-list-btn .region-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid;
+  transition: all 0.25s;
+}
+.region-list-btn.active .region-dot {
+  box-shadow: 0 0 10px currentColor;
+}

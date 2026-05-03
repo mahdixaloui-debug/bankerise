@@ -1,0 +1,250 @@
+/* ═══ ABOUT PAGE CUSTOM STYLES ═══ */
+
+/* Hero orbital ring animation */
+.orbital-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(77, 184, 205, 0.08);
+  animation: orbit-spin 40s linear infinite;
+}
+.orbital-ring:nth-child(2) {
+  animation-duration: 55s;
+  animation-direction: reverse;
+  border-color: rgba(118, 108, 255, 0.06);
+}
+.orbital-ring:nth-child(3) {
+  animation-duration: 70s;
+  border-color: rgba(71, 153, 209, 0.05);
+}
+@keyframes orbit-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Hero particle canvas */
+#about-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Stat counter highlight */
+.stat-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(77, 184, 205, 0.3), transparent, rgba(118, 108, 255, 0.2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+  background: rgba(77, 184, 205, 0.04);
+}
+.stat-card:hover::before {
+  opacity: 1;
+}
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #4DB8CD, #766CFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+/* Timeline refined */
+.timeline-connector {
+  position: absolute;
+  left: 19px;
+  top: 24px;
+  bottom: 24px;
+  width: 2px;
+  background: linear-gradient(to bottom, #4DB8CD, #766CFF, rgba(118, 108, 255, 0.1));
+  border-radius: 2px;
+}
+.timeline-node {
+  position: relative;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+.timeline-node.active {
+  background: rgba(77, 184, 205, 0.15);
+  border: 2px solid #4DB8CD;
+  box-shadow: 0 0 20px rgba(77, 184, 205, 0.2);
+}
+.timeline-node.inactive {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.timeline-node .node-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.timeline-node.active .node-dot { background: #4DB8CD; }
+.timeline-node.inactive .node-dot { background: rgba(255, 255, 255, 0.25); }
+.timeline-item:hover .timeline-node.inactive {
+  border-color: rgba(77, 184, 205, 0.4);
+  background: rgba(77, 184, 205, 0.08);
+}
+.timeline-item:hover .timeline-node.inactive .node-dot {
+  background: rgba(77, 184, 205, 0.6);
+}
+
+/* Value card spotlight */
+.value-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+}
+.value-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.value-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(77, 184, 205, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+.value-card:hover::after {
+  opacity: 1;
+}
+.value-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.value-card:hover .value-icon {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(77, 184, 205, 0.15);
+}
+
+/* Team card 3D tilt */
+.team-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1.25rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%),
+    rgba(77, 184, 205, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.team-card:hover::before { opacity: 1; }
+.team-card:hover {
+  border-color: rgba(77, 184, 205, 0.2);
+  transform: translateY(-6px);
+}
+.team-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, rgba(77, 184, 205, 0.15), rgba(118, 108, 255, 0.15));
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+}
+.team-card:hover .team-avatar {
+  border-color: rgba(77, 184, 205, 0.4);
+}
+
+/* Proxym badge */
+.proxym-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(118, 108, 255, 0.1);
+  border: 1px solid rgba(118, 108, 255, 0.2);
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #766CFF;
+  letter-spacing: 0.05em;
+}
+
+/* Region list glow */
+.region-pill {
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.region-pill:hover {
+  border-color: rgba(77, 184, 205, 0.25);
+  background: rgba(77, 184, 205, 0.04);
+  transform: translateY(-2px);
+}
+
+/* Scroll reveal animation */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
