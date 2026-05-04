@@ -39,9 +39,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Shared CSS -->
-  <link rel="stylesheet" href="assets/css/shared.css?v=20260504g">
+  <link rel="stylesheet" href="assets/css/shared.css?v=20260504h">
 
-  <link rel="stylesheet" href="assets/css/pages/academy.css?v=20260504g">
+  <link rel="stylesheet" href="assets/css/pages/academy.css?v=20260504h">
 
 </head>
 <body class="font-montserrat bg-dark text-white">
@@ -215,47 +215,61 @@
   <main id="main-content">
 
     <!-- HERO -->
-    <section class="pt-32 pb-12 lg:pt-40 lg:pb-16 relative overflow-hidden">
-      <div class="mesh-gradient"><div class="blob blob-1"></div><div class="blob blob-2"></div></div>
-      <div class="noise-overlay"></div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <p class="eyebrow" data-animate>BANKERISE PARTNER ACADEMY</p>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6" data-animate data-animate-delay="1">
+    <section class="pt-32 pb-16 lg:pt-48 lg:pb-24 relative overflow-hidden">
+      <!-- Full-width Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img src="assets/images/academy-hero.jpg" alt="Academy Background" class="w-full h-full object-cover opacity-60" style="object-position: center 20%;" />
+        <div class="absolute inset-0 bg-dark/60 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-dark via-transparent to-dark opacity-80"></div>
+      </div>
+      
+      <div class="noise-overlay z-0"></div>
+      
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <p class="eyebrow text-pacific shadow-sm" data-animate>BANKERISE PARTNER ACADEMY</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight drop-shadow-xl" data-animate data-animate-delay="1">
           Become a Bankerise pro<br>
           <span class="gradient-text">Enrol. Download. Certify.</span>
         </h1>
-        <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-10" data-animate data-animate-delay="2">
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10 drop-shadow-md" data-animate data-animate-delay="2">
           Three short tracks — <strong class="text-white">Become a Partner</strong>, <strong class="text-white">Use Bankerise</strong>,
           <strong class="text-white">Sell Bankerise</strong>. Enrol in any course, download the playbook PDF, and mark it
           complete when you're done. Your progress is saved on this device.
         </p>
         <div class="flex flex-wrap justify-center gap-4" data-animate data-animate-delay="3">
-          <a href="#tracks" class="btn-primary">Start Learning <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
-          <a href="partners/apply.html" class="btn-ghost">Apply to be a Partner</a>
+          <a href="#tracks" class="btn-primary shadow-xl shadow-pacific/20">Start Learning <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
+          <a href="partners/apply.html" class="btn-ghost backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/10">Apply to be a Partner</a>
         </div>
       </div>
     </section>
 
     <!-- PROGRESS DASHBOARD -->
-    <section class="pb-8" id="tracks">
+    <section class="pb-12 mt-8 lg:-mt-12 relative z-20" id="tracks">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="academy-progress-card glass-card p-5 sm:p-6 flex flex-col sm:flex-row items-center gap-5">
-          <div class="flex items-center gap-4 flex-shrink-0">
-            <div class="w-14 h-14 rounded-2xl flex items-center justify-center bg-gradient-to-br from-pacific to-aqua text-white font-extrabold text-xl">
+        <div class="academy-progress-card glass-card p-6 sm:p-8 flex flex-col lg:flex-row items-start lg:items-center gap-8 shadow-2xl border border-white/10 rounded-2xl bg-dark/80 backdrop-blur-xl">
+          
+          <div class="flex items-center gap-6 flex-shrink-0">
+            <div class="w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-pacific to-aqua text-white font-extrabold text-3xl shadow-lg shadow-pacific/20">
               <span id="academyProgressBig">0%</span>
             </div>
             <div>
-              <p class="text-xs uppercase tracking-widest text-gray-500 mb-0.5">Your progress</p>
-              <p id="academyProgressText" class="text-sm font-semibold text-white">0 of 9 courses completed</p>
+              <p class="text-sm uppercase tracking-widest text-pacific font-bold mb-1.5">Your Progress</p>
+              <p id="academyProgressText" class="text-lg font-medium text-white">0 of 9 courses completed</p>
             </div>
           </div>
-          <div class="flex-1 w-full">
-            <div class="academy-progress-bar"><span id="academyProgressBar"></span></div>
+
+          <div class="flex-1 w-full mt-2 lg:mt-0">
+            <div class="academy-progress-bar" style="height: 12px;">
+              <span id="academyProgressBar"></span>
+            </div>
           </div>
-          <button data-action="reset" class="text-xs text-gray-500 hover:text-pacific transition-colors flex items-center gap-1.5 self-start sm:self-center">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-            Reset progress
+
+          <button data-action="reset" class="text-sm font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-2 self-end lg:self-center bg-white/5 hover:bg-white/10 px-4 py-2.5 rounded-xl border border-white/5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            Reset Progress
           </button>
+
         </div>
       </div>
     </section>
@@ -749,7 +763,7 @@
   </footer>
 
   <!-- Chatbot Component -->
-    <link rel="stylesheet" href="assets/css/components/chatbot.css?v=1776971546" />
+    <link rel="stylesheet" href="assets/css/components/chatbot.css?v=1777927356" />
   
 <!-- Chatbot Floating Trigger Button & Tooltip -->
 <div class="chatbot-trigger-container">
@@ -807,9 +821,9 @@
     </button>
   </div>
 </div>
-  <script src="assets/js/components/chatbot.js?v=1776971546" defer></script>
+  <script src="assets/js/components/chatbot.js?v=1777927356" defer></script>
 
-  <script src="assets/js/shared.js?v=20260504g"></script>
-  <script src="assets/js/pages/academy.js?v=20260504g"></script>
+  <script src="assets/js/shared.js?v=20260504h"></script>
+  <script src="assets/js/pages/academy.js?v=20260504h"></script>
 </body>
 </html>

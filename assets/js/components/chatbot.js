@@ -16,6 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let isChatOpen = false;
   let hasGreeted = false;
 
+  // Detect base path dynamically from the site logo link in the footer
+  const baseEl = document.querySelector('footer a[href*="index.php"]');
+  const chatBase = baseEl ? baseEl.getAttribute('href').replace('index.php', '') : '';
+
   // Bot Knowledge Base
   const botKnowledge = [
     {
@@ -24,11 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       keywords: ['partner', 'why', 'benefit', 'apply', 'agency', 'integrator'],
-      response: "Our **Partner Program** is designed for agencies and system integrators. We offer tiered commission structures, a dedicated Developer Sandbox, co-marketing opportunities, and comprehensive technical enablement. You can <a href='/bankerise/partners/apply.php' style='color:#00d2ff; text-decoration:underline;'>Apply Now</a>."
+      response: "Our **Partner Program** is designed for agencies and system integrators. We offer tiered commission structures, a dedicated Developer Sandbox, co-marketing opportunities, and comprehensive technical enablement. You can <a href='" + chatBase + "partners/apply.php' style='color:#00d2ff; text-decoration:underline;'>Apply Now</a>."
     },
     {
       keywords: ['solution', 'product', 'retail', 'corporate', 'microfinance'],
-      response: "Bankerise provides core modules for **Retail Banking**, **Corporate Banking**, and **Microfinance**. Features include unified onboarding, bulk payments, multi-sig approvals, and rapid field-agent deployment. Check out our <a href='/bankerise/product.php' style='color:#00d2ff; text-decoration:underline;'>Solutions Page</a>."
+      response: "Bankerise provides core modules for **Retail Banking**, **Corporate Banking**, and **Microfinance**. Features include unified onboarding, bulk payments, multi-sig approvals, and rapid field-agent deployment. Check out our <a href='" + chatBase + "product.php' style='color:#00d2ff; text-decoration:underline;'>Solutions Page</a>."
     },
     {
       keywords: ['vision', 'mission', 'about', 'goal', 'bankerise'],
@@ -36,15 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       keywords: ['demo', 'contact', 'sales', 'book'],
-      response: "I'd be happy to connect you with our experts! You can book a demo or speak with our sales team via our <a href='/bankerise/contact.php' style='color:#00d2ff; text-decoration:underline;'>Contact Page</a>."
+      response: "I'd be happy to connect you with our experts! You can book a demo or speak with our sales team via our <a href='" + chatBase + "contact.php' style='color:#00d2ff; text-decoration:underline;'>Contact Page</a>."
     },
     {
       keywords: ['dashboard', 'portal', 'login', 'backoffice'],
-      response: "If you are an existing partner, you can access your leads, commissions, and materials in the <a href='/bankerise/partners/dashboard.php' style='color:#00d2ff; text-decoration:underline;'>Partner Dashboard</a>."
+      response: "If you are an existing partner, you can access your leads, commissions, and materials in the <a href='" + chatBase + "partners/dashboard.php' style='color:#00d2ff; text-decoration:underline;'>Partner Dashboard</a>."
     }
   ];
 
-  const defaultResponse = "I'm not entirely sure about that, but our team at Proxym Group can definitely help. Would you like to <a href='/bankerise/contact.php' style='color:#00d2ff; text-decoration:underline;'>contact us</a> or read about our <a href='/bankerise/product.php' style='color:#00d2ff; text-decoration:underline;'>Solutions</a>?";
+  const defaultResponse = "I'm not entirely sure about that, but our team at Proxym Group can definitely help. Would you like to <a href='" + chatBase + "contact.php' style='color:#00d2ff; text-decoration:underline;'>contact us</a> or read about our <a href='" + chatBase + "product.php' style='color:#00d2ff; text-decoration:underline;'>Solutions</a>?";
 
   // Quick Reply Options
   const quickReplies = [

@@ -39,7 +39,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Shared CSS -->
-  <link rel="stylesheet" href="assets/css/shared.css?v=20260504g">
+  <link rel="stylesheet" href="assets/css/shared.css?v=20260504h">
 
 
   <link rel="stylesheet" href="assets/css/pages/about.css">
@@ -229,11 +229,7 @@
         <div class="blob blob-3"></div>
       </div>
 
-      <!-- Orbital rings & Particles hidden in favor of video -->
-      <!-- <div class="orbital-ring" style="width:600px;height:600px;top:50%;left:50%"></div> -->
-      <!-- <div class="orbital-ring" style="width:900px;height:900px;top:50%;left:50%"></div> -->
-      <!-- <div class="orbital-ring" style="width:1200px;height:1200px;top:50%;left:50%"></div> -->
-      <!-- <canvas id="about-particles"></canvas> -->
+
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div class="proxym-badge mx-auto mb-6" data-animate>
@@ -740,7 +736,7 @@
   </footer>
 
   <!-- Chatbot Component -->
-    <link rel="stylesheet" href="assets/css/components/chatbot.css?v=1776971546" />
+    <link rel="stylesheet" href="assets/css/components/chatbot.css?v=1777927356" />
   
 <!-- Chatbot Floating Trigger Button & Tooltip -->
 <div class="chatbot-trigger-container">
@@ -798,7 +794,7 @@
     </button>
   </div>
 </div>
-  <script src="assets/js/components/chatbot.js?v=1776971546" defer></script>
+  <script src="assets/js/components/chatbot.js?v=1777927356" defer></script>
 
   <script src="assets/js/shared.js"></script>
 
@@ -806,70 +802,7 @@
     (function () {
       'use strict';
 
-      /* ══════════════════════════════════════════════
-         HERO PARTICLES
-         ══════════════════════════════════════════════ */
-      function initParticles() {
-        var canvas = document.getElementById('about-particles');
-        if (!canvas) return;
-        var ctx = canvas.getContext('2d');
-        var particles = [];
-        var count = 60;
 
-        function resize() {
-          var sec = canvas.parentElement;
-          canvas.width = sec.offsetWidth;
-          canvas.height = sec.offsetHeight;
-        }
-
-        function create() {
-          return {
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            r: Math.random() * 1.5 + 0.5,
-            dx: (Math.random() - 0.5) * 0.25,
-            dy: (Math.random() - 0.5) * 0.25,
-            o: Math.random() * 0.35 + 0.1,
-          };
-        }
-
-        resize();
-        for (var i = 0; i < count; i++) particles.push(create());
-
-        function tick() {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          particles.forEach(function (p) {
-            p.x += p.dx;
-            p.y += p.dy;
-            if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-            if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(77,184,205,' + p.o + ')';
-            ctx.fill();
-          });
-
-          for (var a = 0; a < particles.length; a++) {
-            for (var b = a + 1; b < particles.length; b++) {
-              var dx = particles[a].x - particles[b].x;
-              var dy = particles[a].y - particles[b].y;
-              var d = Math.sqrt(dx * dx + dy * dy);
-              if (d < 120) {
-                ctx.beginPath();
-                ctx.moveTo(particles[a].x, particles[a].y);
-                ctx.lineTo(particles[b].x, particles[b].y);
-                ctx.strokeStyle = 'rgba(77,184,205,' + (0.05 * (1 - d / 120)) + ')';
-                ctx.lineWidth = 0.5;
-                ctx.stroke();
-              }
-            }
-          }
-          requestAnimationFrame(tick);
-        }
-
-        window.addEventListener('resize', resize);
-        tick();
-      }
 
       /* ══════════════════════════════════════════════
          COUNTER ANIMATION
@@ -886,7 +819,7 @@
             var target = parseInt(el.dataset.count, 10);
             var duration = 2000;
             var start = performance.now();
-            var suffix = target >= 100 ? '+' : '+';
+            var suffix = el.dataset.suffix || '+';
 
             function step(now) {
               var progress = Math.min((now - start) / duration, 1);
@@ -921,7 +854,6 @@
          INIT
          ══════════════════════════════════════════════ */
       document.addEventListener('DOMContentLoaded', function () {
-        initParticles();
         animateCounters();
         initTeamSpotlight();
       });

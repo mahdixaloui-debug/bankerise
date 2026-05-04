@@ -269,10 +269,20 @@
   document.addEventListener('click', async (e) => {
     const btn = e.target.closest('[data-action]');
     if (!btn) return;
+    const action = btn.dataset.action;
+
+    /* Global actions (no card context) */
+    if (action === 'reset') {
+      if (confirm('Reset your academy progress? This clears every course state on this device.')) {
+        state = {}; saveState(state); renderAll();
+      }
+      return;
+    }
+
+    /* Per-course actions */
     const card = btn.closest('[data-course-id]');
     if (!card) return;
     const id = card.dataset.courseId;
-    const action = btn.dataset.action;
 
     if (action === 'enroll') {
       setCourseState(id, { enrolled: true });
@@ -295,10 +305,6 @@
       setCourseState(id, { completed: true });
       flash(card, 'Completed!');
       confettiBurst(card);
-    } else if (action === 'reset') {
-      if (confirm('Reset your academy progress? This clears every course state on this device.')) {
-        state = {}; saveState(state); renderAll();
-      }
     }
     renderAll();
   });
@@ -327,6 +333,9 @@
   }
 
   /* ── 6. Init ── */
-  document.addEventListener('DOMContentLoaded', renderAll);
-  if (document.readyState !== 'loading') renderAll();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderAll);
+  } else {
+    renderAll();
+  }
 })();
