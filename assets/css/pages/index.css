@@ -63,4 +63,6 @@
   .platform-panel, .platform-media { position: relative; opacity: 1; transform: none; }
   .platform-panel:not(.mobile-show), .platform-media:not(.mobile-show) { display: none; }
   .platform-scroll__spacer, .platform-scroll__steps { display: none; }
+  .platform-media { aspect-ratio: 16/10; }
+  .platform-media video, .platform-media img { width: 100%; height: 100%; max-width: 100%; object-fit: cover; }
 }
