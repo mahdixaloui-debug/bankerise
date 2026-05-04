@@ -56,9 +56,15 @@
 .platform-step-dot.is-active { background: #079bc5; transform: scale(1.6); box-shadow: 0 0 0 4px rgba(7,155,197,.2); }
 .platform-scroll__spacer { height: 500vh; /* 5 steps × 100vh */ }
 @media (max-width: 900px) {
-  .platform-scroll__sticky { position: relative; height: auto; padding: 2rem 0 1rem; }
-  .platform-scroll__inner { grid-template-columns: 1fr; gap: 1.25rem; padding: 0 1rem; }
-  .platform-scroll__text-wrap { min-height: 280px; }
+  .platform-scroll__sticky {
+    position: relative; height: auto; padding: 2rem 0 1rem;
+    display: block; overflow: visible;
+  }
+  .platform-scroll__inner {
+    display: block;
+    width: 100%; max-width: 100%; padding: 0 1rem;
+  }
+  .platform-scroll__text-wrap { min-height: 360px; margin-bottom: 1.25rem; }
   .platform-scroll__media-wrap { aspect-ratio: 16/10; max-height: none; }
   /* Keep desktop active-swap behaviour on mobile too — hide inactive, animate active */
   .platform-panel, .platform-media {
@@ -76,8 +82,9 @@
   /* Show dots as a horizontal control strip below the slide */
   .platform-scroll__steps {
     position: relative; top: auto; right: auto; left: auto; transform: none;
-    flex-direction: row; justify-content: center; gap: .6rem;
-    margin: 1.25rem auto 0;
+    display: flex; flex-direction: row; justify-content: center; gap: .65rem;
+    margin: 1.25rem auto 0; padding: .25rem 0;
+    width: 100%;
   }
-  .platform-step-dot { width: 8px; height: 8px; }
+  .platform-step-dot { width: 9px; height: 9px; }
 }
