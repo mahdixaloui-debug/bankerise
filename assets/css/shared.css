@@ -552,11 +552,21 @@ body {
   pointer-events: auto;
 }
 
-/* Mobile menu */
+/* Mobile menu — force viewport-fixed even when ancestor has backdrop-filter (which breaks position:fixed containing block) */
 .mobile-menu {
-  background: #0D0F1C;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: #0D0F1C !important;
   transform: translateX(100%);
   transition: transform 0.5s ease;
+  z-index: 100;
+  overflow-y: auto;
 }
 
 /* Hide scrollbar utility */
