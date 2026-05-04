@@ -81,9 +81,11 @@
   .platform-scroll__spacer { display: none; }
   /* Show dots as a horizontal control strip below the slide */
   .platform-scroll__steps {
-    position: relative; top: auto; right: auto; left: auto; transform: none;
-    display: flex; flex-direction: row; justify-content: center; gap: .65rem;
-    margin: 1.25rem auto 0; padding: .25rem 0;
+    position: relative !important;
+    top: auto !important; right: auto !important; left: auto !important; bottom: auto !important;
+    transform: none !important;
+    display: flex !important; flex-direction: row !important; justify-content: center !important;
+    gap: .65rem; margin: 1.25rem auto 0; padding: .25rem 0;
     width: 100%;
   }
   .platform-step-dot { width: 9px; height: 9px; }
