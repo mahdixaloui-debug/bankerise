@@ -25,6 +25,8 @@ $pages = [
     '/solutions/corporate.php' => '/solutions/corporate.html',
     '/solutions/micro.php' => '/solutions/micro.html',
     '/partners/apply.php' => '/partners/apply.html',
+    '/privacy.php' => '/privacy.html',
+    '/terms.php' => '/terms.html',
     '__placeholder_partner_login' => '/partners/login.html',
 ];
 
