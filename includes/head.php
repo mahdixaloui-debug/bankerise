@@ -77,3 +77,8 @@ $assetVersion    = '20260504h';
 <?php endforeach; ?>
 
 <?= $extraScripts ?>
+<?php if (!empty($_GET['show'])): ?><style id="dev-show-all">
+[data-animate]{opacity:1!important;transform:none!important;transition:none!important;}
+.retail-hero,.corporate-hero,.micro-hero,.about-hero,.partner-hero,.contact-hero,.use-cases-hero,.product-hero,.academy-hero,.find-hero,.hero-section,[class*="-hero"]:not([class*="-hero-"]){min-height:auto!important;height:auto!important;padding-top:6rem!important;padding-bottom:5rem!important;}
+*{animation:none!important;}
+</style><?php endif; ?>

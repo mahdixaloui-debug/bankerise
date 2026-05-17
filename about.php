@@ -563,10 +563,9 @@ include 'includes/head.php';
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="team-card" data-animate data-animate-delay="1">
             <div class="team-avatar">
-              <svg class="w-10 h-10 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
+                alt="Ahmed Hadj-Said" loading="lazy"
+                class="w-full h-full object-cover rounded-full" />
             </div>
             <h4 class="font-bold text-lg">Ahmed Hadj-Said</h4>
             <p class="text-pacific text-sm font-medium mb-3">CEO & Co-Founder</p>
@@ -582,10 +581,9 @@ include 'includes/head.php';
 
           <div class="team-card" data-animate data-animate-delay="2">
             <div class="team-avatar">
-              <svg class="w-10 h-10 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
+                alt="Sana Khelifi" loading="lazy"
+                class="w-full h-full object-cover rounded-full" />
             </div>
             <h4 class="font-bold text-lg">Sana Khelifi</h4>
             <p class="text-aqua text-sm font-medium mb-3">CTO</p>
@@ -601,10 +599,9 @@ include 'includes/head.php';
 
           <div class="team-card" data-animate data-animate-delay="3">
             <div class="team-avatar">
-              <svg class="w-10 h-10 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
+                alt="Youssef Ben Ali" loading="lazy"
+                class="w-full h-full object-cover rounded-full" />
             </div>
             <h4 class="font-bold text-lg">Youssef Ben Ali</h4>
             <p class="text-bell text-sm font-medium mb-3">VP Partnerships</p>
@@ -620,10 +617,9 @@ include 'includes/head.php';
 
           <div class="team-card" data-animate data-animate-delay="4">
             <div class="team-avatar">
-              <svg class="w-10 h-10 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
+                alt="Lina Mezghani" loading="lazy"
+                class="w-full h-full object-cover rounded-full" />
             </div>
             <h4 class="font-bold text-lg">Lina Mezghani</h4>
             <p class="text-green-400 text-sm font-medium mb-3">VP Product</p>

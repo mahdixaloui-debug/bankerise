@@ -502,7 +502,7 @@ if (isLoggedIn()) {
        Drop the video path in the src="" below.
        ═══════════════════════════════════════════ -->
   <video class="login-bg-video" autoplay loop muted playsinline>
-    <source src="../assets/videos/7224311-uhd_3840_2160_25fps.mp4" type="video/mp4">
+    <source src="../assets/videos/6889565-hd_1920_1080_25fps.mp4" type="video/mp4">
   </video>
   <div class="login-bg-overlay"></div>
 

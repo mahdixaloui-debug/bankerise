@@ -69,11 +69,12 @@ body {
 
 /* Site logo hover glow */
 .site-logo {
-  transition: filter 0.3s ease;
+  transition: filter 0.5s ease-in-out;
+  filter: saturate(0) brightness(0.5) invert();
 }
 
 .site-logo:hover {
-  filter: drop-shadow(0 0 8px rgba(230, 230, 230, 0.5));
+  filter: saturate(1) brightness(1.35);
 }
 
 /* Glass card */

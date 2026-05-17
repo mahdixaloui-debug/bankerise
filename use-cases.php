@@ -41,19 +41,99 @@ include 'includes/head.php';
           object-fit: cover;
           z-index: 0;
           pointer-events: none;
+          /* Cinematic color grade */
+          filter: brightness(0.7) contrast(1.1) saturate(1.15) hue-rotate(-8deg);
+          /* Slow Ken Burns zoom + drift */
+          animation: uc-hero-kenburns 28s ease-in-out infinite alternate;
+          transform-origin: center center;
+          will-change: transform, filter;
         }
 
-        /* Gradient overlay: transparent at top → solid #0D0F1C at bottom */
+        @keyframes uc-hero-kenburns {
+          0%   { transform: scale(1.05) translate3d(0, 0, 0); }
+          50%  { transform: scale(1.12) translate3d(-1.5%, 1%, 0); }
+          100% { transform: scale(1.08) translate3d(1.5%, -1%, 0); }
+        }
+
+        /* Gradient overlay: transparent at top → solid #0D0F1C at bottom + brand tint */
         .uc-hero-overlay {
           position: absolute;
           inset: 0;
           z-index: 1;
+          background:
+            radial-gradient(ellipse at 50% 40%, rgba(99, 102, 241, 0.18) 0%, rgba(13, 15, 28, 0) 55%),
+            linear-gradient(
+              to bottom,
+              rgba(13, 15, 28, 0.35) 0%,
+              rgba(13, 15, 28, 0.55) 45%,
+              rgba(13, 15, 28, 1) 100%
+            );
+          pointer-events: none;
+        }
+
+        /* Vignette edges to focus the eye on the headline */
+        .uc-hero-vignette {
+          position: absolute;
+          inset: 0;
+          z-index: 2;
+          pointer-events: none;
+          background: radial-gradient(
+            ellipse at center,
+            rgba(0, 0, 0, 0) 55%,
+            rgba(0, 0, 0, 0.55) 100%
+          );
+        }
+
+        /* Animated film-grain / noise layer */
+        .uc-hero-grain {
+          position: absolute;
+          inset: -50%;
+          z-index: 3;
+          pointer-events: none;
+          opacity: 0.08;
+          mix-blend-mode: overlay;
+          background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+          animation: uc-hero-grain 1.6s steps(6) infinite;
+        }
+
+        @keyframes uc-hero-grain {
+          0%   { transform: translate(0, 0); }
+          20%  { transform: translate(-3%, 2%); }
+          40%  { transform: translate(2%, -3%); }
+          60%  { transform: translate(-2%, -2%); }
+          80%  { transform: translate(3%, 3%); }
+          100% { transform: translate(0, 0); }
+        }
+
+        /* Subtle scanline sweep for a hi-tech feel */
+        .uc-hero-scan {
+          position: absolute;
+          inset: 0;
+          z-index: 2;
+          pointer-events: none;
           background: linear-gradient(
             to bottom,
-            rgba(13, 15, 28, 0) 0%,
-            rgba(13, 15, 28, 1) 100%
+            rgba(255, 255, 255, 0) 0%,
+            rgba(99, 102, 241, 0.08) 50%,
+            rgba(255, 255, 255, 0) 100%
           );
-          pointer-events: none;
+          height: 30%;
+          animation: uc-hero-scan 7s linear infinite;
+        }
+
+        @keyframes uc-hero-scan {
+          0%   { transform: translateY(-50%); opacity: 0; }
+          15%  { opacity: 1; }
+          85%  { opacity: 1; }
+          100% { transform: translateY(380%); opacity: 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .uc-hero-video,
+          .uc-hero-grain,
+          .uc-hero-scan {
+            animation: none;
+          }
         }
       </style>
 
@@ -64,11 +144,20 @@ include 'includes/head.php';
         loop
         muted
         playsinline
-        src="assets/videos/7224311-uhd_3840_2160_25fps.mp4"
+        src="assets/videos/8348312-uhd_3840_2160_25fps.mp4"
       ></video>
 
       <!-- Gradient fade overlay -->
       <div class="uc-hero-overlay"></div>
+
+      <!-- Scanline sweep -->
+      <div class="uc-hero-scan"></div>
+
+      <!-- Vignette -->
+      <div class="uc-hero-vignette"></div>
+
+      <!-- Film grain -->
+      <div class="uc-hero-grain"></div>
 
       <!-- Text content -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">

@@ -80,10 +80,12 @@ $base = $base ?? ($isSubfolder ? '../' : '');
   </footer>
 
   <!-- Chatbot Component -->
+  <?php if (empty($_GET['nochat'])): // chatbot — append ?nochat=1 to hide ?>
   <?php $chatbotVer = @filemtime(__DIR__ . '/../assets/js/components/chatbot.js') ?: time(); ?>
   <link rel="stylesheet" href="<?= $base ?>assets/css/components/chatbot.css?v=<?= $chatbotVer ?>" />
   <?php include __DIR__ . '/chatbot.php'; ?>
   <script src="<?= $base ?>assets/js/components/chatbot.js?v=<?= $chatbotVer ?>" defer></script>
+  <?php endif; ?>
 
 <?php if (isset($pageScripts) && is_array($pageScripts)): ?>
 <?php foreach ($pageScripts as $script): ?>

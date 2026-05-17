@@ -143,7 +143,15 @@ if ($initials === '') $initials = 'P';
     .sidebar-user:hover{border-color:rgba(77,184,205,0.2);background:rgba(255,255,255,0.05)}
 
     /* ─── Main content ─── */
-    .main-content{margin-left:264px;min-height:100vh;padding:0;position:relative}
+    .main-content{
+      margin-left:264px;min-height:100vh;padding:0;position:relative;
+      background:
+        radial-gradient(ellipse 80% 50% at 80% 10%, rgba(77,184,205,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 20% 90%, rgba(118,108,255,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 60% 50%, rgba(76,78,137,0.04) 0%, transparent 60%),
+        linear-gradient(180deg, #0D0F1C 0%, #0A0C18 50%, #0D0F1C 100%);
+      background-attachment:scroll;
+    }
     .topbar{
       position:sticky;top:0;z-index:30;
       background:rgba(13,15,28,0.55);
@@ -398,6 +406,110 @@ if ($initials === '') $initials = 'P';
       .sidebar{transform:translateX(-100%)}
       .sidebar.open{transform:translateX(0)}
       .main-content{margin-left:0}
+      .topbar{padding:12px 16px}
+    }
+
+    /* ─── Mobile overlay for sidebar ─── */
+    .sidebar-backdrop{
+      display:none;position:fixed;inset:0;background:rgba(5,7,15,0.6);
+      backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+      z-index:35;opacity:0;transition:opacity 0.3s ease;
+    }
+    .sidebar-backdrop.visible{display:block;opacity:1}
+
+    /* ─── Tablet & Small Desktop (≤1024px) ─── */
+    @media(max-width:1024px){
+      .dash-section{padding:24px 16px}
+    }
+
+    /* ─── Mobile (≤768px) ─── */
+    @media(max-width:768px){
+      .dash-section{padding:20px 14px}
+      .topbar{padding:10px 14px;gap:8px}
+      .topbar #global-search{width:120px}
+      .topbar h1#section-title{font-size:15px}
+      .stat-card{padding:18px}
+      .data-table thead th{padding:10px 12px;font-size:10px;letter-spacing:0.08em}
+      .data-table tbody td{padding:10px 12px;font-size:12px}
+      .kanban-col{min-width:240px;padding:12px}
+      .kanban-card{padding:12px}
+      .modal-box{padding:20px;border-radius:16px}
+      .resource-card{padding:16px}
+      .feature-card{padding:20px}
+      .stat-card .flex.items-center.gap-4{gap:12px}
+
+      /* Force ALL 2-col grids to single column */
+      .grid-cols-2{grid-template-columns:1fr !important}
+
+      /* Support section — force single column, table fits screen */
+      #sec-support > .grid{grid-template-columns:1fr !important;gap:24px !important}
+      #sec-support .data-table{min-width:0 !important;width:100% !important;table-layout:auto}
+      #sec-support .data-table thead th,
+      #sec-support .data-table tbody td{white-space:normal;word-break:break-word;padding:8px 6px !important;font-size:11px !important}
+
+      /* Reports section — force single column, table fits screen */
+      #sec-reports > .grid{grid-template-columns:1fr !important;gap:24px !important}
+      #sec-reports .lg\:col-span-2,
+      #sec-reports .lg\:col-span-3{grid-column:span 1 !important}
+      #sec-reports .data-table{min-width:0 !important;width:100% !important;table-layout:auto}
+      #sec-reports .data-table thead th,
+      #sec-reports .data-table tbody td{white-space:normal;word-break:break-word;padding:8px 6px !important;font-size:11px !important}
+      /* Hide Period column on mobile to save space */
+      #sec-reports .data-table thead th:nth-child(3),
+      #sec-reports .data-table tbody td:nth-child(3){display:none}
+
+      /* Profile section — force single column */
+      #sec-profile > .grid{grid-template-columns:1fr !important}
+      #sec-profile .lg\:col-span-2{grid-column:span 1 !important}
+    }
+
+    /* ─── Small Mobile (≤480px) ─── */
+    @media(max-width:480px){
+      .dash-section{padding:16px 10px}
+      .topbar{padding:8px 10px}
+      .topbar #global-search{width:100px;font-size:11px}
+      .topbar h1#section-title{font-size:14px}
+      .stat-card p.text-2xl{font-size:1.3rem}
+      .data-table{font-size:11px}
+      .data-table thead th{padding:8px 8px;font-size:9px}
+      .data-table tbody td{padding:8px 8px;font-size:11px;white-space:nowrap}
+      .kanban-col{min-width:220px;padding:10px}
+      .kanban-card{padding:10px}
+      .kanban-card p.text-sm{font-size:12px}
+      .modal-overlay{padding:10px}
+      .modal-box{padding:16px;max-height:95vh;border-radius:14px}
+      .step-dot{width:28px;height:28px;font-size:11px}
+      .step-line{margin:0 4px}
+      .btn-p{padding:8px 16px;font-size:12px}
+      .btn-s{padding:8px 16px;font-size:12px}
+      .toggle-btn{padding:5px 10px;font-size:11px}
+      .input{padding:8px 12px;font-size:12px}
+      .chat-widget{width:48px;height:48px;bottom:16px;right:16px}
+      .dash-section > .flex.flex-wrap{gap:8px}
+      .modal-box .grid-cols-2{grid-template-columns:1fr !important}
+
+      /* Support — compact */
+      #sec-support .grid{gap:16px !important}
+      #sec-support .border-dashed{padding:16px 12px}
+      #sec-support .btn-p{width:100%;justify-content:center}
+
+      /* Reports — compact + full-width button */
+      #sec-reports .grid{gap:16px !important}
+      #sec-reports .btn-p{width:100%;justify-content:center}
+      #sec-reports textarea.input{min-height:100px}
+    }
+
+    /* ─── Ensure horizontal scroll hint on tables ─── */
+    .overflow-x-auto{-webkit-overflow-scrolling:touch}
+    .overflow-x-auto::-webkit-scrollbar{height:4px}
+    .overflow-x-auto::-webkit-scrollbar-thumb{background:rgba(77,184,205,0.15);border-radius:2px}
+
+    /* Make table wrappers scrollable on mobile */
+    @media(max-width:768px){
+      .rounded-xl.border{overflow-x:auto;-webkit-overflow-scrolling:touch}
+      .rounded-xl.border::-webkit-scrollbar{height:4px}
+      .rounded-xl.border::-webkit-scrollbar-thumb{background:rgba(77,184,205,0.15);border-radius:2px}
+      .data-table{min-width:600px}
     }
 
     /* ─── Pipeline stage colors ─── */
@@ -408,7 +520,7 @@ if ($initials === '') $initials = 'P';
     .stage-closing{color:#22C55E}.stage-bg-closing{background:rgba(34,197,94,0.1);border-color:rgba(34,197,94,0.2)}
 
     /* ─── Toggle ─── */
-    .toggle-btn{padding:6px 14px;font-size:12px;font-weight:600;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#94A3B8;cursor:pointer;transition:all 0.25s;font-family:'Montserrat',sans-serif}
+    .toggle-btn{padding:6px 14px;font-size:12px;font-weight:600;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:transparent;color:#94A3B8;cursor:pointer;transition:all 0.25s;font-family:'Montserrat',sans-serif;white-space:nowrap;flex-shrink:0}
     .toggle-btn:hover{color:#fff;border-color:rgba(255,255,255,0.25)}
     .toggle-btn.active{background:rgba(77,184,205,0.12);border-color:rgba(77,184,205,0.4);color:#4DB8CD;box-shadow:0 0 12px rgba(77,184,205,0.15)}
 
@@ -501,6 +613,7 @@ if ($initials === '') $initials = 'P';
     </div>
   </div>
 </aside>
+<div class="sidebar-backdrop" id="sidebar-backdrop" onclick="closeSidebar()"></div>
 
 <!-- ═══════════════════════════════════════════════
      MAIN CONTENT
@@ -510,14 +623,14 @@ if ($initials === '') $initials = 'P';
   <!-- Topbar -->
   <div class="topbar">
     <div class="flex items-center gap-3">
-      <button class="lg:hidden text-white p-1" onclick="document.getElementById('sidebar').classList.toggle('open')">
+      <button class="lg:hidden text-white p-1" onclick="toggleSidebar()">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
       <h1 class="text-lg font-bold" id="section-title">Reserved Leads</h1>
     </div>
     <div class="flex items-center gap-3">
       <div class="relative">
-        <input type="text" placeholder="Search..." class="input !py-2 !text-xs !pl-9 w-48" id="global-search">
+        <input type="text" placeholder="Search..." class="input !py-2 !text-xs !pl-9 w-48 max-[768px]:w-28 max-[480px]:w-20" id="global-search">
         <svg class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
       </div>
       <div class="notif-wrap">
@@ -544,12 +657,12 @@ if ($initials === '') $initials = 'P';
   <div class="dash-section active" id="sec-leads">
     <!-- Filters -->
     <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-      <div class="flex flex-wrap items-center gap-3">
-        <select class="input !w-36 !py-2 !text-xs"><option>All Statuses</option><option>Pending</option><option>Approved</option><option>Rejected</option></select>
-        <select class="input !w-36 !py-2 !text-xs"><option>All Industries</option><option>Banking</option><option>Insurance</option><option>Microfinance</option><option>Fintech</option></select>
-        <input type="date" class="input !w-40 !py-2 !text-xs">
+      <div class="flex flex-wrap items-center gap-3 max-[480px]:gap-2 max-[480px]:w-full">
+        <select class="input !py-2 !text-xs w-36 max-[480px]:w-full"><option>All Statuses</option><option>Pending</option><option>Approved</option><option>Rejected</option></select>
+        <select class="input !py-2 !text-xs w-36 max-[480px]:w-full"><option>All Industries</option><option>Banking</option><option>Insurance</option><option>Microfinance</option><option>Fintech</option></select>
+        <input type="date" class="input !py-2 !text-xs w-40 max-[480px]:w-full">
       </div>
-      <button class="btn-p" onclick="openModal()">
+      <button class="btn-p max-[480px]:w-full max-[480px]:justify-center" onclick="openModal()">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         Reserve a New Lead
       </button>
@@ -682,7 +795,7 @@ if ($initials === '') $initials = 'P';
        SECTION 5: DOCUMENTS & RESOURCES
        ═══════════════════════════════════════════ -->
   <div class="dash-section" id="sec-documents">
-    <div class="flex flex-wrap items-center gap-3 mb-6">
+    <div class="flex flex-wrap items-center gap-3 mb-6 max-[480px]:flex-nowrap max-[480px]:overflow-x-auto max-[480px]:pb-2 max-[480px]:-mx-2 max-[480px]:px-2">
       <button class="toggle-btn active" onclick="filterDocs(this,'all')">All</button>
       <button class="toggle-btn" onclick="filterDocs(this,'sales')">Sales Decks</button>
       <button class="toggle-btn" onclick="filterDocs(this,'product')">Product Sheets</button>
@@ -691,12 +804,12 @@ if ($initials === '') $initials = 'P';
       <button class="toggle-btn" onclick="filterDocs(this,'legal')">Legal</button>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="doc-grid">
-      <div class="resource-card" data-cat="sales"><div class="flex items-center justify-between mb-3"><span class="badge" style="background:rgba(239,68,68,0.1);color:#EF4444;border:1px solid rgba(239,68,68,0.2)">PDF</span><span class="text-[10px] text-gray-600">Updated Apr 5</span></div><h4 class="font-bold text-sm mb-1">Bankerise Sales Deck 2026</h4><p class="text-xs text-gray-500 mb-4">Complete sales presentation with ROI calculators and case studies.</p><button class="btn-s !py-2 !text-xs w-full justify-center"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Download</button></div>
-      <div class="resource-card" data-cat="product"><div class="flex items-center justify-between mb-3"><span class="badge" style="background:rgba(77,184,205,0.1);color:#4DB8CD;border:1px solid rgba(77,184,205,0.2)">PDF</span><span class="text-[10px] text-gray-600">Updated Mar 20</span></div><h4 class="font-bold text-sm mb-1">Platform Overview</h4><p class="text-xs text-gray-500 mb-4">End-to-end product datasheet covering all modules and integrations.</p><button class="btn-s !py-2 !text-xs w-full justify-center"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Download</button></div>
-      <div class="resource-card" data-cat="tech"><div class="flex items-center justify-between mb-3"><span class="badge" style="background:rgba(118,108,255,0.1);color:#766CFF;border:1px solid rgba(118,108,255,0.2)">XLSX</span><span class="text-[10px] text-gray-600">Updated Mar 15</span></div><h4 class="font-bold text-sm mb-1">API Integration Guide</h4><p class="text-xs text-gray-500 mb-4">Technical reference for REST API endpoints, authentication, and webhooks.</p><button class="btn-s !py-2 !text-xs w-full justify-center"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Download</button></div>
-      <div class="resource-card" data-cat="training"><div class="flex items-center justify-between mb-3"><span class="badge" style="background:rgba(251,191,36,0.1);color:#FBBF24;border:1px solid rgba(251,191,36,0.2)">PPTX</span><span class="text-[10px] text-gray-600">Updated Feb 28</span></div><h4 class="font-bold text-sm mb-1">Partner Onboarding Kit</h4><p class="text-xs text-gray-500 mb-4">Step-by-step onboarding guide with checklists and training schedule.</p><button class="btn-s !py-2 !text-xs w-full justify-center"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Download</button></div>
-      <div class="resource-card" data-cat="legal"><div class="flex items-center justify-between mb-3"><span class="badge" style="background:rgba(239,68,68,0.1);color:#EF4444;border:1px solid rgba(239,68,68,0.2)">PDF</span><span class="text-[10px] text-gray-600">Updated Jan 10</span></div><h4 class="font-bold text-sm mb-1">Partner Agreement Template</h4><p class="text-xs text-gray-500 mb-4">Standard partnership contract with commission schedules and SLAs.</p><button class="btn-s !py-2 !text-xs w-full justify-center"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Download</button></div>
-      <div class="resource-card" data-cat="sales"><div class="flex items-center justify-between mb-3"><span class="badge" style="background:rgba(251,191,36,0.1);color:#FBBF24;border:1px solid rgba(251,191,36,0.2)">PPTX</span><span class="text-[10px] text-gray-600">Updated Mar 1</span></div><h4 class="font-bold text-sm mb-1">ROI Calculator Deck</h4><p class="text-xs text-gray-500 mb-4">Interactive presentation to show prospects their projected returns.</p><button class="btn-s !py-2 !text-xs w-full justify-center"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Download</button></div>
+      <div class="resource-card" data-cat="sales"><div class="flex items-center justify-between mb-3"><span class="badge" style="background:rgba(239,68,68,0.1);color:#EF4444;border:1px solid rgba(239,68,68,0.2)">PDF</span><span class="text-[10px] text-gray-600">Updated Apr 5</span></div><h4 class="font-bold text-sm mb-1">Bankerise Sales Deck 2026</h4><p class="text-xs text-gray-500 mb-4">Complete sales presentation with ROI calculators and case studies.</p><a href="download-doc.php?doc=sales-deck" class="btn-s !py-2 !text-xs w-full justify-center" style="text-decoration:none"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Download</a></div>
+      <div class="resource-card" data-cat="product"><div class="flex items-center justify-between mb-3"><span class="badge" style="background:rgba(77,184,205,0.1);color:#4DB8CD;border:1px solid rgba(77,184,205,0.2)">PDF</span><span class="text-[10px] text-gray-600">Updated Mar 20</span></div><h4 class="font-bold text-sm mb-1">Platform Overview</h4><p class="text-xs text-gray-500 mb-4">End-to-end product datasheet covering all modules and integrations.</p><a href="download-doc.php?doc=platform-overview" class="btn-s !py-2 !text-xs w-full justify-center" style="text-decoration:none"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Download</a></div>
+      <div class="resource-card" data-cat="tech"><div class="flex items-center justify-between mb-3"><span class="badge" style="background:rgba(118,108,255,0.1);color:#766CFF;border:1px solid rgba(118,108,255,0.2)">HTML</span><span class="text-[10px] text-gray-600">Updated Mar 15</span></div><h4 class="font-bold text-sm mb-1">API Integration Guide</h4><p class="text-xs text-gray-500 mb-4">Technical reference for REST API endpoints, authentication, and webhooks.</p><a href="download-doc.php?doc=api-guide" class="btn-s !py-2 !text-xs w-full justify-center" style="text-decoration:none"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Download</a></div>
+      <div class="resource-card" data-cat="training"><div class="flex items-center justify-between mb-3"><span class="badge" style="background:rgba(251,191,36,0.1);color:#FBBF24;border:1px solid rgba(251,191,36,0.2)">HTML</span><span class="text-[10px] text-gray-600">Updated Feb 28</span></div><h4 class="font-bold text-sm mb-1">Partner Onboarding Kit</h4><p class="text-xs text-gray-500 mb-4">Step-by-step onboarding guide with checklists and training schedule.</p><a href="download-doc.php?doc=onboarding-kit" class="btn-s !py-2 !text-xs w-full justify-center" style="text-decoration:none"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Download</a></div>
+      <div class="resource-card" data-cat="legal"><div class="flex items-center justify-between mb-3"><span class="badge" style="background:rgba(239,68,68,0.1);color:#EF4444;border:1px solid rgba(239,68,68,0.2)">PDF</span><span class="text-[10px] text-gray-600">Updated Jan 10</span></div><h4 class="font-bold text-sm mb-1">Partner Agreement Template</h4><p class="text-xs text-gray-500 mb-4">Standard partnership contract with commission schedules and SLAs.</p><a href="download-doc.php?doc=partner-agreement" class="btn-s !py-2 !text-xs w-full justify-center" style="text-decoration:none"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Download</a></div>
+      <div class="resource-card" data-cat="sales"><div class="flex items-center justify-between mb-3"><span class="badge" style="background:rgba(251,191,36,0.1);color:#FBBF24;border:1px solid rgba(251,191,36,0.2)">HTML</span><span class="text-[10px] text-gray-600">Updated Mar 1</span></div><h4 class="font-bold text-sm mb-1">ROI Calculator Deck</h4><p class="text-xs text-gray-500 mb-4">Interactive presentation to show prospects their projected returns.</p><a href="download-doc.php?doc=roi-calculator" class="btn-s !py-2 !text-xs w-full justify-center" style="text-decoration:none"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>Download</a></div>
     </div>
   </div>
 
@@ -1032,6 +1145,24 @@ if ($initials === '') $initials = 'P';
 var titles = {leads:'Reserved Leads',deals:'Deals in Progress',signed:'Signed Deals',commissions:'Commissions',documents:'Documents & Resources',features:'Key Features',support:'Support',profile:'My Profile',reports:'Reports'};
 var API = '/bankerise/api';
 
+/* ── Sidebar toggle (mobile) ─────────────────── */
+window.toggleSidebar = function(){
+  var sb = document.getElementById('sidebar');
+  var bd = document.getElementById('sidebar-backdrop');
+  var isOpen = sb.classList.contains('open');
+  if(isOpen){
+    sb.classList.remove('open');
+    bd.classList.remove('visible');
+  } else {
+    sb.classList.add('open');
+    bd.classList.add('visible');
+  }
+};
+window.closeSidebar = function(){
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebar-backdrop').classList.remove('visible');
+};
+
 window.showSection = function(id){
   document.querySelectorAll('.dash-section').forEach(function(s){s.classList.remove('active')});
   document.getElementById('sec-'+id).classList.add('active');
@@ -1040,9 +1171,187 @@ window.showSection = function(id){
   document.getElementById('section-title').textContent = titles[id] || id;
   if(id==='commissions') initChart();
   if(id==='reports') loadReports();
-  // Close mobile sidebar
-  document.getElementById('sidebar').classList.remove('open');
+  // Close mobile sidebar + backdrop
+  closeSidebar();
 };
+
+/* ═══════════════════════════════════════════════
+   GLOBAL SEARCH
+   ═══════════════════════════════════════════════ */
+(function(){
+  var searchInput = document.getElementById('global-search');
+  if(!searchInput) return;
+
+  // Create dropdown
+  var dropdown = document.createElement('div');
+  dropdown.id = 'search-dropdown';
+  dropdown.style.cssText = 'position:absolute;top:100%;left:0;right:0;margin-top:6px;background:rgba(10,12,24,0.96);border:1px solid rgba(77,184,205,0.2);border-radius:12px;max-height:360px;overflow-y:auto;z-index:100;display:none;box-shadow:0 20px 50px rgba(0,0,0,0.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)';
+  searchInput.parentElement.appendChild(dropdown);
+
+  // Sidebar nav items for search
+  var navItems = [];
+  document.querySelectorAll('.sidebar-link[data-section]').forEach(function(link){
+    navItems.push({
+      label: link.textContent.trim().replace(/\d+$/,'').trim(),
+      section: link.getAttribute('data-section'),
+      icon: 'nav'
+    });
+  });
+
+  // Search keywords mapped to sections
+  var keywords = {
+    leads: ['lead','reserve','pipeline','prospect','client'],
+    deals: ['deal','progress','kanban','negotiation','proposal','qualified','contacted','closing'],
+    signed: ['signed','closed','active','contract','revenue'],
+    commissions: ['commission','payout','payment','earned','pending','money','finance'],
+    documents: ['document','resource','download','sales deck','pdf','api guide','onboarding','agreement','roi'],
+    features: ['feature','capability','module'],
+    support: ['support','ticket','help','issue','bug','technical'],
+    profile: ['profile','account','settings','email','phone','company','edit'],
+    reports: ['report','activity','performance','summary']
+  };
+
+  function doSearch(query){
+    var q = query.toLowerCase().trim();
+    if(!q){ dropdown.style.display='none'; return; }
+
+    var results = [];
+
+    // 1. Search navigation items
+    navItems.forEach(function(item){
+      if(item.label.toLowerCase().indexOf(q) !== -1){
+        results.push({type:'nav', label:item.label, section:item.section});
+      }
+    });
+
+    // 2. Search by keywords
+    Object.keys(keywords).forEach(function(section){
+      keywords[section].forEach(function(kw){
+        if(kw.indexOf(q) !== -1){
+          var label = titles[section] || section;
+          // Avoid duplicates
+          var exists = results.some(function(r){ return r.section === section && r.type === 'nav'; });
+          if(!exists) results.push({type:'nav', label:label, section:section, match:kw});
+        }
+      });
+    });
+
+    // 3. Search table rows in ALL sections
+    document.querySelectorAll('.dash-section').forEach(function(sec){
+      var sectionId = sec.id.replace('sec-','');
+      sec.querySelectorAll('.data-table tbody tr').forEach(function(row){
+        var text = row.textContent.toLowerCase();
+        if(text.indexOf(q) !== -1){
+          var firstCell = row.querySelector('td');
+          var preview = firstCell ? firstCell.textContent.trim().substring(0,40) : 'Row match';
+          results.push({type:'data', label:preview, section:sectionId, row:row});
+        }
+      });
+    });
+
+    // 4. Search kanban cards
+    document.querySelectorAll('.kanban-card').forEach(function(card){
+      var text = card.textContent.toLowerCase();
+      if(text.indexOf(q) !== -1){
+        var name = card.querySelector('p');
+        results.push({type:'data', label:name ? name.textContent.trim() : 'Deal match', section:'deals', row:card});
+      }
+    });
+
+    // Render dropdown
+    if(!results.length){
+      dropdown.innerHTML = '<div style="padding:16px;text-align:center;color:#64748B;font-size:12px">No results for "'+q+'"</div>';
+      dropdown.style.display = 'block';
+      return;
+    }
+
+    // Deduplicate nav results
+    var seen = {};
+    results = results.filter(function(r){
+      var key = r.type + '-' + (r.section||'') + '-' + r.label;
+      if(seen[key]) return false;
+      seen[key] = true;
+      return true;
+    });
+
+    var html = '';
+
+    // Nav results
+    var navResults = results.filter(function(r){ return r.type==='nav'; });
+    if(navResults.length){
+      html += '<div style="padding:8px 14px 4px;font-size:9px;font-weight:700;color:#4DB8CD;text-transform:uppercase;letter-spacing:0.1em">Navigation</div>';
+      navResults.forEach(function(r){
+        html += '<div class="search-result" data-section="'+r.section+'" style="padding:10px 14px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:background 0.2s;border-bottom:1px solid rgba(255,255,255,0.03)">'
+          + '<svg style="width:14px;height:14px;color:#4DB8CD;flex-shrink:0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>'
+          + '<span style="font-size:12px;color:#E5E7EB;font-weight:500">'+r.label+'</span>'
+          + (r.match ? '<span style="font-size:10px;color:#64748B;margin-left:auto">matched: '+r.match+'</span>' : '')
+          + '</div>';
+      });
+    }
+
+    // Data results
+    var dataResults = results.filter(function(r){ return r.type==='data'; });
+    if(dataResults.length){
+      html += '<div style="padding:8px 14px 4px;font-size:9px;font-weight:700;color:#766CFF;text-transform:uppercase;letter-spacing:0.1em">Data</div>';
+      dataResults.slice(0,8).forEach(function(r){
+        html += '<div class="search-result" data-section="'+r.section+'" data-highlight="true" style="padding:10px 14px;cursor:pointer;display:flex;align-items:center;gap:10px;transition:background 0.2s;border-bottom:1px solid rgba(255,255,255,0.03)">'
+          + '<svg style="width:14px;height:14px;color:#766CFF;flex-shrink:0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2"/></svg>'
+          + '<span style="font-size:12px;color:#E5E7EB">'+r.label+'</span>'
+          + '<span style="font-size:10px;color:#64748B;margin-left:auto">in '+(titles[r.section]||r.section)+'</span>'
+          + '</div>';
+      });
+      if(dataResults.length > 8){
+        html += '<div style="padding:8px 14px;font-size:10px;color:#64748B;text-align:center">+'+(dataResults.length-8)+' more results</div>';
+      }
+    }
+
+    dropdown.innerHTML = html;
+    dropdown.style.display = 'block';
+
+    // Click handlers
+    dropdown.querySelectorAll('.search-result').forEach(function(el, idx){
+      el.addEventListener('mouseenter', function(){ el.style.background='rgba(77,184,205,0.08)'; });
+      el.addEventListener('mouseleave', function(){ el.style.background='transparent'; });
+      el.addEventListener('click', function(){
+        var sec = el.getAttribute('data-section');
+        showSection(sec);
+
+        // Highlight matching row if data result
+        if(el.getAttribute('data-highlight')==='true'){
+          var matchingResult = (el.getAttribute('data-section')==='deals' ? dataResults : dataResults).filter(function(r){return r.section===sec;})[idx - navResults.length];
+          if(matchingResult && matchingResult.row){
+            matchingResult.row.style.background = 'rgba(77,184,205,0.15)';
+            matchingResult.row.style.boxShadow = 'inset 3px 0 0 #4DB8CD';
+            matchingResult.row.scrollIntoView({behavior:'smooth', block:'center'});
+            setTimeout(function(){ matchingResult.row.style.background=''; matchingResult.row.style.boxShadow=''; }, 3000);
+          }
+        }
+
+        dropdown.style.display = 'none';
+        searchInput.value = '';
+      });
+    });
+  }
+
+  // Debounced input
+  var timer = null;
+  searchInput.addEventListener('input', function(){
+    clearTimeout(timer);
+    timer = setTimeout(function(){ doSearch(searchInput.value); }, 200);
+  });
+
+  // Close on click outside
+  document.addEventListener('click', function(e){
+    if(!searchInput.parentElement.contains(e.target)){
+      dropdown.style.display = 'none';
+    }
+  });
+
+  // Close on Escape
+  searchInput.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ dropdown.style.display = 'none'; searchInput.blur(); }
+  });
+})();
 
 /* ── Kanban / List Toggle ────────────────────── */
 window.setView = function(btn, view){

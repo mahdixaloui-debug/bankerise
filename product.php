@@ -89,11 +89,121 @@ include 'includes/head.php';
           </div>
         </div>
 
-        <!-- Platform screenshot placeholder -->
-        <!-- Replace with: <img src="assets/images/product/platform-screenshot.png" alt="Bankerise Platform" class="w-full rounded-2xl"> -->
-        <div class="mt-12 img-placeholder" style="min-height:300px;aspect-ratio:16/9" data-animate>
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          <span>platform-architecture-screenshot.png — 1440x900</span>
+        <!-- Platform architecture — pro showcase -->
+        <style>
+          .arch-showcase {
+            position: relative;
+            margin-top: 4rem;
+            padding: 1px;
+            border-radius: 28px;
+            background: linear-gradient(135deg,
+              rgba(99, 102, 241, 0.55) 0%,
+              rgba(34, 211, 238, 0.35) 50%,
+              rgba(244, 114, 182, 0.45) 100%);
+            isolation: isolate;
+            transition: transform 0.6s cubic-bezier(.2,.8,.2,1);
+          }
+          .arch-showcase::before {
+            content: "";
+            position: absolute;
+            inset: -40px;
+            z-index: -1;
+            background:
+              radial-gradient(ellipse 60% 50% at 30% 30%, rgba(99, 102, 241, 0.35), transparent 70%),
+              radial-gradient(ellipse 60% 50% at 70% 70%, rgba(34, 211, 238, 0.25), transparent 70%);
+            filter: blur(40px);
+            opacity: 0.9;
+            animation: arch-pulse 8s ease-in-out infinite alternate;
+            pointer-events: none;
+          }
+          @keyframes arch-pulse {
+            0%   { opacity: 0.6; transform: scale(0.95); }
+            100% { opacity: 1;   transform: scale(1.05); }
+          }
+          .arch-showcase-inner {
+            position: relative;
+            border-radius: 27px;
+            overflow: hidden;
+            background:
+              radial-gradient(ellipse at top, rgba(255,255,255,0.04), transparent 60%),
+              linear-gradient(180deg, #ffffff 0%, #f4f7fc 100%);
+            box-shadow:
+              0 30px 80px -20px rgba(0, 0, 0, 0.7),
+              0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+              0 60px 120px -40px rgba(99, 102, 241, 0.4);
+          }
+          .arch-showcase-inner img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: transform 0.8s cubic-bezier(.2,.8,.2,1), filter 0.4s ease;
+            transform-origin: center;
+            image-rendering: -webkit-optimize-contrast;
+            filter: saturate(1.08) contrast(1.03);
+          }
+          /* Sheen sweep on hover */
+          .arch-showcase-inner::after {
+            content: "";
+            position: absolute;
+            top: 0; left: -75%;
+            width: 50%; height: 100%;
+            background: linear-gradient(
+              120deg,
+              transparent 0%,
+              rgba(255, 255, 255, 0.25) 50%,
+              transparent 100%
+            );
+            transform: skewX(-20deg);
+            pointer-events: none;
+            transition: left 0.9s ease;
+          }
+          .arch-showcase:hover { transform: translateY(-4px); }
+          .arch-showcase:hover .arch-showcase-inner img { transform: scale(1.03); filter: saturate(1.15) contrast(1.05); }
+          .arch-showcase:hover .arch-showcase-inner::after { left: 125%; }
+
+          /* Floating spec chips around the image */
+          .arch-chip {
+            position: absolute;
+            z-index: 2;
+            padding: 0.5rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(13, 15, 28, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            animation: arch-float 6s ease-in-out infinite;
+          }
+          .arch-chip .dot { width: 6px; height: 6px; border-radius: 50%; }
+          .arch-chip.top-left  { top: -14px; left: 32px; animation-delay: 0s; }
+          .arch-chip.top-right { top: -14px; right: 32px; animation-delay: -2s; }
+          .arch-chip.bot-left  { bottom: -14px; left: 32px; animation-delay: -4s; }
+          .arch-chip.bot-right { bottom: -14px; right: 32px; animation-delay: -1s; }
+          @keyframes arch-float {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-6px); }
+          }
+          @media (max-width: 640px) { .arch-chip { display: none; } }
+          @media (prefers-reduced-motion: reduce) {
+            .arch-showcase::before, .arch-chip, .arch-showcase-inner img { animation: none; transition: none; }
+          }
+        </style>
+
+        <div class="arch-showcase" data-animate>
+          <span class="arch-chip top-left">  <span class="dot" style="background:#22d3ee"></span> API-FIRST</span>
+          <span class="arch-chip top-right"> <span class="dot" style="background:#6366f1"></span> CLOUD-NATIVE</span>
+          <span class="arch-chip bot-left">  <span class="dot" style="background:#22c55e"></span> 99.99% SLA</span>
+          <span class="arch-chip bot-right"> <span class="dot" style="background:#f472b6"></span> MULTI-TENANT</span>
+          <div class="arch-showcase-inner">
+            <img src="assets/images/product/platform-architecture.png?v=<?= @filemtime(__DIR__ . '/assets/images/product/platform-architecture.png') ?: time() ?>" alt="Bankerise omnichannel banking architecture" loading="lazy" decoding="async">
+          </div>
         </div>
       </div>
     </section>
@@ -117,11 +227,7 @@ include 'includes/head.php';
           </div>
           <div data-animate="right">
             <div class="glass-card p-6">
-              <!-- Replace with: <img src="assets/images/modules/onboarding-screenshot.jpg" alt="Digital Onboarding" class="w-full rounded-xl mb-4"> -->
-              <div class="img-placeholder mb-4" style="min-height:180px">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                <span>onboarding-screenshot.jpg — 800x450</span>
-              </div>
+              <img src="assets/images/product/onboarding-real.jpg" alt="Digital onboarding" class="w-full h-44 object-cover rounded-xl mb-4" loading="lazy">
               <div class="flex items-center gap-3 mb-5"><div class="w-10 h-10 rounded-xl bg-pacific/10 flex items-center justify-center"><svg class="w-5 h-5 text-pacific" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg></div><div><p class="font-bold text-sm">New Account</p><p class="text-xs text-gray-500">Step 3 of 4</p></div></div>
               <div class="w-full bg-white/10 rounded-full h-1.5 mb-5"><div class="bg-gradient-to-r from-pacific to-aqua h-1.5 rounded-full" style="width:75%"></div></div>
               <div class="space-y-3">
@@ -144,11 +250,7 @@ include 'includes/head.php';
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div class="order-2 lg:order-1" data-animate="left">
             <div class="glass-card p-6">
-              <!-- Replace with: <img src="assets/images/modules/lending-screenshot.jpg" alt="Lending Engine" class="w-full rounded-xl mb-4"> -->
-              <div class="img-placeholder mb-4" style="min-height:180px">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                <span>lending-screenshot.jpg — 800x450</span>
-              </div>
+              <img src="assets/images/product/lending-real.jpg" alt="Lending engine" class="w-full h-44 object-cover rounded-xl mb-4" loading="lazy">
               <p class="font-bold text-sm mb-4">Loan Decision Engine</p>
               <div class="space-y-4">
                 <div class="flex justify-between"><span class="text-sm text-gray-400">Credit Score</span><span class="text-sm font-bold text-green-400">742 — Excellent</span></div>
@@ -195,11 +297,7 @@ include 'includes/head.php';
           </div>
           <div data-animate="right">
             <div class="glass-card p-6">
-              <!-- Replace with: <img src="assets/images/modules/omnichannel-screenshot.jpg" alt="Omnichannel" class="w-full rounded-xl mb-4"> -->
-              <div class="img-placeholder mb-4" style="min-height:180px">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                <span>omnichannel-screenshot.jpg — 800x450</span>
-              </div>
+              <img src="assets/images/product/omnichannel-real.jpg" alt="Omnichannel banking" class="w-full h-44 object-cover rounded-xl mb-4" loading="lazy">
               <p class="font-bold text-sm mb-4 text-center">Channel Distribution</p>
               <div class="grid grid-cols-2 gap-3">
                 <div class="p-4 rounded-xl bg-white/5 text-center"><p class="text-2xl font-bold text-pacific">68%</p><p class="text-xs text-gray-400 mt-1">Mobile</p></div>
@@ -221,11 +319,7 @@ include 'includes/head.php';
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div class="order-2 lg:order-1" data-animate="left">
             <div class="glass-card p-6">
-              <!-- Replace with: <img src="assets/images/modules/analytics-screenshot.jpg" alt="Analytics" class="w-full rounded-xl mb-4"> -->
-              <div class="img-placeholder mb-4" style="min-height:180px">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                <span>analytics-screenshot.jpg — 800x450</span>
-              </div>
+              <img src="assets/images/product/analytics-real.jpg" alt="Analytics dashboard" class="w-full h-44 object-cover rounded-xl mb-4" loading="lazy">
               <p class="font-bold text-sm mb-4">Key Metrics — This Month</p>
               <div class="space-y-4">
                 <div><div class="flex justify-between text-sm mb-1"><span class="text-gray-400">Customer Acquisition</span><span class="font-medium text-green-400">+24%</span></div><div class="w-full bg-white/10 rounded-full h-1.5"><div class="bg-pacific h-1.5 rounded-full" style="width:78%"></div></div></div>
@@ -267,11 +361,7 @@ include 'includes/head.php';
           </div>
           <div data-animate="right">
             <div class="glass-card p-6">
-              <!-- Replace with: <img src="assets/images/modules/integration-screenshot.jpg" alt="Integration Hub" class="w-full rounded-xl mb-4"> -->
-              <div class="img-placeholder mb-4" style="min-height:180px">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                <span>integration-screenshot.jpg — 800x450</span>
-              </div>
+              <img src="assets/images/product/integration-real.jpg" alt="API integration" class="w-full h-44 object-cover rounded-xl mb-4" loading="lazy">
               <p class="font-bold text-sm mb-4">API Endpoints</p>
               <div class="space-y-2">
                 <div class="flex items-center gap-3 p-3 rounded-lg bg-white/5"><span class="text-xs font-bold text-green-400 bg-green-400/10 px-2 py-0.5 rounded">GET</span><span class="text-sm text-gray-300 font-mono">/api/v2/accounts</span></div>

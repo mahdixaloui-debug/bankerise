@@ -219,7 +219,7 @@ include 'includes/head.php';
         <div class="mb-12" data-animate>
           <p class="eyebrow text-pacific">SEE IT IN ACTION</p>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Watch the <span class="gradient-text">Platform in Action</span></h2>
-          <p class="text-gray-400 text-lg max-w-2xl mx-auto">A 2-minute overview of how Bankerise transforms digital banking for financial institutions worldwide.</p>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto">A 1-minute overview of how Bankerise transforms digital banking for financial institutions worldwide.</p>
         </div>
 
         <div data-animate data-animate-delay="2" class="relative group mx-auto w-full max-w-4xl">
@@ -236,7 +236,7 @@ include 'includes/head.php';
               muted
               playsinline
               preload="metadata"
-              src="assets/videos/platform-demo.mp4"
+              src="assets/videos/bankerise-plateforme-retail.mp4"
             ></video>
 
             <!-- Overlays -->
@@ -269,7 +269,7 @@ include 'includes/head.php';
               <div class="mt-4 sm:mt-0 flex items-center gap-3 bg-black/60 backdrop-blur-md px-3 py-2 md:px-4 md:py-2 rounded-xl border border-white/10">
                 <div class="flex flex-col text-right">
                   <span class="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Duration</span>
-                  <span class="text-sm md:text-base font-bold text-white font-mono">02:34</span>
+                  <span class="text-sm md:text-base font-bold text-white font-mono">01:00</span>
                 </div>
                 <!-- Animated sound waves icon -->
                 <div class="flex items-end gap-[3px] h-5 md:h-6">
@@ -303,7 +303,7 @@ include 'includes/head.php';
         <div class="video-demo-modal__dialog">
           <button type="button" class="video-demo-modal__close" aria-label="Close video" data-video-close>&times;</button>
           <div class="video-demo-modal__frame">
-            <video id="videoDemoPlayer" controls playsinline preload="none" src="assets/videos/platform-demo.mp4"></video>
+            <video id="videoDemoPlayer" controls playsinline preload="none" src="assets/videos/bankerise-plateforme-retail.mp4"></video>
           </div>
         </div>
       </div>
@@ -509,23 +509,23 @@ include 'includes/head.php';
             <!-- RIGHT: Media/Video panels (swap on scroll) -->
             <div class="platform-scroll__media-wrap" id="platformMediaWrap">
               <div class="platform-media is-active mobile-show" data-media="0">
-                <video src="assets/videos/platform/onboarding.mp4" poster="assets/images/platform/onboarding.png" autoplay muted loop playsinline></video>
+                <img src="assets/images/platform/onboarding.jpg" alt="Digital onboarding — biometric verification process" loading="lazy">
                 <span class="platform-media__badge"><span class="platform-media__badge-dot" style="background:#079bc5"></span>eKYC · Face ID · Biometric Scan</span>
               </div>
               <div class="platform-media mobile-show" data-media="1">
-                <video src="assets/videos/platform/lending.mp4" poster="assets/images/platform/lending.png" autoplay muted loop playsinline></video>
+                <img src="assets/images/platform/lending.jpg" alt="Lending and finance — credit scoring dashboard" loading="lazy">
                 <span class="platform-media__badge"><span class="platform-media__badge-dot" style="background:#4ade80"></span>Credit Scoring · Decision Engine · SME Lending</span>
               </div>
               <div class="platform-media mobile-show" data-media="2">
-                <video src="assets/videos/platform/omnichannel.mp4" poster="assets/images/platform/omnichannel.png" autoplay muted loop playsinline></video>
+                <img src="assets/images/platform/omnichannel.jpg" alt="Omnichannel banking across devices" loading="lazy">
                 <span class="platform-media__badge"><span class="platform-media__badge-dot" style="background:#f59e0b"></span>Mobile · Web · Tablet · AI Chatbot</span>
               </div>
               <div class="platform-media mobile-show" data-media="3">
-                <video src="assets/videos/platform/analytics.mp4" poster="assets/images/platform/analytics.png" autoplay muted loop playsinline></video>
+                <img src="assets/images/platform/analytics.jpg" alt="Analytics and CRM — real-time dashboards" loading="lazy">
                 <span class="platform-media__badge"><span class="platform-media__badge-dot" style="background:#4ade80"></span>Live Dashboards · CRM · Predictive Analytics</span>
               </div>
               <div class="platform-media mobile-show" data-media="4">
-                <video src="assets/videos/platform/partners.mp4" poster="assets/images/platform/partners.png" autoplay muted loop playsinline></video>
+                <img src="assets/images/platform/partners.jpg" alt="Partner portal — deal pipeline and collaboration" loading="lazy">
                 <span class="platform-media__badge"><span class="platform-media__badge-dot" style="background:#a855f7"></span>Deal Pipeline · Commissions · Training</span>
               </div>
             </div>
@@ -601,7 +601,7 @@ include 'includes/head.php';
             </div>
             <div class="lg:w-1/2">
               <div class="relative group rounded-2xl overflow-hidden shadow-2xl shadow-pacific/10">
-                <img src="assets/images/platform/onboarding.png" alt="Digital banking onboarding — biometric verification on mobile" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
+                <img src="assets/images/platform/onboarding.jpg" alt="Digital banking onboarding — biometric verification on mobile" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent rounded-2xl"></div>
                 <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between">
                   <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark/60 backdrop-blur-md border border-white/10 text-xs font-semibold text-white">
@@ -636,7 +636,7 @@ include 'includes/head.php';
             </div>
             <div class="lg:w-1/2">
               <div class="relative group rounded-2xl overflow-hidden shadow-2xl shadow-aqua/10">
-                <img src="assets/images/platform/lending.png" alt="AI-powered credit scoring and loan decision engine" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
+                <img src="assets/images/platform/lending.jpg" alt="AI-powered credit scoring and loan decision engine" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent rounded-2xl"></div>
                 <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between">
                   <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark/60 backdrop-blur-md border border-white/10 text-xs font-semibold text-white">
@@ -671,7 +671,7 @@ include 'includes/head.php';
             </div>
             <div class="lg:w-1/2">
               <div class="relative group rounded-2xl overflow-hidden shadow-2xl shadow-bell/10">
-                <img src="assets/images/platform/omnichannel.png" alt="Omnichannel banking across mobile, tablet, and web" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
+                <img src="assets/images/platform/omnichannel.jpg" alt="Omnichannel banking across mobile, tablet, and web" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent rounded-2xl"></div>
                 <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between">
                   <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark/60 backdrop-blur-md border border-white/10 text-xs font-semibold text-white">
@@ -706,7 +706,7 @@ include 'includes/head.php';
             </div>
             <div class="lg:w-1/2">
               <div class="relative group rounded-2xl overflow-hidden shadow-2xl shadow-green-500/10">
-                <img src="assets/images/platform/analytics.png" alt="Real-time banking analytics and CRM dashboard" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
+                <img src="assets/images/platform/analytics.jpg" alt="Real-time banking analytics and CRM dashboard" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent rounded-2xl"></div>
                 <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between">
                   <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark/60 backdrop-blur-md border border-white/10 text-xs font-semibold text-white">
@@ -741,7 +741,7 @@ include 'includes/head.php';
             </div>
             <div class="lg:w-1/2">
               <div class="relative group rounded-2xl overflow-hidden shadow-2xl shadow-grape/10">
-                <img src="assets/images/platform/partners.png" alt="Partner meeting and deal pipeline management" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
+                <img src="assets/images/platform/partners.jpg" alt="Partner meeting and deal pipeline management" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent rounded-2xl"></div>
                 <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between">
                   <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark/60 backdrop-blur-md border border-white/10 text-xs font-semibold text-white">
@@ -1304,7 +1304,6 @@ include 'includes/head.php';
         </a>
       </div>
     </section>
-
   </main>
 
   <!-- Footer -->
