@@ -20,6 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const baseEl = document.querySelector('footer a[href*="index.php"]');
   const chatBase = baseEl ? baseEl.getAttribute('href').replace('index.php', '') : '';
 
+  // Notification sound for incoming bot messages
+  const botMessageSound = new Audio(chatBase + 'assets/sounds/chat-notification.mp3');
+  botMessageSound.volume = 0.5;
+  function playBotSound() {
+    try {
+      botMessageSound.currentTime = 0;
+      botMessageSound.play().catch(() => {});
+    } catch (e) {}
+  }
+
   // Bot Knowledge Base
   const botKnowledge = [
     {
@@ -194,11 +204,13 @@ document.addEventListener('DOMContentLoaded', () => {
       <span class="message-time">${formatTime()}</span>
     `;
     chatbotMessages.insertBefore(msgDiv, document.getElementById('chatbotScrollAnchor'));
-    
+
+    playBotSound();
+
     if (showQuickReplies) {
       renderQuickReplies();
     }
-    
+
     scrollToBottom();
   }
 

@@ -52,7 +52,7 @@
 
         <!-- Logo -->
         <a href="../" class="flex items-center group" aria-label="Bankerise Home">
-          <img src="../assets/images/brand/logo-white.svg" alt="Bankerise" class="h-8 site-logo" />
+          <img src="../assets/images/brand/logo-colored.svg" alt="Bankerise" class="h-8 site-logo" />
         </a>
 
         <!-- Desktop Navigation -->
@@ -123,7 +123,7 @@
           </div>
 
           <!-- About -->
-          <a href="../about.html" class="nav-link px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">About</a>
+          <a href="../about.html" class="nav-link px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">About Us</a>
 
           <!-- Contact -->
           <a href="../contact.html" class="nav-link px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">Contact</a>
@@ -148,7 +148,7 @@
     <div class="mobile-menu fixed inset-0 top-0 bg-dark z-50 lg:hidden" id="mobile-menu" aria-hidden="true">
       <div class="flex items-center justify-between h-20 px-4 sm:px-6">
         <a href="../" class="flex items-center">
-          <img src="../assets/images/brand/logo-white.svg" alt="Bankerise" class="h-8 site-logo" />
+          <img src="../assets/images/brand/logo-colored.svg" alt="Bankerise" class="h-8 site-logo" />
         </a>
         <button class="text-white p-2" id="mobile-menu-close" aria-label="Close menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -197,7 +197,7 @@
           </div>
         </div>
 
-        <a href="../about.html" class="block py-3 text-white font-semibold text-lg">About</a>
+        <a href="../about.html" class="block py-3 text-white font-semibold text-lg">About Us</a>
         <a href="../contact.html" class="block py-3 text-white font-semibold text-lg">Contact</a>
 
         <div class="pt-6 space-y-3">
@@ -218,6 +218,10 @@
          SPLIT HERO + DATA TICKER
          ═══════════════════════════════════════════ -->
     <section class="corp-hero">
+      <div class="corp-hero-bg">
+        <img src="../assets/images/solutions/corporate-treasury.jpg" alt="Corporate Treasury Dashboard">
+      </div>
+
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 pt-32 pb-16">
         <!-- Breadcrumb -->
         <nav class="mb-8" data-animate aria-label="Breadcrumb">
@@ -230,36 +234,26 @@
           </ol>
         </nav>
 
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div data-animate>
-            <div class="hero-badge">
-              <div class="badge-icon">
-                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              </div>
-              Enterprise Grade
+        <div class="max-w-3xl" data-animate>
+          <div class="hero-badge">
+            <div class="badge-icon">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             </div>
-            
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-              Corporate Banking.<br>
-              <span class="corp-accent">Growth Accelerated.</span>
-            </h1>
-            
-            <p class="text-lg text-gray-400 max-w-xl mb-10 leading-relaxed">
-              Empower your business clients with a comprehensive digital platform. From multi-signatory onboarding to complex trade finance, deliver a seamless corporate experience.
-            </p>
-            
-            <div class="flex flex-wrap gap-4">
-              <a href="../contact.html" class="btn-primary" style="background: linear-gradient(135deg, #766CFF, #5B52E0);">Request a Demo <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></a>
-              <a href="../product.html" class="btn-ghost">Explore Platform</a>
-            </div>
+            Enterprise Grade
           </div>
-
-          <!-- Hero Dashboard Image -->
-          <div data-animate="left" data-animate-delay="2" class="corp-hero-visual">
-            <div class="corp-hero-image">
-              <div class="img-overlay-gradient"></div>
-              <img src="../assets/images/solutions/corporate-treasury.jpg" alt="Corporate Treasury Dashboard">
-            </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+            Corporate Banking.<br>
+            <span class="corp-accent">Growth Accelerated.</span>
+          </h1>
+          
+          <p class="text-lg text-gray-400 max-w-xl mb-10 leading-relaxed">
+            Empower your business clients with a comprehensive digital platform. From multi-signatory onboarding to complex trade finance, deliver a seamless corporate experience.
+          </p>
+          
+          <div class="flex flex-wrap gap-4">
+            <a href="../contact.html" class="btn-primary" style="background: linear-gradient(135deg, #766CFF, #5B52E0);">Request a Demo <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></a>
+            <a href="../product.html" class="btn-ghost">Explore Platform</a>
           </div>
         </div>
       </div>
@@ -549,9 +543,8 @@
           <ul class="space-y-3">
             <li><a href="../about.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">About Us</a></li>
             <li><a href="../contact.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Contact</a></li>
-            <li><a href="#" class="text-gray-500 text-sm hover:text-pacific transition-colors">Careers</a></li>
-            <li><a href="#" class="text-gray-500 text-sm hover:text-pacific transition-colors">Privacy Policy</a></li>
-            <li><a href="#" class="text-gray-500 text-sm hover:text-pacific transition-colors">Terms of Service</a></li>
+            <li><a href="../privacy.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Privacy Policy</a></li>
+            <li><a href="../terms.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Terms of Service</a></li>
           </ul>
         </div>
       </div>
@@ -560,16 +553,16 @@
       <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-gray-600 text-sm">&copy; 2026 Bankerise&reg; by Proxym Group. All rights reserved.</p>
         <div class="flex gap-6">
-          <a href="#" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Privacy</a>
-          <a href="#" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Terms</a>
-          <a href="#" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Cookies</a>
+          <a href="../privacy.html" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Privacy</a>
+          <a href="../terms.html" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Terms</a>
+          <a href="../privacy.html#cookies" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Cookies</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Chatbot Component -->
-    <link rel="stylesheet" href="../assets/css/components/chatbot.css?v=1777927356" />
+      <link rel="stylesheet" href="../assets/css/components/chatbot.css?v=1778277780" />
   
 <!-- Chatbot Floating Trigger Button & Tooltip -->
 <div class="chatbot-trigger-container">
@@ -627,8 +620,8 @@
     </button>
   </div>
 </div>
-  <script src="../assets/js/components/chatbot.js?v=1777927356" defer></script>
-
+  <script src="../assets/js/components/chatbot.js?v=1778277780" defer></script>
+  
   <script src="../assets/js/shared.js"></script>
 </body>
 </html>

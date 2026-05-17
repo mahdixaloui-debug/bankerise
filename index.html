@@ -55,7 +55,7 @@
 
         <!-- Logo -->
         <a href="" class="flex items-center group" aria-label="Bankerise Home">
-          <img src="assets/images/brand/logo-white.svg" alt="Bankerise" class="h-8 site-logo" />
+          <img src="assets/images/brand/logo-colored.svg" alt="Bankerise" class="h-8 site-logo" />
         </a>
 
         <!-- Desktop Navigation -->
@@ -126,7 +126,7 @@
           </div>
 
           <!-- About -->
-          <a href="about.html" class="nav-link px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">About</a>
+          <a href="about.html" class="nav-link px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">About Us</a>
 
           <!-- Contact -->
           <a href="contact.html" class="nav-link px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">Contact</a>
@@ -151,7 +151,7 @@
     <div class="mobile-menu fixed inset-0 top-0 bg-dark z-50 lg:hidden" id="mobile-menu" aria-hidden="true">
       <div class="flex items-center justify-between h-20 px-4 sm:px-6">
         <a href="" class="flex items-center">
-          <img src="assets/images/brand/logo-white.svg" alt="Bankerise" class="h-8 site-logo" />
+          <img src="assets/images/brand/logo-colored.svg" alt="Bankerise" class="h-8 site-logo" />
         </a>
         <button class="text-white p-2" id="mobile-menu-close" aria-label="Close menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -200,7 +200,7 @@
           </div>
         </div>
 
-        <a href="about.html" class="block py-3 text-white font-semibold text-lg">About</a>
+        <a href="about.html" class="block py-3 text-white font-semibold text-lg">About Us</a>
         <a href="contact.html" class="block py-3 text-white font-semibold text-lg">Contact</a>
 
         <div class="pt-6 space-y-3">
@@ -264,14 +264,31 @@
               Watch Overview
             </a>
           </div>
-          <!-- Trust bar -->
-          <div data-animate data-animate-delay="5">
-            <p class="text-gray-400 text-sm font-medium mb-4">Trusted by leading financial institutions</p>
+          <!-- Trust bar — bank logos + rating -->
+          <div data-animate data-animate-delay="5" class="space-y-5">
+
+            <!-- Rating row -->
+            <div class="flex items-center gap-3 flex-wrap">
+              <div class="flex items-center gap-1" aria-label="Rated 4.9 out of 5">
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.539 1.118L10 15.347l-3.37 2.448c-.784.57-1.838-.196-1.539-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.645 9.154c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.539 1.118L10 15.347l-3.37 2.448c-.784.57-1.838-.196-1.539-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.645 9.154c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.539 1.118L10 15.347l-3.37 2.448c-.784.57-1.838-.196-1.539-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.645 9.154c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.539 1.118L10 15.347l-3.37 2.448c-.784.57-1.838-.196-1.539-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.645 9.154c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><defs><linearGradient id="halfStar"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="rgba(255,255,255,0.15)"/></linearGradient></defs><path fill="url(#halfStar)" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.539 1.118L10 15.347l-3.37 2.448c-.784.57-1.838-.196-1.539-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.645 9.154c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+              </div>
+              <p class="text-sm">
+                <span class="text-white font-semibold">4.9/5</span>
+                <span class="text-gray-500"> · trusted by 20+ leading banks worldwide</span>
+              </p>
+            </div>
+
+            <!-- Logo strip -->
             <div class="flex items-center gap-4 sm:gap-6 overflow-x-auto no-scrollbar pb-2 sm:flex-wrap sm:overflow-visible">
-              <img src="assets/images/logos/uib.jpg" alt="UIB" class="client-logo h-8 flex-shrink-0">
-              <img src="assets/images/logos/coris-bank.png" alt="Coris Bank" class="client-logo h-8 flex-shrink-0">
-              <img src="assets/images/logos/qiib.jpg" alt="QIIB" class="client-logo h-8 flex-shrink-0">
-              <img src="assets/images/logos/dukhan-bank.jpg" alt="Dukhan Bank" class="client-logo h-8 flex-shrink-0">
+              <img src="assets/images/logos/uib.jpg" alt="UIB" class="client-logo h-8 flex-shrink-0 bg-white rounded px-2 py-1">
+              <img src="assets/images/logos/coris-bank.png" alt="Coris Bank" class="client-logo h-8 flex-shrink-0 bg-white rounded px-2 py-1">
+              <img src="assets/images/logos/qiib.jpg" alt="QIIB" class="client-logo h-8 flex-shrink-0 bg-white rounded px-2 py-1">
+              <img src="assets/images/logos/dukhan-bank.jpg" alt="Dukhan Bank" class="client-logo h-8 flex-shrink-0 bg-white rounded px-2 py-1">
+              <img src="assets/images/logos/al-baraka.jpg" alt="Al Baraka" class="client-logo h-8 flex-shrink-0 bg-white rounded px-2 py-1">
             </div>
           </div>
 
@@ -410,7 +427,7 @@
         <div class="mb-12" data-animate>
           <p class="eyebrow text-pacific">SEE IT IN ACTION</p>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Watch the <span class="gradient-text">Platform in Action</span></h2>
-          <p class="text-gray-400 text-lg max-w-2xl mx-auto">A 2-minute overview of how Bankerise transforms digital banking for financial institutions worldwide.</p>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto">A 1-minute overview of how Bankerise transforms digital banking for financial institutions worldwide.</p>
         </div>
 
         <div data-animate data-animate-delay="2" class="relative group mx-auto w-full max-w-4xl">
@@ -427,7 +444,7 @@
               muted
               playsinline
               preload="metadata"
-              src="assets/videos/platform-demo.mp4"
+              src="assets/videos/bankerise-plateforme-retail.mp4"
             ></video>
 
             <!-- Overlays -->
@@ -460,7 +477,7 @@
               <div class="mt-4 sm:mt-0 flex items-center gap-3 bg-black/60 backdrop-blur-md px-3 py-2 md:px-4 md:py-2 rounded-xl border border-white/10">
                 <div class="flex flex-col text-right">
                   <span class="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest font-semibold">Duration</span>
-                  <span class="text-sm md:text-base font-bold text-white font-mono">02:34</span>
+                  <span class="text-sm md:text-base font-bold text-white font-mono">01:00</span>
                 </div>
                 <!-- Animated sound waves icon -->
                 <div class="flex items-end gap-[3px] h-5 md:h-6">
@@ -494,7 +511,7 @@
         <div class="video-demo-modal__dialog">
           <button type="button" class="video-demo-modal__close" aria-label="Close video" data-video-close>&times;</button>
           <div class="video-demo-modal__frame">
-            <video id="videoDemoPlayer" controls playsinline preload="none" src="assets/videos/platform-demo.mp4"></video>
+            <video id="videoDemoPlayer" controls playsinline preload="none" src="assets/videos/bankerise-plateforme-retail.mp4"></video>
           </div>
         </div>
       </div>
@@ -700,23 +717,23 @@
             <!-- RIGHT: Media/Video panels (swap on scroll) -->
             <div class="platform-scroll__media-wrap" id="platformMediaWrap">
               <div class="platform-media is-active mobile-show" data-media="0">
-                <video src="assets/videos/platform/onboarding.mp4" poster="assets/images/platform/onboarding.png" autoplay muted loop playsinline></video>
+                <img src="assets/images/platform/onboarding.jpg" alt="Digital onboarding — biometric verification process" loading="lazy">
                 <span class="platform-media__badge"><span class="platform-media__badge-dot" style="background:#079bc5"></span>eKYC · Face ID · Biometric Scan</span>
               </div>
               <div class="platform-media mobile-show" data-media="1">
-                <video src="assets/videos/platform/lending.mp4" poster="assets/images/platform/lending.png" autoplay muted loop playsinline></video>
+                <img src="assets/images/platform/lending.jpg" alt="Lending and finance — credit scoring dashboard" loading="lazy">
                 <span class="platform-media__badge"><span class="platform-media__badge-dot" style="background:#4ade80"></span>Credit Scoring · Decision Engine · SME Lending</span>
               </div>
               <div class="platform-media mobile-show" data-media="2">
-                <video src="assets/videos/platform/omnichannel.mp4" poster="assets/images/platform/omnichannel.png" autoplay muted loop playsinline></video>
+                <img src="assets/images/platform/omnichannel.jpg" alt="Omnichannel banking across devices" loading="lazy">
                 <span class="platform-media__badge"><span class="platform-media__badge-dot" style="background:#f59e0b"></span>Mobile · Web · Tablet · AI Chatbot</span>
               </div>
               <div class="platform-media mobile-show" data-media="3">
-                <video src="assets/videos/platform/analytics.mp4" poster="assets/images/platform/analytics.png" autoplay muted loop playsinline></video>
+                <img src="assets/images/platform/analytics.jpg" alt="Analytics and CRM — real-time dashboards" loading="lazy">
                 <span class="platform-media__badge"><span class="platform-media__badge-dot" style="background:#4ade80"></span>Live Dashboards · CRM · Predictive Analytics</span>
               </div>
               <div class="platform-media mobile-show" data-media="4">
-                <video src="assets/videos/platform/partners.mp4" poster="assets/images/platform/partners.png" autoplay muted loop playsinline></video>
+                <img src="assets/images/platform/partners.jpg" alt="Partner portal — deal pipeline and collaboration" loading="lazy">
                 <span class="platform-media__badge"><span class="platform-media__badge-dot" style="background:#a855f7"></span>Deal Pipeline · Commissions · Training</span>
               </div>
             </div>
@@ -792,7 +809,7 @@
             </div>
             <div class="lg:w-1/2">
               <div class="relative group rounded-2xl overflow-hidden shadow-2xl shadow-pacific/10">
-                <img src="assets/images/platform/onboarding.png" alt="Digital banking onboarding — biometric verification on mobile" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
+                <img src="assets/images/platform/onboarding.jpg" alt="Digital banking onboarding — biometric verification on mobile" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent rounded-2xl"></div>
                 <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between">
                   <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark/60 backdrop-blur-md border border-white/10 text-xs font-semibold text-white">
@@ -827,7 +844,7 @@
             </div>
             <div class="lg:w-1/2">
               <div class="relative group rounded-2xl overflow-hidden shadow-2xl shadow-aqua/10">
-                <img src="assets/images/platform/lending.png" alt="AI-powered credit scoring and loan decision engine" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
+                <img src="assets/images/platform/lending.jpg" alt="AI-powered credit scoring and loan decision engine" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent rounded-2xl"></div>
                 <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between">
                   <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark/60 backdrop-blur-md border border-white/10 text-xs font-semibold text-white">
@@ -862,7 +879,7 @@
             </div>
             <div class="lg:w-1/2">
               <div class="relative group rounded-2xl overflow-hidden shadow-2xl shadow-bell/10">
-                <img src="assets/images/platform/omnichannel.png" alt="Omnichannel banking across mobile, tablet, and web" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
+                <img src="assets/images/platform/omnichannel.jpg" alt="Omnichannel banking across mobile, tablet, and web" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent rounded-2xl"></div>
                 <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between">
                   <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark/60 backdrop-blur-md border border-white/10 text-xs font-semibold text-white">
@@ -897,7 +914,7 @@
             </div>
             <div class="lg:w-1/2">
               <div class="relative group rounded-2xl overflow-hidden shadow-2xl shadow-green-500/10">
-                <img src="assets/images/platform/analytics.png" alt="Real-time banking analytics and CRM dashboard" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
+                <img src="assets/images/platform/analytics.jpg" alt="Real-time banking analytics and CRM dashboard" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent rounded-2xl"></div>
                 <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between">
                   <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark/60 backdrop-blur-md border border-white/10 text-xs font-semibold text-white">
@@ -932,7 +949,7 @@
             </div>
             <div class="lg:w-1/2">
               <div class="relative group rounded-2xl overflow-hidden shadow-2xl shadow-grape/10">
-                <img src="assets/images/platform/partners.png" alt="Partner meeting and deal pipeline management" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
+                <img src="assets/images/platform/partners.jpg" alt="Partner meeting and deal pipeline management" class="w-full h-auto object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent rounded-2xl"></div>
                 <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between">
                   <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark/60 backdrop-blur-md border border-white/10 text-xs font-semibold text-white">
@@ -1495,7 +1512,6 @@
         </a>
       </div>
     </section>
-
   </main>
 
   <!-- Footer -->
@@ -1553,9 +1569,8 @@
           <ul class="space-y-3">
             <li><a href="about.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">About Us</a></li>
             <li><a href="contact.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Contact</a></li>
-            <li><a href="#" class="text-gray-500 text-sm hover:text-pacific transition-colors">Careers</a></li>
-            <li><a href="#" class="text-gray-500 text-sm hover:text-pacific transition-colors">Privacy Policy</a></li>
-            <li><a href="#" class="text-gray-500 text-sm hover:text-pacific transition-colors">Terms of Service</a></li>
+            <li><a href="privacy.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Privacy Policy</a></li>
+            <li><a href="terms.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Terms of Service</a></li>
           </ul>
         </div>
       </div>
@@ -1564,16 +1579,16 @@
       <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-gray-600 text-sm">&copy; 2026 Bankerise&reg; by Proxym Group. All rights reserved.</p>
         <div class="flex gap-6">
-          <a href="#" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Privacy</a>
-          <a href="#" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Terms</a>
-          <a href="#" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Cookies</a>
+          <a href="privacy.html" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Privacy</a>
+          <a href="terms.html" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Terms</a>
+          <a href="privacy.html#cookies" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Cookies</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Chatbot Component -->
-    <link rel="stylesheet" href="assets/css/components/chatbot.css?v=1777927356" />
+      <link rel="stylesheet" href="assets/css/components/chatbot.css?v=1778277780" />
   
 <!-- Chatbot Floating Trigger Button & Tooltip -->
 <div class="chatbot-trigger-container">
@@ -1631,8 +1646,8 @@
     </button>
   </div>
 </div>
-  <script src="assets/js/components/chatbot.js?v=1777927356" defer></script>
-
+  <script src="assets/js/components/chatbot.js?v=1778277780" defer></script>
+  
 
   <!-- Scripts -->
   <script src="assets/js/shared.js?v=20260504h"></script>

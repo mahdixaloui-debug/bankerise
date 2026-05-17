@@ -53,7 +53,7 @@
 
         <!-- Logo -->
         <a href="" class="flex items-center group" aria-label="Bankerise Home">
-          <img src="assets/images/brand/logo-white.svg" alt="Bankerise" class="h-8 site-logo" />
+          <img src="assets/images/brand/logo-colored.svg" alt="Bankerise" class="h-8 site-logo" />
         </a>
 
         <!-- Desktop Navigation -->
@@ -124,7 +124,7 @@
           </div>
 
           <!-- About -->
-          <a href="about.html" class="nav-link px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">About</a>
+          <a href="about.html" class="nav-link px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">About Us</a>
 
           <!-- Contact -->
           <a href="contact.html" class="nav-link px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">Contact</a>
@@ -149,7 +149,7 @@
     <div class="mobile-menu fixed inset-0 top-0 bg-dark z-50 lg:hidden" id="mobile-menu" aria-hidden="true">
       <div class="flex items-center justify-between h-20 px-4 sm:px-6">
         <a href="" class="flex items-center">
-          <img src="assets/images/brand/logo-white.svg" alt="Bankerise" class="h-8 site-logo" />
+          <img src="assets/images/brand/logo-colored.svg" alt="Bankerise" class="h-8 site-logo" />
         </a>
         <button class="text-white p-2" id="mobile-menu-close" aria-label="Close menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -198,7 +198,7 @@
           </div>
         </div>
 
-        <a href="about.html" class="block py-3 text-white font-semibold text-lg">About</a>
+        <a href="about.html" class="block py-3 text-white font-semibold text-lg">About Us</a>
         <a href="contact.html" class="block py-3 text-white font-semibold text-lg">Contact</a>
 
         <div class="pt-6 space-y-3">
@@ -271,90 +271,179 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
-         OUR STORY + TIMELINE
+         OUR STORY + TIMELINE  (redesigned)
          ═══════════════════════════════════════════ -->
-    <section class="py-20 lg:py-28">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-16 items-start">
-          <!-- Story text -->
-          <div data-animate>
-            <p class="eyebrow">OUR STORY</p>
-            <h2 class="text-3xl sm:text-4xl font-bold mb-6">From engineering roots<br>to banking innovation</h2>
-            <div class="space-y-5 text-gray-400 leading-relaxed text-[15px]">
-              <p>Bankerise was born from a simple observation: financial institutions in emerging markets deserve the
-                same world-class digital tools as global banks — without the complexity and cost.</p>
-              <p>Backed by Proxym Group, a technology company with 20+ years of experience delivering enterprise
-                software across Africa, the Middle East, and Central Asia, we built Bankerise to be modular, flexible,
-                and ready for the unique challenges of high-growth markets.</p>
-              <p>Today, our platform powers digital transformation for 150+ financial institutions across 26 countries,
-                serving over 14 million end users — and we're just getting started.</p>
+    <section class="story-section py-20 lg:py-32 relative overflow-hidden">
+      <div class="story-bg-orb story-bg-orb--1"></div>
+      <div class="story-bg-orb story-bg-orb--2"></div>
+      <div class="story-grid-overlay"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+
+          <!-- ── Story narrative (sticky) ── -->
+          <div class="lg:col-span-5 lg:sticky lg:top-28" data-animate>
+            <p class="eyebrow story-eyebrow">
+              <span class="eyebrow-line"></span> OUR STORY
+            </p>
+            <h2 class="text-4xl sm:text-5xl lg:text-[3.25rem] font-extrabold leading-[1.05] mb-8 tracking-tight">
+              From engineering roots<br>
+              to <span class="gradient-text">banking innovation</span>.
+            </h2>
+
+            <div class="space-y-5 text-gray-300/90 leading-relaxed text-[15.5px] story-typewriter">
+              <p>
+                <span class="dropcap">B</span>ankerise was born from a simple observation: financial institutions in
+                emerging markets deserve the same world-class digital tools as global banks — without the complexity
+                and cost.
+              </p>
+              <p>
+                Backed by <strong class="text-white font-semibold">Proxym Group</strong>, a technology company with
+                20+ years of experience delivering enterprise software across Africa, the Middle East, and Central
+                Asia, we built Bankerise to be modular, flexible, and ready for the unique challenges of high-growth
+                markets.
+              </p>
+              <p>
+                Today, our platform powers digital transformation for 150+ financial institutions across 26 countries,
+                serving over 14 million end users — and we're just getting started.
+              </p>
+            </div>
+
+            <!-- Pull quote -->
+            <figure class="story-quote">
+              <svg class="story-quote-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M7.17 6C4.32 6 2 8.32 2 11.17V18h6.83v-6.83H5.5C5.5 9.42 6.92 8 8.67 8H10V6H7.17zm10 0c-2.85 0-5.17 2.32-5.17 5.17V18h6.83v-6.83H15.5c0-1.75 1.42-3.17 3.17-3.17H20V6h-2.83z"/>
+              </svg>
+              <blockquote>
+                Banking should be accessible, intelligent, and beautifully designed — for every market, not just the
+                wealthy ones.
+              </blockquote>
+              <figcaption>— Founding Principle, 2019</figcaption>
+            </figure>
+
+            <!-- Mini inline stats -->
+            <div class="story-mini-stats">
+              <div>
+                <p class="story-mini-num">23<span>yrs</span></p>
+                <p class="story-mini-lbl">Engineering DNA</p>
+              </div>
+              <div>
+                <p class="story-mini-num">4<span>+</span></p>
+                <p class="story-mini-lbl">Continents Served</p>
+              </div>
+              <div>
+                <p class="story-mini-num">14<span>M+</span></p>
+                <p class="story-mini-lbl">Lives Touched</p>
+              </div>
             </div>
           </div>
 
-          <!-- Timeline -->
-          <div data-animate="right">
-            <div class="relative space-y-8">
-              <div class="timeline-connector"></div>
-
-              <div class="flex gap-6 timeline-item">
-                <div class="timeline-node active">
-                  <div class="node-dot"></div>
-                </div>
-                <div>
-                  <p class="text-pacific font-bold text-sm">2003</p>
-                  <p class="font-bold text-lg">Proxym Group Founded</p>
-                  <p class="text-gray-500 text-sm mt-1">Enterprise software consultancy established in Tunisia, laying
-                    the engineering foundation for what would become Bankerise.</p>
-                </div>
+          <!-- ── Timeline ── -->
+          <div class="lg:col-span-7" data-animate="right">
+            <div class="story-timeline">
+              <div class="story-timeline-track">
+                <div class="story-timeline-progress"></div>
               </div>
 
-              <div class="flex gap-6 timeline-item">
-                <div class="timeline-node inactive">
-                  <div class="node-dot"></div>
+              <!-- 2003 -->
+              <article class="story-milestone is-past" style="--ms-color:#4DB8CD;">
+                <div class="story-milestone-marker">
+                  <span class="story-milestone-chapter">01</span>
+                  <span class="story-milestone-pulse"></span>
                 </div>
-                <div>
-                  <p class="text-gray-500 font-bold text-sm">2015</p>
-                  <p class="font-bold text-lg">First Banking Projects</p>
-                  <p class="text-gray-500 text-sm mt-1">Digital channels built for leading North African banks, proving
-                    the need for a purpose-built platform.</p>
+                <div class="story-milestone-card">
+                  <header>
+                    <span class="story-milestone-year">2003</span>
+                    <span class="story-milestone-tag">Origin</span>
+                  </header>
+                  <h3>Proxym Group Founded</h3>
+                  <p>An enterprise software consultancy established in Tunisia, laying the engineering foundation
+                    for what would become Bankerise.</p>
                 </div>
-              </div>
+              </article>
 
-              <div class="flex gap-6 timeline-item">
-                <div class="timeline-node inactive">
-                  <div class="node-dot"></div>
+              <!-- 2015 -->
+              <article class="story-milestone is-past" style="--ms-color:#4DB8CD;">
+                <div class="story-milestone-marker">
+                  <span class="story-milestone-chapter">02</span>
                 </div>
-                <div>
-                  <p class="text-gray-500 font-bold text-sm">2019</p>
-                  <p class="font-bold text-lg">Bankerise Platform Launched</p>
-                  <p class="text-gray-500 text-sm mt-1">The modular digital banking platform was born as a standalone,
-                    API-first product — designed for emerging markets from day one.</p>
+                <div class="story-milestone-card">
+                  <header>
+                    <span class="story-milestone-year">2015</span>
+                    <span class="story-milestone-tag">Banking</span>
+                  </header>
+                  <h3>First Banking Projects</h3>
+                  <p>Digital channels built for leading North African banks, proving the need for a purpose-built
+                    platform.</p>
                 </div>
-              </div>
+              </article>
 
-              <div class="flex gap-6 timeline-item">
-                <div class="timeline-node inactive">
-                  <div class="node-dot"></div>
+              <!-- 2019 -->
+              <article class="story-milestone is-past" style="--ms-color:#4799D1;">
+                <div class="story-milestone-marker">
+                  <span class="story-milestone-chapter">03</span>
                 </div>
-                <div>
-                  <p class="text-gray-500 font-bold text-sm">2022</p>
-                  <p class="font-bold text-lg">International Expansion</p>
-                  <p class="text-gray-500 text-sm mt-1">Entered Middle East, West Africa, and Central Asia markets.
-                    Partner ecosystem launched to drive regional growth.</p>
+                <div class="story-milestone-card is-highlight">
+                  <header>
+                    <span class="story-milestone-year">2019</span>
+                    <span class="story-milestone-tag">Launch</span>
+                  </header>
+                  <h3>Bankerise Platform Launched</h3>
+                  <p>The modular digital banking platform was born as a standalone, API-first product — designed for
+                    emerging markets from day one.</p>
                 </div>
-              </div>
+              </article>
 
-              <div class="flex gap-6 timeline-item">
-                <div class="timeline-node active" style="border-color:#766CFF; background:rgba(118,108,255,0.15);">
-                  <div class="node-dot" style="background:#766CFF;"></div>
+              <!-- 2022 -->
+              <article class="story-milestone is-past" style="--ms-color:#766CFF;">
+                <div class="story-milestone-marker">
+                  <span class="story-milestone-chapter">04</span>
                 </div>
-                <div>
-                  <p class="text-aqua font-bold text-sm">2026</p>
-                  <p class="font-bold text-lg">150+ Institutions, 26+ Countries</p>
-                  <p class="text-gray-500 text-sm mt-1">Scaling the partner ecosystem, entering new continents, and
-                    continuing to shape the future of digital banking.</p>
+                <div class="story-milestone-card">
+                  <header>
+                    <span class="story-milestone-year">2022</span>
+                    <span class="story-milestone-tag">Expansion</span>
+                  </header>
+                  <h3>International Expansion</h3>
+                  <p>Entered Middle East, West Africa, and Central Asia markets. Partner ecosystem launched to drive
+                    regional growth.</p>
                 </div>
-              </div>
+              </article>
+
+              <!-- 2026 (current) -->
+              <article class="story-milestone is-current" style="--ms-color:#766CFF;">
+                <div class="story-milestone-marker">
+                  <span class="story-milestone-chapter">05</span>
+                  <span class="story-milestone-pulse story-milestone-pulse--strong"></span>
+                </div>
+                <div class="story-milestone-card is-current">
+                  <header>
+                    <span class="story-milestone-year">2026</span>
+                    <span class="story-milestone-tag story-milestone-tag--live">
+                      <span class="live-dot"></span> Today
+                    </span>
+                  </header>
+                  <h3>150+ Institutions, 26+ Countries</h3>
+                  <p>Scaling the partner ecosystem, entering new continents, and continuing to shape the future of
+                    digital banking.</p>
+                </div>
+              </article>
+
+              <!-- Future -->
+              <article class="story-milestone is-future" style="--ms-color:#34D399;">
+                <div class="story-milestone-marker">
+                  <span class="story-milestone-chapter">06</span>
+                </div>
+                <div class="story-milestone-card is-future">
+                  <header>
+                    <span class="story-milestone-year">Next</span>
+                    <span class="story-milestone-tag">Horizon</span>
+                  </header>
+                  <h3>The Next Chapter</h3>
+                  <p>AI-native banking, embedded finance, and a global partner ecosystem reaching every emerging
+                    market on the map.</p>
+                </div>
+              </article>
             </div>
           </div>
         </div>
@@ -365,40 +454,170 @@
          MISSION & VISION
          ═══════════════════════════════════════════ -->
     <hr class="section-divider">
-    <section class="py-20 lg:py-28 bg-dark2">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
-          <p class="eyebrow">PURPOSE</p>
-          <h2 class="text-3xl sm:text-4xl font-bold">Why we exist</h2>
+    <section class="purpose-section py-20 lg:py-32 bg-dark2 relative overflow-hidden">
+      <!-- Decorative background -->
+      <div class="purpose-bg-orb purpose-bg-orb--left"></div>
+      <div class="purpose-bg-orb purpose-bg-orb--right"></div>
+      <div class="purpose-grid-overlay"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        <!-- Manifesto header -->
+        <div class="text-center max-w-3xl mx-auto mb-20" data-animate>
+          <div class="purpose-eyebrow-wrap">
+            <span class="purpose-eyebrow-line"></span>
+            <p class="eyebrow !mb-0">PURPOSE</p>
+            <span class="purpose-eyebrow-line"></span>
+          </div>
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-6 mb-6 leading-[1.05] tracking-tight">
+            Why <span class="gradient-text">we exist</span>.
+          </h2>
+          <p class="text-gray-400 text-lg leading-relaxed">
+            Two beliefs shape every decision we make — from the architecture of our platform
+            to the partnerships we build.
+          </p>
         </div>
-        <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
-          <div class="glass-card p-8 lg:p-10 relative overflow-hidden group" data-animate data-animate-delay="1">
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-pacific to-pacific/0"></div>
-            <div class="w-14 h-14 rounded-2xl bg-pacific/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-7 h-7 text-pacific" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+
+        <!-- Mission / Vision cards -->
+        <div class="grid lg:grid-cols-2 gap-6 lg:gap-10 relative">
+
+          <!-- Center compass (lg+ only) -->
+          <div class="purpose-compass" aria-hidden="true">
+            <div class="purpose-compass-ring"></div>
+            <div class="purpose-compass-ring purpose-compass-ring--2"></div>
+            <div class="purpose-compass-core">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/>
               </svg>
             </div>
-            <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
-            <p class="text-gray-400 leading-relaxed">To empower financial institutions worldwide with flexible, modular
-              digital banking technology that accelerates their transformation, improves customer experience, and drives
-              financial inclusion in underserved markets.</p>
           </div>
-          <div class="glass-card p-8 lg:p-10 relative overflow-hidden group" data-animate data-animate-delay="2">
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-aqua to-aqua/0"></div>
-            <div class="w-14 h-14 rounded-2xl bg-aqua/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <svg class="w-7 h-7 text-aqua" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-              </svg>
+
+          <!-- MISSION -->
+          <article class="purpose-card" style="--p-color:#4DB8CD; --p-color-2:#4799D1;" data-animate data-animate-delay="1">
+            <div class="purpose-card-glow"></div>
+            <div class="purpose-card-corner purpose-card-corner--tl"></div>
+            <div class="purpose-card-corner purpose-card-corner--br"></div>
+
+            <div class="purpose-card-head">
+              <div class="purpose-card-icon">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div class="purpose-card-meta">
+                <span class="purpose-card-index">PRINCIPLE 01</span>
+                <h3 class="purpose-card-title">Our Mission</h3>
+              </div>
             </div>
-            <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
-            <p class="text-gray-400 leading-relaxed">To become the global standard for digital banking platforms in
-              emerging markets — trusted by every institution that believes banking should be accessible, intelligent,
-              and beautifully designed.</p>
-          </div>
+
+            <p class="purpose-card-lead">
+              To empower financial institutions worldwide with flexible, modular digital banking technology
+              that accelerates transformation, elevates customer experience, and drives financial inclusion
+              in underserved markets.
+            </p>
+
+            <ul class="purpose-pillars">
+              <li>
+                <span class="purpose-pillar-dot"></span>
+                <div>
+                  <strong>Empower</strong>
+                  <span>Give every bank the tools of a hyperscaler.</span>
+                </div>
+              </li>
+              <li>
+                <span class="purpose-pillar-dot"></span>
+                <div>
+                  <strong>Accelerate</strong>
+                  <span>Cut transformation timelines from years to months.</span>
+                </div>
+              </li>
+              <li>
+                <span class="purpose-pillar-dot"></span>
+                <div>
+                  <strong>Include</strong>
+                  <span>Bring banking to the unbanked — not just the affluent.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="purpose-card-foot">
+              <span class="purpose-card-tag">Today</span>
+              <span class="purpose-card-arrow" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                </svg>
+              </span>
+            </div>
+          </article>
+
+          <!-- VISION -->
+          <article class="purpose-card" style="--p-color:#766CFF; --p-color-2:#9F7AEA;" data-animate data-animate-delay="2">
+            <div class="purpose-card-glow"></div>
+            <div class="purpose-card-corner purpose-card-corner--tl"></div>
+            <div class="purpose-card-corner purpose-card-corner--br"></div>
+
+            <div class="purpose-card-head">
+              <div class="purpose-card-icon">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                </svg>
+              </div>
+              <div class="purpose-card-meta">
+                <span class="purpose-card-index">PRINCIPLE 02</span>
+                <h3 class="purpose-card-title">Our Vision</h3>
+              </div>
+            </div>
+
+            <p class="purpose-card-lead">
+              To become the global standard for digital banking platforms in emerging markets — trusted by
+              every institution that believes banking should be accessible, intelligent, and beautifully
+              designed.
+            </p>
+
+            <ul class="purpose-pillars">
+              <li>
+                <span class="purpose-pillar-dot"></span>
+                <div>
+                  <strong>Accessible</strong>
+                  <span>Banking that meets people where they are — on any device.</span>
+                </div>
+              </li>
+              <li>
+                <span class="purpose-pillar-dot"></span>
+                <div>
+                  <strong>Intelligent</strong>
+                  <span>AI-native, data-driven, and adaptive by default.</span>
+                </div>
+              </li>
+              <li>
+                <span class="purpose-pillar-dot"></span>
+                <div>
+                  <strong>Beautiful</strong>
+                  <span>Craft and design as serious as the engineering beneath.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div class="purpose-card-foot">
+              <span class="purpose-card-tag purpose-card-tag--future">Tomorrow</span>
+              <span class="purpose-card-arrow" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                </svg>
+              </span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Closing manifesto strip -->
+        <div class="purpose-manifesto" data-animate data-animate-delay="3">
+          <span class="purpose-manifesto-divider"></span>
+          <p>
+            Mission is what we do <em>today</em>. Vision is where we're going <em>tomorrow</em>.
+            Both point in the same direction.
+          </p>
+          <span class="purpose-manifesto-divider"></span>
         </div>
       </div>
     </section>
@@ -406,61 +625,129 @@
     <!-- ═══════════════════════════════════════════
          OUR VALUES
          ═══════════════════════════════════════════ -->
-    <section class="py-20 lg:py-28">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="values-section py-20 lg:py-32 relative overflow-hidden">
+      <div class="values-bg-orb values-bg-orb--1"></div>
+      <div class="values-bg-orb values-bg-orb--2"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
-          <p class="eyebrow">OUR VALUES</p>
-          <h2 class="text-3xl sm:text-4xl font-bold mb-4">What drives us every day</h2>
-          <p class="text-gray-400">Four principles that shape every product decision, partnership, and line of code.</p>
+          <div class="purpose-eyebrow-wrap">
+            <span class="purpose-eyebrow-line"></span>
+            <p class="eyebrow !mb-0">OUR VALUES</p>
+            <span class="purpose-eyebrow-line"></span>
+          </div>
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-6 mb-6 leading-[1.05] tracking-tight">
+            What drives us <span class="gradient-text">every day</span>.
+          </h2>
+          <p class="text-gray-400 text-lg leading-relaxed">
+            Four principles that shape every product decision, every partnership, and every line of code.
+          </p>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="value-card" style="--accent: #4DB8CD;" data-animate data-animate-delay="1">
-            <div class="value-icon bg-pacific/10">
-              <svg class="w-7 h-7 text-pacific" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+
+        <div class="values-grid">
+          <!-- 01 INNOVATION -->
+          <article class="v-card" style="--v-color:#4DB8CD;" data-animate data-animate-delay="1">
+            <div class="v-card-bg"></div>
+            <div class="v-card-corner v-card-corner--tl"></div>
+            <div class="v-card-corner v-card-corner--br"></div>
+            <span class="v-card-num">01</span>
+
+            <div class="v-card-icon">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
                   d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
             </div>
-            <h4 class="font-bold text-lg mb-2">Innovation</h4>
-            <p class="text-gray-400 text-sm leading-relaxed">We push boundaries, challenge conventions, and build what
-              the market needs next — not what worked yesterday.</p>
-          </div>
 
-          <div class="value-card" style="--accent: #766CFF;" data-animate data-animate-delay="2">
-            <div class="value-icon bg-aqua/10">
-              <svg class="w-7 h-7 text-aqua" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            <h4 class="v-card-title">Innovation</h4>
+            <p class="v-card-tagline">Build what's next.</p>
+            <p class="v-card-desc">
+              We push boundaries, challenge conventions, and build what the market needs next — not what worked yesterday.
+            </p>
+
+            <div class="v-card-foot">
+              <span class="v-card-line"></span>
+              <span class="v-card-mantra">"Question everything."</span>
+            </div>
+          </article>
+
+          <!-- 02 TRUST -->
+          <article class="v-card" style="--v-color:#766CFF;" data-animate data-animate-delay="2">
+            <div class="v-card-bg"></div>
+            <div class="v-card-corner v-card-corner--tl"></div>
+            <div class="v-card-corner v-card-corner--br"></div>
+            <span class="v-card-num">02</span>
+
+            <div class="v-card-icon">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
                   d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
-            <h4 class="font-bold text-lg mb-2">Trust</h4>
-            <p class="text-gray-400 text-sm leading-relaxed">Banking demands trust. We earn it through security,
-              transparency, and reliability — in every release and every interaction.</p>
-          </div>
 
-          <div class="value-card" style="--accent: #4799D1;" data-animate data-animate-delay="3">
-            <div class="value-icon bg-bell/10">
-              <svg class="w-7 h-7 text-bell" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            <h4 class="v-card-title">Trust</h4>
+            <p class="v-card-tagline">Earned, never assumed.</p>
+            <p class="v-card-desc">
+              Banking demands trust. We earn it through security, transparency, and reliability — in every release and every interaction.
+            </p>
+
+            <div class="v-card-foot">
+              <span class="v-card-line"></span>
+              <span class="v-card-mantra">"Reliability is the feature."</span>
+            </div>
+          </article>
+
+          <!-- 03 COLLABORATION -->
+          <article class="v-card" style="--v-color:#4799D1;" data-animate data-animate-delay="3">
+            <div class="v-card-bg"></div>
+            <div class="v-card-corner v-card-corner--tl"></div>
+            <div class="v-card-corner v-card-corner--br"></div>
+            <span class="v-card-num">03</span>
+
+            <div class="v-card-icon">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
                   d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <h4 class="font-bold text-lg mb-2">Collaboration</h4>
-            <p class="text-gray-400 text-sm leading-relaxed">We succeed together — with our clients, our partners, and
-              each other. Every voice matters, every perspective counts.</p>
-          </div>
 
-          <div class="value-card" style="--accent: #34D399;" data-animate data-animate-delay="4">
-            <div class="value-icon bg-green-400/10">
-              <svg class="w-7 h-7 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            <h4 class="v-card-title">Collaboration</h4>
+            <p class="v-card-tagline">Better together.</p>
+            <p class="v-card-desc">
+              We succeed together — with our clients, our partners, and each other. Every voice matters, every perspective counts.
+            </p>
+
+            <div class="v-card-foot">
+              <span class="v-card-line"></span>
+              <span class="v-card-mantra">"Strong opinions, loosely held."</span>
+            </div>
+          </article>
+
+          <!-- 04 EXCELLENCE -->
+          <article class="v-card" style="--v-color:#34D399;" data-animate data-animate-delay="4">
+            <div class="v-card-bg"></div>
+            <div class="v-card-corner v-card-corner--tl"></div>
+            <div class="v-card-corner v-card-corner--br"></div>
+            <span class="v-card-num">04</span>
+
+            <div class="v-card-icon">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
                   d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
               </svg>
             </div>
-            <h4 class="font-bold text-lg mb-2">Excellence</h4>
-            <p class="text-gray-400 text-sm leading-relaxed">Good enough isn't. We strive for craft in everything we
-              ship — from code architecture to pixel-perfect interfaces.</p>
-          </div>
+
+            <h4 class="v-card-title">Excellence</h4>
+            <p class="v-card-tagline">Craft, always.</p>
+            <p class="v-card-desc">
+              Good enough isn't. We strive for craft in everything we ship — from code architecture to pixel-perfect interfaces.
+            </p>
+
+            <div class="v-card-foot">
+              <span class="v-card-line"></span>
+              <span class="v-card-mantra">"Sweat the details."</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -480,10 +767,9 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="team-card" data-animate data-animate-delay="1">
             <div class="team-avatar">
-              <svg class="w-10 h-10 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
+                alt="Ahmed Hadj-Said" loading="lazy"
+                class="w-full h-full object-cover rounded-full" />
             </div>
             <h4 class="font-bold text-lg">Ahmed Hadj-Said</h4>
             <p class="text-pacific text-sm font-medium mb-3">CEO & Co-Founder</p>
@@ -499,10 +785,9 @@
 
           <div class="team-card" data-animate data-animate-delay="2">
             <div class="team-avatar">
-              <svg class="w-10 h-10 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
+                alt="Sana Khelifi" loading="lazy"
+                class="w-full h-full object-cover rounded-full" />
             </div>
             <h4 class="font-bold text-lg">Sana Khelifi</h4>
             <p class="text-aqua text-sm font-medium mb-3">CTO</p>
@@ -518,10 +803,9 @@
 
           <div class="team-card" data-animate data-animate-delay="3">
             <div class="team-avatar">
-              <svg class="w-10 h-10 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
+                alt="Youssef Ben Ali" loading="lazy"
+                class="w-full h-full object-cover rounded-full" />
             </div>
             <h4 class="font-bold text-lg">Youssef Ben Ali</h4>
             <p class="text-bell text-sm font-medium mb-3">VP Partnerships</p>
@@ -537,10 +821,9 @@
 
           <div class="team-card" data-animate data-animate-delay="4">
             <div class="team-avatar">
-              <svg class="w-10 h-10 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=faces&auto=format&q=80"
+                alt="Lina Mezghani" loading="lazy"
+                class="w-full h-full object-cover rounded-full" />
             </div>
             <h4 class="font-bold text-lg">Lina Mezghani</h4>
             <p class="text-green-400 text-sm font-medium mb-3">VP Product</p>
@@ -606,30 +889,320 @@
     <!-- ═══════════════════════════════════════════
          GLOBAL PRESENCE
          ═══════════════════════════════════════════ -->
-    <section class="py-20 lg:py-28 bg-dark2">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
-          <p class="eyebrow">GLOBAL PRESENCE</p>
-          <h2 class="text-3xl sm:text-4xl font-bold mb-4">Where we operate</h2>
-          <p class="text-gray-400">From North Africa to Central Asia, we serve financial institutions across 4
-            continents and 26+ countries.</p>
+    <section class="presence-section py-20 lg:py-32 bg-dark2 relative overflow-hidden">
+      <div class="presence-bg-orb presence-bg-orb--1"></div>
+      <div class="presence-bg-orb presence-bg-orb--2"></div>
+      <div class="presence-grid-overlay"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14" data-animate>
+          <div class="purpose-eyebrow-wrap">
+            <span class="purpose-eyebrow-line"></span>
+            <p class="eyebrow !mb-0">GLOBAL PRESENCE</p>
+            <span class="purpose-eyebrow-line"></span>
+          </div>
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-6 mb-6 leading-[1.05] tracking-tight">
+            Close to our <span class="gradient-text">customers</span>.
+          </h2>
+          <p class="text-gray-400 text-lg leading-relaxed">
+            Proxym works in a multicultural environment, accompanying clients across
+            <strong class="text-white font-semibold">Europe, Africa, and the Middle East</strong> —
+            with <strong class="text-white font-semibold">5 regional offices</strong> serving
+            <strong class="text-white font-semibold">20+ countries</strong>.
+          </p>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-animate>
-          <div class="region-pill">
-            <p class="text-lg font-bold text-pacific mb-1">North Africa</p>
-            <p class="text-gray-500 text-xs">Tunisia, Morocco, Algeria, Egypt, Libya</p>
+      </div>
+
+      <!-- ── Animated flag marquees (full bleed) ── -->
+      <div class="flag-marquee-wrap" data-animate>
+        <!-- Edge fades -->
+        <div class="flag-marquee-fade flag-marquee-fade--left"></div>
+        <div class="flag-marquee-fade flag-marquee-fade--right"></div>
+
+        <!-- Row 1 — scroll left  (Europe + North Africa + Egypt) -->
+        <div class="flag-marquee">
+          <div class="flag-track flag-track--left">
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/fr.png" srcset="https://flagcdn.com/w160/fr.png 2x" alt="France flag" loading="lazy" width="40" height="28">
+                <span>France</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/tn.png" srcset="https://flagcdn.com/w160/tn.png 2x" alt="Tunisia flag" loading="lazy" width="40" height="28">
+                <span>Tunisia</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/ma.png" srcset="https://flagcdn.com/w160/ma.png 2x" alt="Morocco flag" loading="lazy" width="40" height="28">
+                <span>Morocco</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/dz.png" srcset="https://flagcdn.com/w160/dz.png 2x" alt="Algeria flag" loading="lazy" width="40" height="28">
+                <span>Algeria</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/ly.png" srcset="https://flagcdn.com/w160/ly.png 2x" alt="Libya flag" loading="lazy" width="40" height="28">
+                <span>Libya</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/eg.png" srcset="https://flagcdn.com/w160/eg.png 2x" alt="Egypt flag" loading="lazy" width="40" height="28">
+                <span>Egypt</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/sa.png" srcset="https://flagcdn.com/w160/sa.png 2x" alt="Saudi Arabia flag" loading="lazy" width="40" height="28">
+                <span>Saudi Arabia</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/ae.png" srcset="https://flagcdn.com/w160/ae.png 2x" alt="UAE flag" loading="lazy" width="40" height="28">
+                <span>UAE</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/qa.png" srcset="https://flagcdn.com/w160/qa.png 2x" alt="Qatar flag" loading="lazy" width="40" height="28">
+                <span>Qatar</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/kw.png" srcset="https://flagcdn.com/w160/kw.png 2x" alt="Kuwait flag" loading="lazy" width="40" height="28">
+                <span>Kuwait</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/bh.png" srcset="https://flagcdn.com/w160/bh.png 2x" alt="Bahrain flag" loading="lazy" width="40" height="28">
+                <span>Bahrain</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/om.png" srcset="https://flagcdn.com/w160/om.png 2x" alt="Oman flag" loading="lazy" width="40" height="28">
+                <span>Oman</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/jo.png" srcset="https://flagcdn.com/w160/jo.png 2x" alt="Jordan flag" loading="lazy" width="40" height="28">
+                <span>Jordan</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/iq.png" srcset="https://flagcdn.com/w160/iq.png 2x" alt="Iraq flag" loading="lazy" width="40" height="28">
+                <span>Iraq</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/fr.png" srcset="https://flagcdn.com/w160/fr.png 2x" alt="France flag" loading="lazy" width="40" height="28">
+                <span>France</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/tn.png" srcset="https://flagcdn.com/w160/tn.png 2x" alt="Tunisia flag" loading="lazy" width="40" height="28">
+                <span>Tunisia</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/ma.png" srcset="https://flagcdn.com/w160/ma.png 2x" alt="Morocco flag" loading="lazy" width="40" height="28">
+                <span>Morocco</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/dz.png" srcset="https://flagcdn.com/w160/dz.png 2x" alt="Algeria flag" loading="lazy" width="40" height="28">
+                <span>Algeria</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/ly.png" srcset="https://flagcdn.com/w160/ly.png 2x" alt="Libya flag" loading="lazy" width="40" height="28">
+                <span>Libya</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/eg.png" srcset="https://flagcdn.com/w160/eg.png 2x" alt="Egypt flag" loading="lazy" width="40" height="28">
+                <span>Egypt</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/sa.png" srcset="https://flagcdn.com/w160/sa.png 2x" alt="Saudi Arabia flag" loading="lazy" width="40" height="28">
+                <span>Saudi Arabia</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/ae.png" srcset="https://flagcdn.com/w160/ae.png 2x" alt="UAE flag" loading="lazy" width="40" height="28">
+                <span>UAE</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/qa.png" srcset="https://flagcdn.com/w160/qa.png 2x" alt="Qatar flag" loading="lazy" width="40" height="28">
+                <span>Qatar</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/kw.png" srcset="https://flagcdn.com/w160/kw.png 2x" alt="Kuwait flag" loading="lazy" width="40" height="28">
+                <span>Kuwait</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/bh.png" srcset="https://flagcdn.com/w160/bh.png 2x" alt="Bahrain flag" loading="lazy" width="40" height="28">
+                <span>Bahrain</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/om.png" srcset="https://flagcdn.com/w160/om.png 2x" alt="Oman flag" loading="lazy" width="40" height="28">
+                <span>Oman</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/jo.png" srcset="https://flagcdn.com/w160/jo.png 2x" alt="Jordan flag" loading="lazy" width="40" height="28">
+                <span>Jordan</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/iq.png" srcset="https://flagcdn.com/w160/iq.png 2x" alt="Iraq flag" loading="lazy" width="40" height="28">
+                <span>Iraq</span>
+              </div>
+                      </div>
+        </div>
+
+        <!-- Row 2 — scroll right (West & Sub-Saharan Africa) -->
+        <div class="flag-marquee">
+          <div class="flag-track flag-track--right">
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/sn.png" srcset="https://flagcdn.com/w160/sn.png 2x" alt="Senegal flag" loading="lazy" width="40" height="28">
+                <span>Senegal</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/ci.png" srcset="https://flagcdn.com/w160/ci.png 2x" alt="Côte d'Ivoire flag" loading="lazy" width="40" height="28">
+                <span>Côte d'Ivoire</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/ng.png" srcset="https://flagcdn.com/w160/ng.png 2x" alt="Nigeria flag" loading="lazy" width="40" height="28">
+                <span>Nigeria</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/gh.png" srcset="https://flagcdn.com/w160/gh.png 2x" alt="Ghana flag" loading="lazy" width="40" height="28">
+                <span>Ghana</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/cm.png" srcset="https://flagcdn.com/w160/cm.png 2x" alt="Cameroon flag" loading="lazy" width="40" height="28">
+                <span>Cameroon</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/ml.png" srcset="https://flagcdn.com/w160/ml.png 2x" alt="Mali flag" loading="lazy" width="40" height="28">
+                <span>Mali</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/bf.png" srcset="https://flagcdn.com/w160/bf.png 2x" alt="Burkina Faso flag" loading="lazy" width="40" height="28">
+                <span>Burkina Faso</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/ne.png" srcset="https://flagcdn.com/w160/ne.png 2x" alt="Niger flag" loading="lazy" width="40" height="28">
+                <span>Niger</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/tg.png" srcset="https://flagcdn.com/w160/tg.png 2x" alt="Togo flag" loading="lazy" width="40" height="28">
+                <span>Togo</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/bj.png" srcset="https://flagcdn.com/w160/bj.png 2x" alt="Benin flag" loading="lazy" width="40" height="28">
+                <span>Benin</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/gn.png" srcset="https://flagcdn.com/w160/gn.png 2x" alt="Guinea flag" loading="lazy" width="40" height="28">
+                <span>Guinea</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/mr.png" srcset="https://flagcdn.com/w160/mr.png 2x" alt="Mauritania flag" loading="lazy" width="40" height="28">
+                <span>Mauritania</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/kz.png" srcset="https://flagcdn.com/w160/kz.png 2x" alt="Kazakhstan flag" loading="lazy" width="40" height="28">
+                <span>Kazakhstan</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/uz.png" srcset="https://flagcdn.com/w160/uz.png 2x" alt="Uzbekistan flag" loading="lazy" width="40" height="28">
+                <span>Uzbekistan</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/kg.png" srcset="https://flagcdn.com/w160/kg.png 2x" alt="Kyrgyzstan flag" loading="lazy" width="40" height="28">
+                <span>Kyrgyzstan</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/tm.png" srcset="https://flagcdn.com/w160/tm.png 2x" alt="Turkmenistan flag" loading="lazy" width="40" height="28">
+                <span>Turkmenistan</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/tj.png" srcset="https://flagcdn.com/w160/tj.png 2x" alt="Tajikistan flag" loading="lazy" width="40" height="28">
+                <span>Tajikistan</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/sn.png" srcset="https://flagcdn.com/w160/sn.png 2x" alt="Senegal flag" loading="lazy" width="40" height="28">
+                <span>Senegal</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/ci.png" srcset="https://flagcdn.com/w160/ci.png 2x" alt="Côte d'Ivoire flag" loading="lazy" width="40" height="28">
+                <span>Côte d'Ivoire</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/ng.png" srcset="https://flagcdn.com/w160/ng.png 2x" alt="Nigeria flag" loading="lazy" width="40" height="28">
+                <span>Nigeria</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/gh.png" srcset="https://flagcdn.com/w160/gh.png 2x" alt="Ghana flag" loading="lazy" width="40" height="28">
+                <span>Ghana</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/cm.png" srcset="https://flagcdn.com/w160/cm.png 2x" alt="Cameroon flag" loading="lazy" width="40" height="28">
+                <span>Cameroon</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/ml.png" srcset="https://flagcdn.com/w160/ml.png 2x" alt="Mali flag" loading="lazy" width="40" height="28">
+                <span>Mali</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/bf.png" srcset="https://flagcdn.com/w160/bf.png 2x" alt="Burkina Faso flag" loading="lazy" width="40" height="28">
+                <span>Burkina Faso</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/ne.png" srcset="https://flagcdn.com/w160/ne.png 2x" alt="Niger flag" loading="lazy" width="40" height="28">
+                <span>Niger</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/tg.png" srcset="https://flagcdn.com/w160/tg.png 2x" alt="Togo flag" loading="lazy" width="40" height="28">
+                <span>Togo</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/bj.png" srcset="https://flagcdn.com/w160/bj.png 2x" alt="Benin flag" loading="lazy" width="40" height="28">
+                <span>Benin</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/gn.png" srcset="https://flagcdn.com/w160/gn.png 2x" alt="Guinea flag" loading="lazy" width="40" height="28">
+                <span>Guinea</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/mr.png" srcset="https://flagcdn.com/w160/mr.png 2x" alt="Mauritania flag" loading="lazy" width="40" height="28">
+                <span>Mauritania</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/kz.png" srcset="https://flagcdn.com/w160/kz.png 2x" alt="Kazakhstan flag" loading="lazy" width="40" height="28">
+                <span>Kazakhstan</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/uz.png" srcset="https://flagcdn.com/w160/uz.png 2x" alt="Uzbekistan flag" loading="lazy" width="40" height="28">
+                <span>Uzbekistan</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/kg.png" srcset="https://flagcdn.com/w160/kg.png 2x" alt="Kyrgyzstan flag" loading="lazy" width="40" height="28">
+                <span>Kyrgyzstan</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/tm.png" srcset="https://flagcdn.com/w160/tm.png 2x" alt="Turkmenistan flag" loading="lazy" width="40" height="28">
+                <span>Turkmenistan</span>
+              </div>
+                          <div class="flag-chip">
+                <img src="https://flagcdn.com/w80/tj.png" srcset="https://flagcdn.com/w160/tj.png 2x" alt="Tajikistan flag" loading="lazy" width="40" height="28">
+                <span>Tajikistan</span>
+              </div>
+                      </div>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-16">
+        <!-- Stats strip -->
+        <div class="presence-stats" data-animate>
+          <div>
+            <p class="presence-stat-num" data-count="20">0</p>
+            <p class="presence-stat-lbl">Countries</p>
           </div>
-          <div class="region-pill">
-            <p class="text-lg font-bold text-aqua mb-1">Middle East</p>
-            <p class="text-gray-500 text-xs">Saudi Arabia, UAE, Jordan, Iraq, Kuwait</p>
+          <div class="presence-stat-divider"></div>
+          <div>
+            <p class="presence-stat-num" data-count="5">0</p>
+            <p class="presence-stat-lbl">Regional Offices</p>
           </div>
-          <div class="region-pill">
-            <p class="text-lg font-bold text-bell mb-1">Sub-Saharan Africa</p>
-            <p class="text-gray-500 text-xs">Nigeria, Kenya, Ghana, Senegal, Cameroon</p>
+          <div class="presence-stat-divider"></div>
+          <div>
+            <p class="presence-stat-num" data-count="3" data-suffix="">0</p>
+            <p class="presence-stat-lbl">Continents</p>
           </div>
-          <div class="region-pill">
-            <p class="text-lg font-bold text-green-400 mb-1">Central Asia</p>
-            <p class="text-gray-500 text-xs">Kazakhstan, Uzbekistan, and expanding</p>
+          <div class="presence-stat-divider"></div>
+          <div>
+            <p class="presence-stat-num" data-count="150">0</p>
+            <p class="presence-stat-lbl">Institutions</p>
           </div>
         </div>
       </div>
@@ -716,9 +1289,8 @@
           <ul class="space-y-3">
             <li><a href="about.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">About Us</a></li>
             <li><a href="contact.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Contact</a></li>
-            <li><a href="#" class="text-gray-500 text-sm hover:text-pacific transition-colors">Careers</a></li>
-            <li><a href="#" class="text-gray-500 text-sm hover:text-pacific transition-colors">Privacy Policy</a></li>
-            <li><a href="#" class="text-gray-500 text-sm hover:text-pacific transition-colors">Terms of Service</a></li>
+            <li><a href="privacy.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Privacy Policy</a></li>
+            <li><a href="terms.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Terms of Service</a></li>
           </ul>
         </div>
       </div>
@@ -727,16 +1299,16 @@
       <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-gray-600 text-sm">&copy; 2026 Bankerise&reg; by Proxym Group. All rights reserved.</p>
         <div class="flex gap-6">
-          <a href="#" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Privacy</a>
-          <a href="#" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Terms</a>
-          <a href="#" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Cookies</a>
+          <a href="privacy.html" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Privacy</a>
+          <a href="terms.html" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Terms</a>
+          <a href="privacy.html#cookies" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Cookies</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Chatbot Component -->
-    <link rel="stylesheet" href="assets/css/components/chatbot.css?v=1777927356" />
+      <link rel="stylesheet" href="assets/css/components/chatbot.css?v=1778277780" />
   
 <!-- Chatbot Floating Trigger Button & Tooltip -->
 <div class="chatbot-trigger-container">
@@ -794,8 +1366,8 @@
     </button>
   </div>
 </div>
-  <script src="assets/js/components/chatbot.js?v=1777927356" defer></script>
-
+  <script src="assets/js/components/chatbot.js?v=1778277780" defer></script>
+  
   <script src="assets/js/shared.js"></script>
 
   <script>
@@ -803,6 +1375,84 @@
       'use strict';
 
 
+
+      /* ══════════════════════════════════════════════
+         STORY TYPEWRITER
+         ══════════════════════════════════════════════ */
+      function initStoryTypewriter() {
+        var root = document.querySelector('.story-typewriter');
+        if (!root) return;
+
+        // Snapshot original nodes, then clear visible content.
+        var paragraphs = Array.prototype.slice.call(root.querySelectorAll(':scope > p'));
+        var snapshots = paragraphs.map(function (p) {
+          var clone = p.cloneNode(true);
+          p.classList.add('tw-pending');
+          p.innerHTML = '';
+          return clone;
+        });
+
+        function typeNode(targetEl, sourceNode, charDelay, done) {
+          var children = Array.prototype.slice.call(sourceNode.childNodes);
+          var i = 0;
+
+          function next() {
+            if (i >= children.length) { done && done(); return; }
+            var node = children[i++];
+
+            if (node.nodeType === Node.TEXT_NODE) {
+              var text = node.nodeValue;
+              var idx = 0;
+              (function tick() {
+                if (idx < text.length) {
+                  targetEl.appendChild(document.createTextNode(text.charAt(idx++)));
+                  setTimeout(tick, charDelay);
+                } else {
+                  next();
+                }
+              })();
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+              var el = node.cloneNode(false); // clone tag + attrs, no kids
+              targetEl.appendChild(el);
+              typeNode(el, node, charDelay, next);
+            } else {
+              next();
+            }
+          }
+          next();
+        }
+
+        function runSequence() {
+          var idx = 0;
+          function step() {
+            if (idx >= paragraphs.length) return;
+            var target = paragraphs[idx];
+            var source = snapshots[idx];
+            target.classList.remove('tw-pending');
+            target.classList.add('tw-typing');
+            // Faster on first paragraph (which has dropcap), feels punchier
+            var delay = idx === 0 ? 14 : 12;
+            typeNode(target, source, delay, function () {
+              target.classList.remove('tw-typing');
+              target.classList.add('tw-done');
+              idx++;
+              setTimeout(step, 240);
+            });
+          }
+          step();
+        }
+
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            if (root.dataset.typed) return;
+            root.dataset.typed = '1';
+            runSequence();
+            io.disconnect();
+          });
+        }, { threshold: 0.25 });
+        io.observe(root);
+      }
 
       /* ══════════════════════════════════════════════
          COUNTER ANIMATION
@@ -856,6 +1506,7 @@
       document.addEventListener('DOMContentLoaded', function () {
         animateCounters();
         initTeamSpotlight();
+        initStoryTypewriter();
       });
     })();
   </script>
