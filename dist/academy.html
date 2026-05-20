@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bankerise Partner Academy — interactive courses to learn how to become a partner, master the platform, and sell Bankerise. Enrol, download, and certify.">
+  <title>Partner Academy — Bankerise®</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/logo-monogram.svg">
+
+  <!-- Tailwind CSS (CDN — centralized config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            grape: '#4C4E89',
+            'indigo-brand': '#35365F',
+            pacific: '#4DB8CD',
+            aqua: '#766CFF',
+            bell: '#4799D1',
+            dark: '#0D0F1C',
+            dark2: '#141729',
+            dark3: '#1A1D35',
+            surface: '#111827',
+            card: '#1F2937',
+          },
+          fontFamily: { montserrat: ['Montserrat', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="assets/css/shared.css?v=20260504h">
+
+  <link rel="stylesheet" href="assets/css/pages/academy.css?v=20260504h">
+
+</head>
+<body class="font-montserrat bg-dark text-white">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+  <nav class="navbar-glass fixed top-0 left-0 w-full z-50" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Logo -->
+        <a href="" class="flex items-center group" aria-label="Bankerise Home">
+          <img src="assets/images/brand/logo-colored.svg" alt="Bankerise" class="h-8 site-logo" />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center gap-1">
+
+          <!-- Product Dropdown -->
+          <div class="relative" data-dropdown>
+            <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors" aria-expanded="false" aria-haspopup="true">
+              Product
+              <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="nav-dropdown absolute top-full left-0 mt-2 w-64 glass-card p-3" role="menu">
+              <a href="product.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all" role="menuitem">
+                <svg class="w-5 h-5 text-pacific flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                Bankerise Products
+              </a>
+              <div class="border-t border-white/10 my-2"></div>
+              <div class="relative" data-submenu>
+                <a href="#" class="flex items-center justify-between gap-3 px-4 py-3 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all" role="menuitem">
+                  <span class="flex items-center gap-3">
+                    <svg class="w-5 h-5 text-aqua flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    Solutions
+                  </span>
+                  <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+                <div class="nav-submenu absolute left-full top-0 ml-2 w-56 glass-card p-3" role="menu">
+                  <a href="solutions/retail.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all" role="menuitem">
+                    <svg class="w-5 h-5 text-pacific flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    Retail Banking
+                  </a>
+                  <a href="solutions/corporate.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all" role="menuitem">
+                    <svg class="w-5 h-5 text-aqua flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    Corporate Banking
+                  </a>
+                  <a href="solutions/micro.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all" role="menuitem">
+                    <svg class="w-5 h-5 text-[#4799D1] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    Microfinance
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Use Cases -->
+          <a href="use-cases.html" class="nav-link px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">Use Cases</a>
+
+          <!-- Partners Dropdown -->
+          <div class="relative" data-dropdown>
+            <button class="nav-link flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors" aria-expanded="false" aria-haspopup="true">
+              Partners
+              <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="nav-dropdown absolute top-full left-0 mt-2 w-64 glass-card p-3" role="menu">
+              <a href="partners.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all" role="menuitem">
+                <svg class="w-5 h-5 text-pacific flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                Why Become a Partner
+              </a>
+              <a href="academy.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-all" role="menuitem">
+                <svg class="w-5 h-5 text-pacific flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
+                Academy
+              </a>
+              <div class="border-t border-white/10 my-2"></div>
+              <a href="partners/apply.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-pacific font-semibold hover:bg-pacific/10 transition-all" role="menuitem">
+                <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                Apply Now
+              </a>
+            </div>
+          </div>
+
+          <!-- About -->
+          <a href="about.html" class="nav-link px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">About Us</a>
+
+          <!-- Contact -->
+          <a href="contact.html" class="nav-link px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors">Contact</a>
+        </div>
+
+        <!-- Desktop CTA + Mobile Hamburger -->
+        <div class="flex items-center gap-3">
+          <a href="partners.html" class="hidden lg:inline-flex items-center gap-2 text-sm font-semibold py-3 px-6 rounded-full border border-pacific/40 text-pacific hover:bg-pacific/10 transition-all">
+            Become a Partner          </a>
+          <a href="contact.html" class="hidden lg:inline-flex btn-primary text-sm !py-3 !px-6">
+            Request Demo
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+          <button class="lg:hidden text-white p-2" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed inset-0 top-0 bg-dark z-50 lg:hidden" id="mobile-menu" aria-hidden="true">
+      <div class="flex items-center justify-between h-20 px-4 sm:px-6">
+        <a href="" class="flex items-center">
+          <img src="assets/images/brand/logo-colored.svg" alt="Bankerise" class="h-8 site-logo" />
+        </a>
+        <button class="text-white p-2" id="mobile-menu-close" aria-label="Close menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="px-4 sm:px-6 py-6 space-y-2 overflow-y-auto max-h-[calc(100vh-80px)]">
+        <!-- Mobile: Product -->
+        <div class="mobile-accordion">
+          <button class="w-full flex items-center justify-between py-3 text-white font-semibold text-lg">
+            Product
+            <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300">
+            <div class="pl-4 pb-3 space-y-2">
+              <a href="product.html" class="flex items-center gap-2 py-2 text-gray-400 hover:text-pacific transition-colors">
+                <svg class="w-4 h-4 text-pacific flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                Bankerise Products
+              </a>
+              <div class="border-t border-white/10 my-2"></div>
+              <p class="text-xs text-gray-600 uppercase tracking-wider font-semibold pt-1 flex items-center gap-2">
+                <svg class="w-4 h-4 text-aqua flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                Solutions
+              </p>
+              <a href="solutions/retail.html" class="block py-2 pl-6 text-gray-400 hover:text-pacific transition-colors">Retail Banking</a>
+              <a href="solutions/corporate.html" class="block py-2 pl-6 text-gray-400 hover:text-pacific transition-colors">Corporate Banking</a>
+              <a href="solutions/micro.html" class="block py-2 pl-6 text-gray-400 hover:text-pacific transition-colors">Microfinance</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="use-cases.html" class="block py-3 text-white font-semibold text-lg">Use Cases</a>
+
+        <!-- Mobile: Partners -->
+        <div class="mobile-accordion">
+          <button class="w-full flex items-center justify-between py-3 text-white font-semibold text-lg">
+            Partners
+            <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="mobile-accordion-content overflow-hidden max-h-0 transition-all duration-300">
+            <div class="pl-4 pb-3 space-y-2">
+              <a href="partners.html" class="block py-2 text-gray-400 hover:text-pacific transition-colors">Why Become a Partner</a>
+              <a href="academy.html" class="block py-2 text-gray-400 hover:text-pacific transition-colors">Academy</a>
+
+              <a href="partners/apply.html" class="block py-2 text-pacific font-semibold hover:text-white transition-colors">Apply Now &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="about.html" class="block py-3 text-white font-semibold text-lg">About Us</a>
+        <a href="contact.html" class="block py-3 text-white font-semibold text-lg">Contact</a>
+
+        <div class="pt-6 space-y-3">
+          <a href="partners.html" class="flex items-center justify-center gap-2 w-full py-3 rounded-full border border-pacific/40 text-pacific font-semibold text-base hover:bg-pacific/10 transition-all">
+            Become a Partner          </a>
+          <a href="contact.html" class="btn-primary w-full justify-center text-base">
+            Request Demo
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="pt-32 pb-16 lg:pt-48 lg:pb-24 relative overflow-hidden">
+      <!-- Full-width Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img src="assets/images/academy-hero.jpg" alt="Academy Background" class="w-full h-full object-cover opacity-60" style="object-position: center 20%;" />
+        <div class="absolute inset-0 bg-dark/60 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-dark via-transparent to-dark opacity-80"></div>
+      </div>
+      
+      <div class="noise-overlay z-0"></div>
+      
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <p class="eyebrow text-pacific shadow-sm" data-animate>BANKERISE PARTNER ACADEMY</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight drop-shadow-xl" data-animate data-animate-delay="1">
+          Become a Bankerise pro<br>
+          <span class="gradient-text">Enrol. Download. Certify.</span>
+        </h1>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10 drop-shadow-md" data-animate data-animate-delay="2">
+          Three short tracks — <strong class="text-white">Become a Partner</strong>, <strong class="text-white">Use Bankerise</strong>,
+          <strong class="text-white">Sell Bankerise</strong>. Enrol in any course, download the playbook PDF, and mark it
+          complete when you're done. Your progress is saved on this device.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4" data-animate data-animate-delay="3">
+          <a href="#tracks" class="btn-primary shadow-xl shadow-pacific/20">Start Learning <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
+          <a href="partners/apply.html" class="btn-ghost backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/10">Apply to be a Partner</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRESS DASHBOARD -->
+    <section class="pb-12 mt-8 lg:-mt-12 relative z-20" id="tracks">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="academy-progress-card glass-card p-6 sm:p-8 flex flex-col lg:flex-row items-start lg:items-center gap-8 shadow-2xl border border-white/10 rounded-2xl bg-dark/80 backdrop-blur-xl">
+          
+          <div class="flex items-center gap-6 flex-shrink-0">
+            <div class="w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-br from-pacific to-aqua text-white font-extrabold text-3xl shadow-lg shadow-pacific/20">
+              <span id="academyProgressBig">0%</span>
+            </div>
+            <div>
+              <p class="text-sm uppercase tracking-widest text-pacific font-bold mb-1.5">Your Progress</p>
+              <p id="academyProgressText" class="text-lg font-medium text-white">0 of 9 courses completed</p>
+            </div>
+          </div>
+
+          <div class="flex-1 w-full mt-2 lg:mt-0">
+            <div class="academy-progress-bar" style="height: 12px;">
+              <span id="academyProgressBar"></span>
+            </div>
+          </div>
+
+          <button data-action="reset" class="text-sm font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-2 self-end lg:self-center bg-white/5 hover:bg-white/10 px-4 py-2.5 rounded-xl border border-white/5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            Reset Progress
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TRACKS + COURSES -->
+    <section class="pb-16 lg:pb-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+        
+                <div class="academy-track" data-track-id="partner" data-animate data-animate-delay="0">
+          <div class="academy-track__head">
+            <div class="academy-track__title">
+              <div class="academy-track__icon" style="background: #4DB8CD1a; color: #4DB8CD">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold tracking-widest" style="color: #4DB8CD">TRACK 01</p>
+                <h2 class="text-xl sm:text-2xl font-bold">Become a Partner</h2>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 flex-wrap justify-end">
+              <span class="text-xs text-gray-400" data-track-label>0 / 3</span>
+              <div class="academy-track__bar"><span data-track-bar></span></div>
+              <span class="academy-track__badge" data-track-badge>
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17l-3.5-3.5-1.42 1.41L9 19l11-11-1.41-1.41z"/></svg>
+                Track Certified
+              </span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-400 mb-5 max-w-3xl">Everything you need to apply, choose your tier, and onboard with Bankerise.</p>
+
+          <div class="grid md:grid-cols-3 gap-4">
+                          <article class="academy-course" data-course-id="p1" data-status="idle">
+                <div class="academy-course__head">
+                  <span class="academy-course__code">P-101</span>
+                  <span class="academy-course__check" data-check>✓</span>
+                </div>
+                <h3 class="academy-course__title">Bankerise Partner Program 101</h3>
+                <p class="academy-course__tag">Why partner with Bankerise, who the program is for, and the benefits at every tier.</p>
+                <div class="academy-course__meta">
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    45 min                  </span>
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+                    4 modules
+                  </span>
+                </div>
+                <div class="academy-course__actions">
+                  <button class="academy-btn academy-btn--enroll" data-action="enroll">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    Enrol
+                  </button>
+                  <button class="academy-btn academy-btn--download hidden" data-action="download">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    Download PDF
+                  </button>
+                  <button class="academy-btn academy-btn--complete hidden" data-action="complete">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    Mark as Complete
+                  </button>
+                </div>
+                <p class="academy-state-label" data-state-label>Not started</p>
+              </article>
+                          <article class="academy-course" data-course-id="p2" data-status="idle">
+                <div class="academy-course__head">
+                  <span class="academy-course__code">P-110</span>
+                  <span class="academy-course__check" data-check>✓</span>
+                </div>
+                <h3 class="academy-course__title">Choosing Your Tier — Bronze, Silver or Gold</h3>
+                <p class="academy-course__tag">A decision framework to pick the tier that matches your team size, market and ambition.</p>
+                <div class="academy-course__meta">
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    30 min                  </span>
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+                    3 modules
+                  </span>
+                </div>
+                <div class="academy-course__actions">
+                  <button class="academy-btn academy-btn--enroll" data-action="enroll">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    Enrol
+                  </button>
+                  <button class="academy-btn academy-btn--download hidden" data-action="download">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    Download PDF
+                  </button>
+                  <button class="academy-btn academy-btn--complete hidden" data-action="complete">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    Mark as Complete
+                  </button>
+                </div>
+                <p class="academy-state-label" data-state-label>Not started</p>
+              </article>
+                          <article class="academy-course" data-course-id="p3" data-status="idle">
+                <div class="academy-course__head">
+                  <span class="academy-course__code">P-120</span>
+                  <span class="academy-course__check" data-check>✓</span>
+                </div>
+                <h3 class="academy-course__title">Onboarding &amp; Legal Setup</h3>
+                <p class="academy-course__tag">From application to credentials — paperwork, MoU, NDAs and how long each step takes.</p>
+                <div class="academy-course__meta">
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    40 min                  </span>
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+                    4 modules
+                  </span>
+                </div>
+                <div class="academy-course__actions">
+                  <button class="academy-btn academy-btn--enroll" data-action="enroll">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    Enrol
+                  </button>
+                  <button class="academy-btn academy-btn--download hidden" data-action="download">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    Download PDF
+                  </button>
+                  <button class="academy-btn academy-btn--complete hidden" data-action="complete">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    Mark as Complete
+                  </button>
+                </div>
+                <p class="academy-state-label" data-state-label>Not started</p>
+              </article>
+                      </div>
+        </div>
+                <div class="academy-track" data-track-id="use" data-animate data-animate-delay="1">
+          <div class="academy-track__head">
+            <div class="academy-track__title">
+              <div class="academy-track__icon" style="background: #766CFF1a; color: #766CFF">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M16 3v1.5m0 15V21m-8-9h8m-8 4h8M7.5 7.5h9v9h-9v-9z"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold tracking-widest" style="color: #766CFF">TRACK 02</p>
+                <h2 class="text-xl sm:text-2xl font-bold">Use Bankerise</h2>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 flex-wrap justify-end">
+              <span class="text-xs text-gray-400" data-track-label>0 / 3</span>
+              <div class="academy-track__bar"><span data-track-bar></span></div>
+              <span class="academy-track__badge" data-track-badge>
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17l-3.5-3.5-1.42 1.41L9 19l11-11-1.41-1.41z"/></svg>
+                Track Certified
+              </span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-400 mb-5 max-w-3xl">Master the platform — architecture, configuration, APIs. The technical foundation.</p>
+
+          <div class="grid md:grid-cols-3 gap-4">
+                          <article class="academy-course" data-course-id="u1" data-status="idle">
+                <div class="academy-course__head">
+                  <span class="academy-course__code">U-201</span>
+                  <span class="academy-course__check" data-check>✓</span>
+                </div>
+                <h3 class="academy-course__title">Bankerise Platform Architecture</h3>
+                <p class="academy-course__tag">Modules, services, data flow — the mental model every consultant needs day one.</p>
+                <div class="academy-course__meta">
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    55 min                  </span>
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+                    5 modules
+                  </span>
+                </div>
+                <div class="academy-course__actions">
+                  <button class="academy-btn academy-btn--enroll" data-action="enroll">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    Enrol
+                  </button>
+                  <button class="academy-btn academy-btn--download hidden" data-action="download">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    Download PDF
+                  </button>
+                  <button class="academy-btn academy-btn--complete hidden" data-action="complete">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    Mark as Complete
+                  </button>
+                </div>
+                <p class="academy-state-label" data-state-label>Not started</p>
+              </article>
+                          <article class="academy-course" data-course-id="u2" data-status="idle">
+                <div class="academy-course__head">
+                  <span class="academy-course__code">U-210</span>
+                  <span class="academy-course__check" data-check>✓</span>
+                </div>
+                <h3 class="academy-course__title">Configuring the Banking Modules</h3>
+                <p class="academy-course__tag">Walk through configuration — products, rules, channels — without writing a line of code.</p>
+                <div class="academy-course__meta">
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    60 min                  </span>
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+                    6 modules
+                  </span>
+                </div>
+                <div class="academy-course__actions">
+                  <button class="academy-btn academy-btn--enroll" data-action="enroll">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    Enrol
+                  </button>
+                  <button class="academy-btn academy-btn--download hidden" data-action="download">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    Download PDF
+                  </button>
+                  <button class="academy-btn academy-btn--complete hidden" data-action="complete">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    Mark as Complete
+                  </button>
+                </div>
+                <p class="academy-state-label" data-state-label>Not started</p>
+              </article>
+                          <article class="academy-course" data-course-id="u3" data-status="idle">
+                <div class="academy-course__head">
+                  <span class="academy-course__code">U-220</span>
+                  <span class="academy-course__check" data-check>✓</span>
+                </div>
+                <h3 class="academy-course__title">API Integration Basics</h3>
+                <p class="academy-course__tag">Authenticate, call core APIs, subscribe to webhooks. The minimum viable integration.</p>
+                <div class="academy-course__meta">
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    50 min                  </span>
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+                    5 modules
+                  </span>
+                </div>
+                <div class="academy-course__actions">
+                  <button class="academy-btn academy-btn--enroll" data-action="enroll">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    Enrol
+                  </button>
+                  <button class="academy-btn academy-btn--download hidden" data-action="download">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    Download PDF
+                  </button>
+                  <button class="academy-btn academy-btn--complete hidden" data-action="complete">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    Mark as Complete
+                  </button>
+                </div>
+                <p class="academy-state-label" data-state-label>Not started</p>
+              </article>
+                      </div>
+        </div>
+                <div class="academy-track" data-track-id="sell" data-animate data-animate-delay="2">
+          <div class="academy-track__head">
+            <div class="academy-track__title">
+              <div class="academy-track__icon" style="background: #4799D11a; color: #4799D1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+              </div>
+              <div>
+                <p class="text-xs font-semibold tracking-widest" style="color: #4799D1">TRACK 03</p>
+                <h2 class="text-xl sm:text-2xl font-bold">Sell Bankerise</h2>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 flex-wrap justify-end">
+              <span class="text-xs text-gray-400" data-track-label>0 / 3</span>
+              <div class="academy-track__bar"><span data-track-bar></span></div>
+              <span class="academy-track__badge" data-track-badge>
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17l-3.5-3.5-1.42 1.41L9 19l11-11-1.41-1.41z"/></svg>
+                Track Certified
+              </span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-400 mb-5 max-w-3xl">Pitch, demo, handle objections, close. The playbook that turns interest into deals.</p>
+
+          <div class="grid md:grid-cols-3 gap-4">
+                          <article class="academy-course" data-course-id="s1" data-status="idle">
+                <div class="academy-course__head">
+                  <span class="academy-course__code">S-301</span>
+                  <span class="academy-course__check" data-check>✓</span>
+                </div>
+                <h3 class="academy-course__title">The Bankerise Pitch</h3>
+                <p class="academy-course__tag">A 3-minute story that lands with bank executives — from problem to proof.</p>
+                <div class="academy-course__meta">
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    35 min                  </span>
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+                    4 modules
+                  </span>
+                </div>
+                <div class="academy-course__actions">
+                  <button class="academy-btn academy-btn--enroll" data-action="enroll">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    Enrol
+                  </button>
+                  <button class="academy-btn academy-btn--download hidden" data-action="download">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    Download PDF
+                  </button>
+                  <button class="academy-btn academy-btn--complete hidden" data-action="complete">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    Mark as Complete
+                  </button>
+                </div>
+                <p class="academy-state-label" data-state-label>Not started</p>
+              </article>
+                          <article class="academy-course" data-course-id="s2" data-status="idle">
+                <div class="academy-course__head">
+                  <span class="academy-course__code">S-310</span>
+                  <span class="academy-course__check" data-check>✓</span>
+                </div>
+                <h3 class="academy-course__title">Live Demo Walkthrough</h3>
+                <p class="academy-course__tag">A 25-minute scripted demo covering onboarding, lending and analytics — in that order.</p>
+                <div class="academy-course__meta">
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    50 min                  </span>
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+                    5 modules
+                  </span>
+                </div>
+                <div class="academy-course__actions">
+                  <button class="academy-btn academy-btn--enroll" data-action="enroll">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    Enrol
+                  </button>
+                  <button class="academy-btn academy-btn--download hidden" data-action="download">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    Download PDF
+                  </button>
+                  <button class="academy-btn academy-btn--complete hidden" data-action="complete">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    Mark as Complete
+                  </button>
+                </div>
+                <p class="academy-state-label" data-state-label>Not started</p>
+              </article>
+                          <article class="academy-course" data-course-id="s3" data-status="idle">
+                <div class="academy-course__head">
+                  <span class="academy-course__code">S-320</span>
+                  <span class="academy-course__check" data-check>✓</span>
+                </div>
+                <h3 class="academy-course__title">Handling Objections &amp; Closing</h3>
+                <p class="academy-course__tag">The 8 objections you will hear in MEA and how to answer each in under 60 seconds.</p>
+                <div class="academy-course__meta">
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    40 min                  </span>
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+                    4 modules
+                  </span>
+                </div>
+                <div class="academy-course__actions">
+                  <button class="academy-btn academy-btn--enroll" data-action="enroll">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    Enrol
+                  </button>
+                  <button class="academy-btn academy-btn--download hidden" data-action="download">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    Download PDF
+                  </button>
+                  <button class="academy-btn academy-btn--complete hidden" data-action="complete">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    Mark as Complete
+                  </button>
+                </div>
+                <p class="academy-state-label" data-state-label>Not started</p>
+              </article>
+                      </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- CERTIFICATE -->
+    <section class="py-16 lg:py-20" id="certificate">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="academy-cert" id="academyCertificate">
+          <div class="academy-cert__seal">★</div>
+          <p class="eyebrow" style="color:#4ade80">CERTIFIED PARTNER</p>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-3 mb-3">Bankerise Partner Academy Diploma</h2>
+          <p class="text-gray-400 max-w-xl mx-auto">Complete every course in the three tracks to unlock your Bankerise Partner certification — proof you're ready to onboard, deliver, and sell.</p>
+          <p class="academy-cert__lock mt-4">
+            <span class="not-unlocked">🔒 Locked — finish all 9 courses to unlock</span>
+            <span class="is-unlocked-msg">★ Unlocked — ready to share with the partner team</span>
+          </p>
+          <div class="mt-6 flex flex-wrap justify-center gap-3">
+            <a href="partners/apply.html" class="btn-primary">Apply with my certificate <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></a>
+            <a href="contact.html" class="btn-ghost">Talk to a partner manager</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="py-12 bg-dark2">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-3 gap-6">
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-pacific/15 text-pacific flex items-center justify-center mx-auto mb-3 font-bold">1</div>
+          <h4 class="font-bold mb-1">Enrol</h4>
+          <p class="text-sm text-gray-400">Pick any course and click Enrol. No account, no login — just start.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-aqua/15 text-aqua flex items-center justify-center mx-auto mb-3 font-bold">2</div>
+          <h4 class="font-bold mb-1">Download the PDF</h4>
+          <p class="text-sm text-gray-400">A branded course playbook is generated and downloads to your device.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full bg-bell/15 text-bell flex items-center justify-center mx-auto mb-3 font-bold">3</div>
+          <h4 class="font-bold mb-1">Mark complete</h4>
+          <p class="text-sm text-gray-400">Once you've read it, mark the course complete to update your progress.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+    <footer class="bg-[#0A0C18] border-t border-white/5 pt-16 pb-8" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+        <!-- Column 1: Brand -->
+        <div>
+          <a href="" class="flex items-center mb-6">
+            <img src="assets/images/brand/logo-white.svg" alt="Bankerise" class="h-7 site-logo" />
+          </a>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">Experience Banking beyond Transactions. A product by Proxym Group.</p>
+          <div class="flex gap-4">
+            <a href="#" class="text-gray-500 hover:text-pacific transition-colors" aria-label="LinkedIn">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-pacific transition-colors" aria-label="X (Twitter)">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-pacific transition-colors" aria-label="GitHub">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Product & Solutions -->
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-6">Product</h4>
+          <ul class="space-y-3">
+            <li><a href="product.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Platform Overview</a></li>
+            <li><a href="use-cases.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Use Cases</a></li>
+          </ul>
+          <h4 class="text-white font-semibold text-sm mt-6 mb-4">Solutions</h4>
+          <ul class="space-y-3">
+            <li><a href="solutions/retail.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Retail Banking</a></li>
+            <li><a href="solutions/corporate.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Corporate Banking</a></li>
+            <li><a href="solutions/micro.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Microfinance</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Partners -->
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-6">Partners</h4>
+          <ul class="space-y-3">
+            <li><a href="partners.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Why Partner</a></li>
+            <li><a href="partners/apply.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Apply Now</a></li>
+            <li><a href="academy.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Academy</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-6">Company</h4>
+          <ul class="space-y-3">
+            <li><a href="about.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">About Us</a></li>
+            <li><a href="contact.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Contact</a></li>
+            <li><a href="privacy.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Privacy Policy</a></li>
+            <li><a href="terms.html" class="text-gray-500 text-sm hover:text-pacific transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-gray-600 text-sm">&copy; 2026 Bankerise&reg; by Proxym Group. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="privacy.html" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Privacy</a>
+          <a href="terms.html" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Terms</a>
+          <a href="privacy.html#cookies" class="text-gray-600 text-sm hover:text-gray-400 transition-colors">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot Component -->
+      <link rel="stylesheet" href="assets/css/components/chatbot.css?v=1778277780" />
+  
+<!-- Chatbot Floating Trigger Button & Tooltip -->
+<div class="chatbot-trigger-container">
+  <div id="chatbotTooltip" class="chatbot-tooltip">
+    <button type="button" class="chatbot-tooltip-close" id="chatbotTooltipClose" aria-label="Dismiss">&times;</button>
+    <span class="chatbot-tooltip-text">Hello 👋 Need any help?</span>
+  </div>
+  <div id="chatbotTrigger" class="chatbot-trigger" role="button" aria-label="Open Chat Assistant">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="bot-svg-icon">
+      <!-- Antenna -->
+      <line x1="50" y1="18" x2="50" y2="30" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="50" cy="12" r="6" fill="currentColor"/>
+      <!-- Head / Speech Bubble -->
+      <path d="M 15 55 C 15 30, 85 30, 85 55 C 85 75, 65 85, 50 85 C 45 85, 40 88, 32 95 L 32 82 C 20 78, 15 68, 15 55 Z" fill="currentColor"/>
+      <!-- Visor -->
+      <rect x="28" y="42" width="44" height="22" rx="11" fill="#0A0C18"/>
+      <!-- Eyes -->
+      <circle cx="40" cy="53" r="4.5" fill="#00ffff"/>
+      <circle cx="60" cy="53" r="4.5" fill="#00ffff"/>
+    </svg>
+  </div>
+</div>
+
+<!-- Chatbot Window -->
+<div id="chatbotWindow" class="chatbot-window shadow-2xl">
+  <!-- Header -->
+  <div class="chatbot-header">
+    <div class="chatbot-avatar">
+      <img src="assets/images/brand/icon-mark.svg" alt="Bankerise Logo" class="chatbot-header-logo" />
+    </div>
+    <div class="chatbot-header-info">
+      <h3>Bankerise Bot</h3>
+      <p><span class="status-dot"></span> Online & Ready</p>
+    </div>
+  </div>
+
+  <!-- Messages Container -->
+  <div id="chatbotMessages" class="chatbot-messages">
+    <!-- Messages will be injected here via JS -->
+    <div id="chatbotScrollAnchor"></div>
+  </div>
+
+  <!-- Quick Replies (dynamically populated) -->
+  <div style="padding: 0 1.5rem 0.5rem 1.5rem;">
+    <div id="quickReplies" class="quick-replies"></div>
+  </div>
+
+  <!-- Input Area -->
+  <div class="chatbot-input">
+    <input type="text" id="chatbotInput" placeholder="Ask about solutions, partners, or vision..." autocomplete="off" />
+    <button id="chatbotSend" class="chatbot-send" aria-label="Send Message">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path fill="currentColor" d="M3.4 20.4 21.5 12.8c.8-.3.8-1.4 0-1.7L3.4 3.6c-.7-.3-1.4.4-1.2 1.1L4 11c.1.3.3.5.6.6l7.8 1c.3 0 .3.5 0 .5l-7.8 1c-.3.1-.5.3-.6.6l-1.8 6.3c-.2.7.5 1.4 1.2 1.1z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+  <script src="assets/js/components/chatbot.js?v=1778277780" defer></script>
+  
+  <script src="assets/js/shared.js?v=20260504h"></script>
+  <script src="assets/js/pages/academy.js?v=20260504h"></script>
+</body>
+</html>

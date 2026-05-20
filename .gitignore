@@ -1,4 +1,3 @@
-/dist/
 /uploads/avatars/*
 !/uploads/avatars/.gitkeep
 /config/mail.php

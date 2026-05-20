@@ -1,0 +1,321 @@
+/* ============================================
+   Bankerise — Partners Preview Section
+   Glassmorphism spotlight cards + stagger reveal
+   ============================================ */
+
+/* ── Section ────────────────────────────────── */
+.pp-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 8rem 1.5rem;
+  background: #080D1A;
+}
+
+/* Background orb */
+.pp-orb {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-25%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse at center, rgba(69,212,197,0.1), transparent 70%);
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pp-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Header ─────────────────────────────────── */
+.pp-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.pp-header.visible { opacity: 1; transform: translateY(0); }
+
+.pp-eyebrow {
+  color: #45D4C5;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.pp-title {
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 4.5vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Shimmer underline */
+.pp-shimmer {
+  width: 80px;
+  height: 3px;
+  border-radius: 9999px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(90deg, #45D4C5, #2B8FD8, #45D4C5);
+  background-size: 200% 100%;
+  animation: pp-shimmer 2s linear infinite;
+}
+@keyframes pp-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.pp-subtitle {
+  color: #94A3B8;
+  font-size: 16px;
+}
+
+/* ── Cards Grid ─────────────────────────────── */
+.pp-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+@media(min-width: 768px) {
+  .pp-cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── Card ───────────────────────────────────── */
+.pp-card {
+  position: relative;
+  background: #0D1B2A;
+  border: 1px solid #1E3A5F;
+  border-radius: 20px;
+  padding: 2rem;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.35s ease-out, box-shadow 0.35s ease-out, border-color 0.35s ease-out;
+  /* Scroll reveal */
+  opacity: 0;
+  transform: translateY(40px);
+}
+.pp-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.35s ease-out, border-color 0.35s ease-out;
+}
+.pp-card:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35), 0 0 40px rgba(69,212,197,0.06);
+  border-color: transparent;
+}
+
+/* Gradient border */
+.pp-card-border {
+  position: absolute;
+  inset: -1px;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(135deg, #45D4C5, #2B8FD8);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.pp-card:hover .pp-card-border { opacity: 1; }
+
+/* Spotlight */
+.pp-card-spotlight {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.pp-card:hover .pp-card-spotlight { opacity: 1; }
+
+/* Diagonal grid */
+.pp-card-grid {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.03) 0px,
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 12px
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.pp-card:hover .pp-card-grid { opacity: 1; }
+
+/* ── Card Inner Elements ────────────────────── */
+.pp-number {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  font-size: 13px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #45D4C5, #2B8FD8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  z-index: 2;
+}
+
+.pp-icon-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(69,212,197,0.12), rgba(43,143,216,0.12));
+  border: 1px solid rgba(69,212,197,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  z-index: 2;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.pp-card:hover .pp-icon-wrap {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 12px rgba(69,212,197,0.5));
+}
+.pp-icon-wrap svg {
+  width: 36px;
+  height: 36px;
+  color: #45D4C5;
+}
+
+.pp-card-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 0.75rem;
+  z-index: 2;
+}
+
+.pp-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 1.25rem;
+  z-index: 2;
+}
+.pp-tag {
+  color: #94A3B8;
+  font-size: 11px;
+  font-weight: 500;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 9999px;
+  padding: 3px 12px;
+}
+
+.pp-separator {
+  width: 64px;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #45D4C5, #2B8FD8);
+  margin: 0 auto 1.25rem;
+  z-index: 2;
+}
+
+.pp-card-desc {
+  color: #94A3B8;
+  font-size: 14px;
+  line-height: 1.65;
+  z-index: 2;
+  flex: 1;
+}
+
+.pp-card-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 1.5rem;
+  z-index: 2;
+}
+.pp-card-cta-text {
+  font-size: 13px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #45D4C5, #2B8FD8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.pp-card-cta svg {
+  width: 16px;
+  height: 16px;
+  stroke: #45D4C5;
+  transition: transform 0.3s ease;
+}
+.pp-card:hover .pp-card-cta svg { transform: translateX(4px); }
+
+/* ── Bottom CTA ─────────────────────────────── */
+.pp-bottom {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+}
+.pp-bottom.visible { opacity: 1; transform: translateY(0); }
+
+.pp-bottom-text {
+  color: #fff;
+  font-weight: 600;
+  font-size: 17px;
+  margin-bottom: 1rem;
+}
+.pp-bottom-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #45D4C5, #2B8FD8);
+  border: none;
+  border-radius: 9999px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(69,212,197,0.2);
+  transition: all 0.2s ease;
+}
+.pp-bottom-btn:hover {
+  transform: scale(1.04);
+  filter: brightness(1.1);
+  box-shadow: 0 12px 35px rgba(69,212,197,0.3);
+}
+.pp-bottom-btn svg {
+  width: 16px; height: 16px;
+  transition: transform 0.3s;
+}
+.pp-bottom-btn:hover svg { transform: translateX(3px); }
