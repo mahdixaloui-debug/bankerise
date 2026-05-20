@@ -3,6 +3,7 @@
    API: Partner Status Change (Accept/Stall/Decline)
    ============================================ */
 require_once __DIR__ . '/../config/auth.php';
+require_once __DIR__ . '/../config/smtp.php';
 
 requireMethod('PUT');
 if (!isAdmin()) jsonResponse(['error' => 'Forbidden'], 403);
@@ -79,9 +80,23 @@ notifyPartner(
     '#profile'
 );
 
+// Send the welcome email with the temporary password
+$emailSent = false;
+$emailError = null;
+if ($autoCreds) {
+    $r = sendPartnerWelcomeEmail($autoCreds['email'], $partner['name'] ?? '', $autoCreds['password']);
+    $emailSent  = $r['success'];
+    $emailError = $r['success'] ? null : $r['error'];
+    logActivity($_SESSION['user_id'], $emailSent ? 'email_sent' : 'email_failed',
+        ($emailSent ? 'Welcome email sent to ' : 'Welcome email FAILED for ') . $autoCreds['email'],
+        'partner', $id);
+}
+
 jsonResponse([
-    'success'    => true,
-    'status'     => $status,
-    'progress'   => $progress,
-    'login'      => $autoCreds, // {email, password} when a new partner account was just created; null otherwise
+    'success'     => true,
+    'status'      => $status,
+    'progress'    => $progress,
+    'login'       => $autoCreds,
+    'email_sent'  => $emailSent,
+    'email_error' => $emailError,
 ]);

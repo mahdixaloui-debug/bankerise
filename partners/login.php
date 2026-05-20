@@ -752,7 +752,7 @@ if (isLoggedIn()) {
             submitBtn.classList.add('loading');
 
             // Real login via API
-            fetch('/bankerise/api/auth.php', {
+            fetch('/api/auth.php', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ email: email, password: password })

@@ -3,7 +3,7 @@
  * Bankerise Static Site Builder
  * 
  * Run this on your local XAMPP to convert all PHP pages to static HTML.
- * Usage: Open http://localhost/bankerise/build.php in your browser
+ * Usage: Open http://localhost/build.php in your browser
  */
 
 set_time_limit(120);

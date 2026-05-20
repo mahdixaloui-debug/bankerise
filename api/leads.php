@@ -18,6 +18,42 @@ if ($method === 'GET' && isAdmin() && !empty($_GET['partner_id'])) {
     jsonResponse(['leads' => $leads, 'total' => count($leads)]);
 }
 
+// ─── PUT — Admin updates a lead's status (must run before the partner_id guard) ──
+if ($method === 'PUT') {
+    if (!isAdmin()) jsonResponse(['error' => 'Forbidden'], 403);
+
+    $d = getJsonBody();
+    $id = (int)($d['id'] ?? 0);
+    $status = trim($d['status'] ?? '');
+    $valid = ['Pending', 'Approved', 'Rejected'];
+    if (!$id || !in_array($status, $valid, true)) {
+        jsonResponse(['error' => 'Lead id and a valid status (Pending|Approved|Rejected) are required.'], 400);
+    }
+
+    $stmt = $db->prepare('SELECT l.*, u.id AS user_id FROM leads l LEFT JOIN users u ON u.partner_id = l.partner_id AND u.role = "partner" WHERE l.id = ?');
+    $stmt->execute([$id]);
+    $lead = $stmt->fetch();
+    if (!$lead) jsonResponse(['error' => 'Lead not found.'], 404);
+
+    $db->prepare('UPDATE leads SET status = ? WHERE id = ?')->execute([$status, $id]);
+
+    $actionMap = ['Approved' => 'lead_approve', 'Rejected' => 'lead_reject', 'Pending' => 'lead_reset'];
+    logActivity($user['id'], $actionMap[$status], "Lead #{$id} ({$lead['company_name']}) marked as {$status}", 'lead', $id);
+
+    if (!empty($lead['user_id'])) {
+        $typeMap = ['Approved' => 'success', 'Rejected' => 'warning', 'Pending' => 'info'];
+        notify(
+            (int)$lead['user_id'],
+            'Lead ' . strtolower($status) . ': ' . $lead['company_name'],
+            'An admin updated the status of this lead.',
+            $typeMap[$status] ?? 'info',
+            '#leads'
+        );
+    }
+
+    jsonResponse(['success' => true, 'id' => $id, 'status' => $status]);
+}
+
 $partnerId = $user['partner_id'] ?? null;
 if (!$partnerId) jsonResponse(['error' => 'No partner record linked to this user.'], 404);
 

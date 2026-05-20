@@ -89,6 +89,45 @@ include '../includes/head.php';
                 <p class="form-error"></p>
               </div>
 
+              <!-- Tier selection -->
+              <div class="mb-8">
+                <label class="block text-sm font-medium text-gray-300 mb-3">Requested Partner Tier *</label>
+                <p class="text-xs text-gray-500 mb-4">Pick the tier that best fits your goals. The final tier is confirmed by our team during review.</p>
+                <div class="grid sm:grid-cols-3 gap-3">
+                  <label class="tier-card cursor-pointer">
+                    <input type="radio" name="tier" value="Bronze" class="hidden peer" data-validate="radio">
+                    <div class="p-4 rounded-xl border-2 border-white/10 peer-checked:border-orange-400 peer-checked:bg-orange-400/10 hover:border-white/25 transition-all">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span class="w-3 h-3 rounded-full" style="background:#CD7F32"></span>
+                        <span class="font-bold text-white">Bronze</span>
+                      </div>
+                      <p class="text-[11px] text-gray-400 leading-relaxed">Entry tier. Standard commission, basic enablement.</p>
+                    </div>
+                  </label>
+                  <label class="tier-card cursor-pointer">
+                    <input type="radio" name="tier" value="Silver" class="hidden peer" data-validate="radio">
+                    <div class="p-4 rounded-xl border-2 border-white/10 peer-checked:border-gray-300 peer-checked:bg-gray-300/10 hover:border-white/25 transition-all">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span class="w-3 h-3 rounded-full" style="background:#C0C0C0"></span>
+                        <span class="font-bold text-white">Silver</span>
+                      </div>
+                      <p class="text-[11px] text-gray-400 leading-relaxed">Higher commission, co-marketing, dedicated manager.</p>
+                    </div>
+                  </label>
+                  <label class="tier-card cursor-pointer">
+                    <input type="radio" name="tier" value="Gold" class="hidden peer" data-validate="radio">
+                    <div class="p-4 rounded-xl border-2 border-white/10 peer-checked:border-yellow-400 peer-checked:bg-yellow-400/10 hover:border-white/25 transition-all">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span class="w-3 h-3 rounded-full" style="background:#FFD700"></span>
+                        <span class="font-bold text-white">Gold</span>
+                      </div>
+                      <p class="text-[11px] text-gray-400 leading-relaxed">Top tier. Best commission, regional exclusivity, lead sharing.</p>
+                    </div>
+                  </label>
+                </div>
+                <p class="form-error mt-2"></p>
+              </div>
+
               <div class="border-t border-white/10 my-8"></div>
 
               <!-- Contact Info -->
@@ -194,18 +233,24 @@ include '../includes/head.php';
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       initFormValidation('#partner-form', function(form) {
+        var tierEl = form.querySelector('input[name="tier"]:checked');
+        if(!tierEl){
+          alert('Please pick a partner tier (Bronze, Silver or Gold).');
+          return;
+        }
         var payload = {
           company_name: form.querySelector('#company-name').value,
           website: form.querySelector('#website').value,
           country: form.querySelector('#country').value,
           company_size: form.querySelector('#company-size').value,
           partner_type: form.querySelector('#partner-type').value,
+          requested_tier: tierEl.value,
           contact_name: form.querySelector('#contact-name').value,
           contact_email: form.querySelector('#contact-email').value,
           contact_phone: form.querySelector('#contact-phone').value,
           message: form.querySelector('#message').value
         };
-        fetch('/bankerise/api/applications.php', {
+        fetch('/api/applications.php', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(payload)

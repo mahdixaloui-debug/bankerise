@@ -334,6 +334,9 @@ if ($initials === '') $initials = 'P';
     .chat-msg.out{align-self:flex-end;background:linear-gradient(135deg,#4DB8CD,#766CFF);color:#fff;border-bottom-right-radius:4px}
     .chat-msg.out .t{color:rgba(255,255,255,0.75);text-align:right}
     .chat-msg.in{align-self:flex-start;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.06);color:#E5E7EB;border-bottom-left-radius:4px}
+    .chat-msg .msg-del{position:absolute;top:-8px;right:-8px;width:22px;height:22px;border-radius:50%;background:#EF4444;color:#fff;border:2px solid #0D0F1C;display:none;align-items:center;justify-content:center;cursor:pointer;font-size:12px;line-height:1;padding:0}
+    .chat-msg.out:hover .msg-del{display:flex}
+    .chat-msg .msg-del:hover{background:#DC2626;transform:scale(1.1)}
     .chat-msg-empty{text-align:center;color:#64748B;font-size:12px;padding:32px 16px}
     .chat-day-sep{align-self:center;font-size:10px;color:#475569;padding:4px 10px;background:rgba(255,255,255,0.03);border-radius:8px;text-transform:uppercase;letter-spacing:.1em}
 
@@ -602,12 +605,12 @@ if ($initials === '') $initials = 'P';
 
   <div class="sidebar-user">
     <div class="flex items-center gap-3">
-      <div class="w-9 h-9 rounded-full bg-gradient-to-br from-pacific to-aqua flex items-center justify-center text-xs font-bold shadow-lg shadow-pacific/30"><?= htmlspecialchars($initials) ?></div>
+      <div id="sidebar-avatar" class="w-9 h-9 rounded-full bg-gradient-to-br from-pacific to-aqua flex items-center justify-center text-xs font-bold shadow-lg shadow-pacific/30 overflow-hidden"<?php if(!empty($partner['avatar'])): ?> style="background-image:url('/uploads/avatars/<?= htmlspecialchars($partner['avatar']) ?>');background-size:cover;background-position:center;color:transparent"<?php endif; ?>><?= htmlspecialchars($initials) ?></div>
       <div class="flex-1 min-w-0">
         <p class="text-xs font-semibold text-white truncate"><?= htmlspecialchars($displayName) ?></p>
         <p class="text-[10px] text-pacific font-semibold tracking-wider uppercase"><?= htmlspecialchars($displayTier) ?> Partner</p>
       </div>
-      <a href="javascript:void(0)" onclick="fetch('/bankerise/api/auth.php',{method:'DELETE'}).then(function(){window.location.href='login.php'}).catch(function(){window.location.href='login.php'})" class="text-gray-500 hover:text-red-400 transition-colors" title="Sign out">
+      <a href="javascript:void(0)" onclick="fetch('/api/auth.php',{method:'DELETE'}).then(function(){window.location.href='login.php'}).catch(function(){window.location.href='login.php'})" class="text-gray-500 hover:text-red-400 transition-colors" title="Sign out">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
       </a>
     </div>
@@ -874,10 +877,24 @@ if ($initials === '') $initials = 'P';
       <!-- Summary card -->
       <div class="stat-card">
         <div class="flex items-center gap-4 mb-5">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-pacific to-aqua flex items-center justify-center text-xl font-extrabold shadow-lg shadow-pacific/30"><?= htmlspecialchars($initials) ?></div>
-          <div>
+          <div class="relative group">
+            <div id="prof-avatar" class="w-16 h-16 rounded-2xl bg-gradient-to-br from-pacific to-aqua flex items-center justify-center text-xl font-extrabold shadow-lg shadow-pacific/30 overflow-hidden cursor-pointer"<?php if(!empty($partner['avatar'])): ?> style="background-image:url('/uploads/avatars/<?= htmlspecialchars($partner['avatar']) ?>');background-size:cover;background-position:center;color:transparent"<?php endif; ?> onclick="document.getElementById('avatar-input').click()" title="Click to change photo"><?= htmlspecialchars($initials) ?></div>
+            <button type="button" onclick="document.getElementById('avatar-input').click()" class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-pacific hover:bg-aqua flex items-center justify-center shadow-lg border-2 border-dark2 transition-colors" title="Upload photo">
+              <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </button>
+            <input type="file" id="avatar-input" accept="image/png,image/jpeg,image/webp,image/gif" class="hidden" onchange="uploadAvatar(this)">
+          </div>
+          <div class="flex-1 min-w-0">
             <p class="text-base font-bold text-white" id="prof-sum-name"><?= htmlspecialchars($displayName) ?></p>
             <p class="text-[11px] text-pacific font-semibold tracking-wider uppercase"><?= htmlspecialchars($displayTier) ?> Partner</p>
+            <div class="flex items-center gap-2 mt-1">
+              <button type="button" class="text-[10px] text-pacific hover:underline" onclick="document.getElementById('avatar-input').click()">Change photo</button>
+              <?php if(!empty($partner['avatar'])): ?>
+              <span class="text-gray-600">·</span>
+              <button type="button" id="avatar-remove-btn" class="text-[10px] text-red-400 hover:underline" onclick="removeAvatar()">Remove</button>
+              <?php endif; ?>
+              <span id="avatar-msg" class="text-[10px] text-gray-500"></span>
+            </div>
           </div>
         </div>
         <div class="space-y-3 text-xs">
@@ -1086,6 +1103,25 @@ if ($initials === '') $initials = 'P';
   </div>
 </div>
 
+<!-- ═══════════════════════════════════════════════
+     LEAD DETAILS MODAL (View)
+     ═══════════════════════════════════════════════ -->
+<div class="modal-overlay" id="lead-view-modal">
+  <div class="modal-box">
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <h2 class="text-lg font-bold" id="lv-company">Lead Details</h2>
+        <p class="text-xs text-gray-500" id="lv-sub">—</p>
+      </div>
+      <button onclick="closeLeadView()" class="text-gray-500 hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    </div>
+    <div id="lv-body" class="space-y-5"></div>
+    <div class="flex justify-end pt-5">
+      <button class="btn-p" onclick="closeLeadView()">Close</button>
+    </div>
+  </div>
+</div>
+
 <!-- Chat Floating Trigger -->
 <button class="chat-widget" id="chat-fab" title="Messages" onclick="openChat()" aria-label="Open messages">
   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
@@ -1143,7 +1179,7 @@ if ($initials === '') $initials = 'P';
 
 /* ── Section Navigation ──────────────────────── */
 var titles = {leads:'Reserved Leads',deals:'Deals in Progress',signed:'Signed Deals',commissions:'Commissions',documents:'Documents & Resources',features:'Key Features',support:'Support',profile:'My Profile',reports:'Reports'};
-var API = '/bankerise/api';
+var API = '/api';
 
 /* ── Sidebar toggle (mobile) ─────────────────── */
 window.toggleSidebar = function(){
@@ -1553,13 +1589,53 @@ window.viewLead = function(id){
     .then(function(d){
       var l = (d.leads||[]).find(function(x){return x.id==id});
       if(!l) return;
-      alert(l.company_name + ' · ' + (l.contact_first_name||'')+' '+(l.contact_last_name||'')
-        + '\nEmail: '+(l.contact_email||'—')
-        + '\nPhone: '+(l.contact_phone||'—')
-        + '\nBudget: '+(l.budget_range||'—')+' · Timeline: '+(l.timeline||'—')
-        + '\nStatus: '+l.status
-        + (l.notes ? '\n\nNotes: '+l.notes : ''));
+      var fullName = ((l.contact_first_name||'')+' '+(l.contact_last_name||'')).trim() || '—';
+      document.getElementById('lv-company').textContent = l.company_name || '—';
+      document.getElementById('lv-sub').innerHTML = esc(fullName) + ' · ' + badgeForStatus(l.status);
+
+      function row(label, val){
+        return '<div class="p-3 rounded-lg bg-white/3 border border-white/5">'
+             + '<p class="text-[10px] text-gray-500 uppercase tracking-wider mb-1">'+esc(label)+'</p>'
+             + '<p class="text-xs font-semibold text-white break-words">'+(val ? esc(val) : '<span class="text-gray-500">—</span>')+'</p>'
+             + '</div>';
+      }
+      function section(title, rows){
+        return '<div><h3 class="text-xs font-bold text-pacific uppercase tracking-wider mb-2">'+esc(title)+'</h3>'
+             + '<div class="grid sm:grid-cols-2 gap-2">'+rows.join('')+'</div></div>';
+      }
+
+      var html = '';
+      html += section('Company', [
+        row('Company Name', l.company_name),
+        row('Industry', l.industry),
+        row('Company Size', l.company_size),
+        row('Website', l.website),
+        row('Country', l.country)
+      ]);
+      html += section('Contact', [
+        row('Full Name', fullName),
+        row('Job Title', l.contact_title),
+        row('Email', l.contact_email),
+        row('Phone', l.contact_phone),
+        row('Decision Maker', (l.decision_maker==1||l.decision_maker===true||l.decision_maker==='1') ? 'Yes' : 'No')
+      ]);
+      html += section('Project', [
+        row('Project Types', l.project_types),
+        row('Budget Range', l.budget_range),
+        row('Timeline', l.timeline),
+        row('Status', l.status),
+        row('Created', fmtDate(l.created_at))
+      ]);
+      if(l.notes){
+        html += '<div><h3 class="text-xs font-bold text-pacific uppercase tracking-wider mb-2">Notes</h3>'
+              + '<div class="p-3 rounded-lg bg-white/3 border border-white/5 text-xs text-gray-200 whitespace-pre-wrap">'+esc(l.notes)+'</div></div>';
+      }
+      document.getElementById('lv-body').innerHTML = html;
+      document.getElementById('lead-view-modal').classList.add('open');
     });
+};
+window.closeLeadView = function(){
+  document.getElementById('lead-view-modal').classList.remove('open');
 };
 
 /* ── Lead modal submit → POST ───────────────── */
@@ -1653,6 +1729,74 @@ window.saveProfile = function(){
   })
   .catch(function(){ msg.textContent = 'Network error.'; msg.style.color = '#EF4444'; });
 };
+
+window.uploadAvatar = function(input){
+  if(!input.files || !input.files[0]) return;
+  var file = input.files[0];
+  var msg = document.getElementById('avatar-msg');
+  if(file.size > 4*1024*1024){
+    msg.textContent = 'Max 4 MB'; msg.style.color = '#EF4444';
+    input.value = ''; return;
+  }
+  msg.textContent = 'Uploading…'; msg.style.color = '#94A3B8';
+  var fd = new FormData();
+  fd.append('photo', file);
+  fetch(API+'/profile-photo.php',{ method:'POST', credentials:'same-origin', body: fd })
+    .then(function(r){return r.json().then(function(d){return {ok:r.ok,data:d}})})
+    .then(function(res){
+      if(!res.ok){ msg.textContent = res.data.error || 'Upload failed.'; msg.style.color = '#EF4444'; return; }
+      var url = res.data.url + '?t=' + Date.now();
+      applyAvatar(url);
+      msg.textContent = 'Updated ✓'; msg.style.color = '#22C55E';
+      setTimeout(function(){ msg.textContent=''; }, 2500);
+      if(!document.getElementById('avatar-remove-btn')){
+        var btn = document.createElement('button');
+        btn.id = 'avatar-remove-btn';
+        btn.type = 'button';
+        btn.className = 'text-[10px] text-red-400 hover:underline';
+        btn.textContent = 'Remove';
+        btn.onclick = removeAvatar;
+        var sep = document.createElement('span');
+        sep.className = 'text-gray-600'; sep.textContent = '·';
+        msg.parentNode.insertBefore(sep, msg);
+        msg.parentNode.insertBefore(btn, msg);
+      }
+    })
+    .catch(function(){ msg.textContent = 'Network error.'; msg.style.color = '#EF4444'; })
+    .finally(function(){ input.value = ''; });
+};
+
+window.removeAvatar = function(){
+  if(!confirm('Remove your profile photo?')) return;
+  fetch(API+'/profile-photo.php',{ method:'DELETE', credentials:'same-origin' })
+    .then(function(r){return r.json()})
+    .then(function(d){
+      if(d.error){ alert(d.error); return; }
+      applyAvatar(null);
+      var btn = document.getElementById('avatar-remove-btn');
+      if(btn){
+        var prev = btn.previousSibling;
+        if(prev && prev.textContent === '·') prev.remove();
+        btn.remove();
+      }
+    });
+};
+
+function applyAvatar(url){
+  ['prof-avatar','sidebar-avatar'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    if(url){
+      el.style.backgroundImage = "url('"+url+"')";
+      el.style.backgroundSize = 'cover';
+      el.style.backgroundPosition = 'center';
+      el.style.color = 'transparent';
+    } else {
+      el.style.backgroundImage = '';
+      el.style.color = '';
+    }
+  });
+}
 
 /* ── Reports ────────────────────────────────── */
 var reportsLoaded = false;
@@ -1864,12 +2008,29 @@ function renderMessages(messages){
     var d = dayLabel(m.created_at);
     if(d !== lastDay){ html += '<div class="chat-day-sep">'+esc(d)+'</div>'; lastDay = d; }
     var cls = m.sender==='partner' ? 'out' : 'in';
-    html += '<div class="chat-msg '+cls+'">'+esc(m.body).replace(/\n/g,'<br>')
-         + '<span class="t">'+esc(fmtTime(m.created_at))+'</span></div>';
+    var delBtn = m.sender==='partner'
+      ? '<button class="msg-del" title="Delete message" onclick="deleteMessage('+m.id+',event)"><svg width="10" height="10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"/></svg></button>'
+      : '';
+    html += '<div class="chat-msg '+cls+'" data-msg-id="'+m.id+'">'+esc(m.body).replace(/\n/g,'<br>')
+         + '<span class="t">'+esc(fmtTime(m.created_at))+'</span>'+delBtn+'</div>';
   });
   box.innerHTML = html;
   box.scrollTop = box.scrollHeight;
 }
+
+window.deleteMessage = function(id, ev){
+  if(ev){ ev.stopPropagation(); }
+  if(!confirm('Delete this message? This cannot be undone.')) return;
+  fetch(API+'/messages.php?id='+id,{method:'DELETE', credentials:'same-origin'})
+    .then(function(r){return r.json()})
+    .then(function(d){
+      if(d.error){ alert(d.error); return; }
+      var el = document.querySelector('.chat-msg[data-msg-id="'+id+'"]');
+      if(el) el.remove();
+      if(chatState.activeLeadId) loadThreads(true);
+    })
+    .catch(function(){ alert('Failed to delete message.'); });
+};
 
 window.chatKey = function(e){
   var input = document.getElementById('chat-input');

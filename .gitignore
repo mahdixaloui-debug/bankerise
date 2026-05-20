@@ -1,29 +1,4 @@
-# Dependencies
-/vendor/
-/node_modules/
-
-# Local config / secrets
-.env
-.env.local
-config/database.local.php
-
-# Build output
 /dist/
-
-# Editor / OS
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
-*.swp
-*.swo
-
-# Logs
-*.log
-/logs/
-
-# Local uploads
-/uploads/
-
-# PHP cache
-*.cache
+/uploads/avatars/*
+!/uploads/avatars/.gitkeep
+/config/mail.php

@@ -1,7 +1,7 @@
 <?php
 /* ============================================
    Bankerise — Database Installer
-   Run once: http://localhost/bankerise/config/install.php
+   Run once: http://localhost/config/install.php
    ============================================ */
 
 require_once __DIR__ . '/database.php';
@@ -47,13 +47,8 @@ try {
     $db = getDB();
 
     $adminHash = password_hash('bankerise2026', PASSWORD_DEFAULT);
-    $partnerHash = password_hash('partner123', PASSWORD_DEFAULT);
-
     $db->prepare("UPDATE users SET password_hash = ? WHERE email = 'admin@bankerise.com'")->execute([$adminHash]);
-    $db->prepare("UPDATE users SET password_hash = ? WHERE email = 'amir@dbfinance.uz'")->execute([$partnerHash]);
-    $db->prepare("UPDATE users SET password_hash = ? WHERE email = 'sophie@lyoncredit.fr'")->execute([$partnerHash]);
-
-    $messages[] = '✅ User passwords hashed securely.';
+    $messages[] = '✅ Admin password hashed securely.';
 
     // 6. Verify
     $count = $db->query('SELECT COUNT(*) FROM partners')->fetchColumn();
@@ -108,10 +103,9 @@ try {
             <div class="creds">
                 <h3>🔐 Default Login Credentials</h3>
                 <p><strong>Admin:</strong> admin@bankerise.com / bankerise2026</p>
-                <p><strong>Partner (Amir):</strong> amir@dbfinance.uz / partner123</p>
-                <p><strong>Partner (Sophie):</strong> sophie@lyoncredit.fr / partner123</p>
+                <p style="opacity:0.75;font-size:12px;margin-top:8px">No partner accounts are seeded. Use the public Apply form, approve from the admin backoffice, then log in as the new partner.</p>
             </div>
-            <a href="/bankerise/partners/login.php" class="btn">Go to Login →</a>
+            <a href="/partners/login.php" class="btn">Go to Login →</a>
         <?php else: ?>
             <p style="color:#EF4444;margin-top:16px;font-size:13px">Please fix the errors above and refresh this page.</p>
         <?php endif; ?>

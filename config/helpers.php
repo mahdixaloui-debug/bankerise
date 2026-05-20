@@ -74,7 +74,7 @@ function requireMethod($methods) {
  * Get base URL for the project
  */
 function baseUrl() {
-    return '/bankerise';
+    return '';
 }
 
 /**

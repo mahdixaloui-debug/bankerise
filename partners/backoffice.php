@@ -1041,7 +1041,7 @@ var partners = [];
 
 // Load partners from DB
 function loadPartners(callback) {
-  fetch('/bankerise/api/partners.php')
+  fetch('/api/partners.php')
     .then(function(r){ return r.json(); })
     .then(function(data){
       if(Array.isArray(data)){
@@ -1063,7 +1063,7 @@ function loadPartners(callback) {
 
 // Logout
 window.doLogout = function(){
-  fetch('/bankerise/api/auth.php', {method:'DELETE'})
+  fetch('/api/auth.php', {method:'DELETE'})
     .then(function(){ window.location.href = 'login.php'; })
     .catch(function(){ window.location.href = 'login.php'; });
 };
@@ -1250,7 +1250,7 @@ window.closePartnerEdit = function(){
 /* ── Set partner status (API) ──────── */
 window.setPartnerStatus = function(status){
   if(!currentEditId) return;
-  fetch('/bankerise/api/partner-status.php', {
+  fetch('/api/partner-status.php', {
     method: 'PUT',
     credentials: 'same-origin',
     headers: {'Content-Type':'application/json'},
@@ -1267,6 +1267,18 @@ window.setPartnerStatus = function(status){
       document.getElementById('edit-progress-pct').textContent = data.progress + '%';
       pBar.className = 'progress-fill ' + (data.status === 'Accepted' ? 'accepted' : data.status === 'Declined' ? 'declined' : 'stalled');
       filterPartnerList();
+      if(data.login && data.login.email && data.login.password){
+        var emailLine = data.email_sent
+          ? '\n\n📧 A welcome email with these credentials has been sent to the partner.'
+          : '\n\n⚠️ Email delivery failed' + (data.email_error ? ' (' + data.email_error + ')' : '') + '. Please share the credentials manually.';
+        alert(
+          'Partner accepted.\n\n' +
+          'A login was just provisioned:\n' +
+          'Email: ' + data.login.email + '\n' +
+          'Temporary password: ' + data.login.password +
+          emailLine
+        );
+      }
     }
   })
   .catch(function(err){ alert('Error updating status'); });
@@ -1296,7 +1308,7 @@ window.savePartner = function(ev){
     status: p ? p.status : 'Pending',
     progress: p ? p.progress : 0
   };
-  fetch('/bankerise/api/partners.php', {
+  fetch('/api/partners.php', {
     method: 'PUT',
     credentials: 'same-origin',
     headers: {'Content-Type':'application/json'},
@@ -1338,7 +1350,7 @@ window.savePartner = function(ev){
 /* ── Delete partner (API) ─────────── */
 window.deletePartner = function(id){
   if(!confirm('Are you sure you want to delete this partner?')) return;
-  fetch('/bankerise/api/partners.php', {
+  fetch('/api/partners.php', {
     method: 'DELETE',
     credentials: 'same-origin',
     headers: {'Content-Type':'application/json'},
@@ -1364,7 +1376,7 @@ var typeAcceptChart = null, tierGrowthChart = null;
 function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]}); }
 
 function loadOverviewStats(){
-  return fetch('/bankerise/api/dashboard.php', {credentials:'same-origin'})
+  return fetch('/api/dashboard.php', {credentials:'same-origin'})
     .then(function(r){ return r.json(); })
     .then(function(data){
       if(!data || data.error) return;
@@ -1584,7 +1596,7 @@ function iconForAction(action){
 function loadActivityFeed(){
   var feed = document.getElementById('activity-feed');
   if(!feed) return;
-  fetch('/bankerise/api/activity.php?limit=12', {credentials:'same-origin'})
+  fetch('/api/activity.php?limit=12', {credentials:'same-origin'})
     .then(function(r){ return r.json(); })
     .then(function(items){
       if(!Array.isArray(items) || items.length===0){
@@ -1626,7 +1638,7 @@ function loadApplications(){
   var wrap = document.getElementById('apps-container');
   if(!wrap) return;
   var status = document.getElementById('apps-filter').value;
-  var url = '/bankerise/api/applications.php' + (status ? ('?status=' + encodeURIComponent(status)) : '');
+  var url = '/api/applications.php' + (status ? ('?status=' + encodeURIComponent(status)) : '');
   wrap.innerHTML = '<p class="text-xs text-gray-500 text-center py-8">Loading applications…</p>';
   fetch(url, {credentials:'same-origin'})
     .then(function(r){ return r.json(); })
@@ -1636,10 +1648,12 @@ function loadApplications(){
         return;
       }
       wrap.innerHTML = list.map(function(a){
-        var tier = tierFromSize(a.company_size);
+        // Prefer the tier the applicant requested on the form; fall back to size heuristic
+        var tier = a.requested_tier || tierFromSize(a.company_size);
         var tierBadge = tier==='Gold' ? '<span class="tier-badge-gold">🏆 Gold</span>' :
                         tier==='Silver' ? '<span class="tier-badge-silver">🥈 Silver</span>' :
                         '<span class="tier-badge-bronze">🥉 Bronze</span>';
+        if(a.requested_tier) tierBadge += ' <span class="text-[9px] text-gray-500 uppercase tracking-wider ml-1">requested</span>';
         var statusClass = a.status==='Approved' ? 'badge-accepted' :
                           a.status==='Rejected' ? 'badge-declined' :
                           a.status==='Reviewed' ? 'badge-stalled' : 'badge-pending';
@@ -1666,8 +1680,32 @@ function loadApplications(){
 }
 window.loadApplications = loadApplications;
 
+window.setLeadStatus = function(leadId, status, partnerId){
+  fetch('/api/leads.php', {
+    method:'PUT',
+    credentials:'same-origin',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({id: leadId, status: status})
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(res){
+    if(res && res.success){
+      // Reload this partner's activity panel + global stats/activity feed
+      if(typeof loadPartnerActivity === 'function' && partnerId){
+        paLoadedFor = null; // force re-render
+        loadPartnerActivity(partnerId);
+      }
+      if(typeof loadActivityFeed === 'function') loadActivityFeed();
+      if(typeof loadOverviewStats === 'function') loadOverviewStats();
+    } else {
+      alert('Error: ' + (res && res.error || 'Update failed'));
+    }
+  })
+  .catch(function(){ alert('Network error'); });
+};
+
 window.setApplicationStatus = function(id, status){
-  fetch('/bankerise/api/applications.php', {
+  fetch('/api/applications.php', {
     method:'PUT',
     credentials:'same-origin',
     headers:{'Content-Type':'application/json'},
@@ -1676,9 +1714,26 @@ window.setApplicationStatus = function(id, status){
   .then(function(r){ return r.json(); })
   .then(function(res){
     if(res && res.success){
+      // If the approval just provisioned a partner login, show it so the admin
+      // can share the credentials with the new partner.
+      if(res.login && res.login.email && res.login.password){
+        var emailLine = res.email_sent
+          ? '\n\n📧 A welcome email with these credentials has been sent to the partner.'
+          : '\n\n⚠️ Email delivery failed' + (res.email_error ? ' (' + res.email_error + ')' : '') + '. Please share the credentials manually.';
+        alert(
+          'Application approved.\n\n' +
+          'A new partner account was created:\n' +
+          'Email: ' + res.login.email + '\n' +
+          'Temporary password: ' + res.login.password +
+          emailLine
+        );
+      }
       loadApplications();
       loadActivityFeed();
       loadOverviewStats();
+      if(typeof loadPartners === 'function') loadPartners(function(){
+        if(typeof renderPartnerTable === 'function') renderPartnerTable(partners);
+      });
     } else {
       alert('Error: ' + (res && res.error || 'Update failed'));
     }
@@ -1751,7 +1806,7 @@ function loadAllReports(){
   var tbody = document.getElementById('reports-tbody');
   if(!tbody) return;
   tbody.innerHTML = '<tr><td colspan="8" class="text-center text-xs text-gray-500 py-6">Loading reports…</td></tr>';
-  fetch('/bankerise/api/reports.php?all=1', {credentials:'same-origin'})
+  fetch('/api/reports.php?all=1', {credentials:'same-origin'})
     .then(function(r){ return r.json(); })
     .then(function(data){
       allReports = (data && data.reports) || [];
@@ -1854,7 +1909,7 @@ window.loadPartnerActivity = function(partnerId){
   if(threadsEl) threadsEl.innerHTML = '<p class="text-xs text-gray-500 text-center py-4">Loading chat threads…</p>';
 
   // Leads
-  fetch('/bankerise/api/leads.php?partner_id='+partnerId, {credentials:'same-origin'})
+  fetch('/api/leads.php?partner_id='+partnerId, {credentials:'same-origin'})
     .then(function(r){return r.json()})
     .then(function(data){
       if(paLoadedFor !== partnerId) return;
@@ -1867,20 +1922,31 @@ window.loadPartnerActivity = function(partnerId){
         var statusClass = l.status==='Approved' ? 'badge-accepted' :
                           l.status==='Rejected' ? 'badge-declined' : 'badge-pending';
         var contact = esc((l.contact_first_name||'') + ' ' + (l.contact_last_name||'')).trim();
-        return '<div class="pa-row">'+
+        var actions = '';
+        if(l.status !== 'Approved'){
+          actions += '<button class="text-[10px] font-semibold px-2 py-1 rounded bg-green-500/15 text-green-400 hover:bg-green-500/25 transition-colors" onclick="setLeadStatus('+l.id+',\'Approved\','+partnerId+')">Approve</button>';
+        }
+        if(l.status !== 'Rejected'){
+          actions += '<button class="text-[10px] font-semibold px-2 py-1 rounded bg-red-500/15 text-red-400 hover:bg-red-500/25 transition-colors" onclick="setLeadStatus('+l.id+',\'Rejected\','+partnerId+')">Reject</button>';
+        }
+        if(l.status !== 'Pending'){
+          actions += '<button class="text-[10px] font-semibold px-2 py-1 rounded bg-white/5 text-gray-400 hover:bg-white/10 transition-colors" onclick="setLeadStatus('+l.id+',\'Pending\','+partnerId+')">Reset</button>';
+        }
+        return '<div class="pa-row" style="flex-wrap:wrap;gap:8px">'+
           '<div class="min-w-0 flex-1">'+
             '<p class="text-xs font-semibold text-white truncate">'+esc(l.company_name)+'</p>'+
             '<p class="text-[10px] text-gray-500 truncate">'+contact+' · '+esc(l.contact_email||'')+'</p>'+
             '<p class="text-[10px] text-gray-600 mt-0.5">'+fmtDate(l.created_at)+(l.project_types?(' · '+esc(l.project_types)):'')+'</p>'+
           '</div>'+
           '<span class="badge '+statusClass+'" style="flex-shrink:0">'+esc(l.status)+'</span>'+
+          '<div class="flex gap-1 w-full justify-end" style="margin-top:4px">'+actions+'</div>'+
         '</div>';
       }).join('');
     })
     .catch(function(){ if(leadsEl) leadsEl.innerHTML = '<p class="text-xs text-red-400 text-center py-4">Failed to load leads.</p>'; });
 
   // Reports
-  fetch('/bankerise/api/reports.php?partner_id='+partnerId, {credentials:'same-origin'})
+  fetch('/api/reports.php?partner_id='+partnerId, {credentials:'same-origin'})
     .then(function(r){return r.json()})
     .then(function(data){
       if(paLoadedFor !== partnerId) return;
@@ -1900,7 +1966,7 @@ window.loadPartnerActivity = function(partnerId){
     .catch(function(){ if(reportsEl) reportsEl.innerHTML = '<p class="text-xs text-red-400 text-center py-4">Failed to load reports.</p>'; });
 
   // Threads
-  fetch('/bankerise/api/messages.php?partner_id='+partnerId+'&action=threads', {credentials:'same-origin'})
+  fetch('/api/messages.php?partner_id='+partnerId+'&action=threads', {credentials:'same-origin'})
     .then(function(r){return r.json()})
     .then(function(data){
       if(paLoadedFor !== partnerId) return;
@@ -1966,7 +2032,7 @@ window.toggleAdminNotif = function(ev){
 function loadAdminNotifications(){
   var list = document.getElementById('anotif-list');
   var countEl = document.getElementById('anotif-count');
-  fetch('/bankerise/api/notifications.php', {credentials:'same-origin'})
+  fetch('/api/notifications.php', {credentials:'same-origin'})
     .then(function(r){ return r.json(); })
     .then(function(data){
       var items = (data && data.notifications) || [];
@@ -1998,7 +2064,7 @@ function loadAdminNotifications(){
 
 window.handleAdminNotifClick = function(id, el){
   // mark this one as read
-  fetch('/bankerise/api/notifications.php', {
+  fetch('/api/notifications.php', {
     method:'POST', credentials:'same-origin',
     headers:{'Content-Type':'application/json'},
     body: JSON.stringify({action:'mark_read', id:id})
@@ -2014,7 +2080,7 @@ window.handleAdminNotifClick = function(id, el){
 };
 
 window.markAllAdminNotifRead = function(){
-  fetch('/bankerise/api/notifications.php', {
+  fetch('/api/notifications.php', {
     method:'POST', credentials:'same-origin',
     headers:{'Content-Type':'application/json'},
     body: JSON.stringify({action:'mark_read'})

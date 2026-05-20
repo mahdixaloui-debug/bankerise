@@ -127,4 +127,20 @@ if ($method === 'POST') {
     jsonResponse(['success' => true, 'id' => $mid, 'created_at' => date('Y-m-d H:i:s')]);
 }
 
+if ($method === 'DELETE') {
+    $msgId = (int)($_GET['id'] ?? 0);
+    if (!$msgId) jsonResponse(['error' => 'Message id required.'], 400);
+
+    // Verify the message belongs to this partner and was sent by them
+    $stmt = $db->prepare('SELECT id, lead_id, sender FROM lead_messages WHERE id=? AND partner_id=?');
+    $stmt->execute([$msgId, $partnerId]);
+    $m = $stmt->fetch();
+    if (!$m) jsonResponse(['error' => 'Message not found.'], 404);
+    if ($m['sender'] !== 'partner') jsonResponse(['error' => 'You can only delete your own messages.'], 403);
+
+    $db->prepare('DELETE FROM lead_messages WHERE id=?')->execute([$msgId]);
+    logActivity($user['id'], 'message_delete', 'Deleted message #'.$msgId, 'lead', (int)$m['lead_id']);
+    jsonResponse(['success' => true]);
+}
+
 jsonResponse(['error' => 'Method not allowed'], 405);
