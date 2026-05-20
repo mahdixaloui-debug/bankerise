@@ -250,7 +250,7 @@ include '../includes/head.php';
           contact_phone: form.querySelector('#contact-phone').value,
           message: form.querySelector('#message').value
         };
-        fetch('/api/applications.php', {
+        fetch('/bankerise/api/applications.php', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(payload)

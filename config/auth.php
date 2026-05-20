@@ -45,7 +45,7 @@ function currentUser() {
  */
 function requireLogin() {
     if (!isLoggedIn()) {
-        header('Location: /partners/login.php');
+        header('Location: /bankerise/partners/login.php');
         exit;
     }
 }
@@ -56,7 +56,7 @@ function requireLogin() {
 function requireAdmin() {
     requireLogin();
     if (!isAdmin()) {
-        header('Location: /partners/dashboard.php');
+        header('Location: /bankerise/partners/dashboard.php');
         exit;
     }
 }
@@ -102,8 +102,8 @@ function login($email, $password) {
         'role'     => $user['role'],
         'name'     => $user['full_name'],
         'redirect' => $user['role'] === 'admin'
-            ? '/partners/backoffice.php'
-            : '/partners/dashboard.php',
+            ? '/bankerise/partners/backoffice.php'
+            : '/bankerise/partners/dashboard.php',
     ];
 }
 

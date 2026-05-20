@@ -76,7 +76,7 @@ if ($method === 'POST') {
     jsonResponse([
         'success' => true,
         'avatar'  => $filename,
-        'url'     => '/uploads/avatars/' . $filename,
+        'url'     => '/bankerise/uploads/avatars/' . $filename,
     ]);
 }
 

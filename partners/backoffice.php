@@ -1041,7 +1041,7 @@ var partners = [];
 
 // Load partners from DB
 function loadPartners(callback) {
-  fetch('/api/partners.php')
+  fetch('/bankerise/api/partners.php')
     .then(function(r){ return r.json(); })
     .then(function(data){
       if(Array.isArray(data)){
@@ -1063,7 +1063,7 @@ function loadPartners(callback) {
 
 // Logout
 window.doLogout = function(){
-  fetch('/api/auth.php', {method:'DELETE'})
+  fetch('/bankerise/api/auth.php', {method:'DELETE'})
     .then(function(){ window.location.href = 'login.php'; })
     .catch(function(){ window.location.href = 'login.php'; });
 };
@@ -1250,7 +1250,7 @@ window.closePartnerEdit = function(){
 /* ── Set partner status (API) ──────── */
 window.setPartnerStatus = function(status){
   if(!currentEditId) return;
-  fetch('/api/partner-status.php', {
+  fetch('/bankerise/api/partner-status.php', {
     method: 'PUT',
     credentials: 'same-origin',
     headers: {'Content-Type':'application/json'},
@@ -1308,7 +1308,7 @@ window.savePartner = function(ev){
     status: p ? p.status : 'Pending',
     progress: p ? p.progress : 0
   };
-  fetch('/api/partners.php', {
+  fetch('/bankerise/api/partners.php', {
     method: 'PUT',
     credentials: 'same-origin',
     headers: {'Content-Type':'application/json'},
@@ -1350,7 +1350,7 @@ window.savePartner = function(ev){
 /* ── Delete partner (API) ─────────── */
 window.deletePartner = function(id){
   if(!confirm('Are you sure you want to delete this partner?')) return;
-  fetch('/api/partners.php', {
+  fetch('/bankerise/api/partners.php', {
     method: 'DELETE',
     credentials: 'same-origin',
     headers: {'Content-Type':'application/json'},
@@ -1376,7 +1376,7 @@ var typeAcceptChart = null, tierGrowthChart = null;
 function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]}); }
 
 function loadOverviewStats(){
-  return fetch('/api/dashboard.php', {credentials:'same-origin'})
+  return fetch('/bankerise/api/dashboard.php', {credentials:'same-origin'})
     .then(function(r){ return r.json(); })
     .then(function(data){
       if(!data || data.error) return;
@@ -1596,7 +1596,7 @@ function iconForAction(action){
 function loadActivityFeed(){
   var feed = document.getElementById('activity-feed');
   if(!feed) return;
-  fetch('/api/activity.php?limit=12', {credentials:'same-origin'})
+  fetch('/bankerise/api/activity.php?limit=12', {credentials:'same-origin'})
     .then(function(r){ return r.json(); })
     .then(function(items){
       if(!Array.isArray(items) || items.length===0){
@@ -1681,7 +1681,7 @@ function loadApplications(){
 window.loadApplications = loadApplications;
 
 window.setLeadStatus = function(leadId, status, partnerId){
-  fetch('/api/leads.php', {
+  fetch('/bankerise/api/leads.php', {
     method:'PUT',
     credentials:'same-origin',
     headers:{'Content-Type':'application/json'},
@@ -1705,7 +1705,7 @@ window.setLeadStatus = function(leadId, status, partnerId){
 };
 
 window.setApplicationStatus = function(id, status){
-  fetch('/api/applications.php', {
+  fetch('/bankerise/api/applications.php', {
     method:'PUT',
     credentials:'same-origin',
     headers:{'Content-Type':'application/json'},
@@ -1806,7 +1806,7 @@ function loadAllReports(){
   var tbody = document.getElementById('reports-tbody');
   if(!tbody) return;
   tbody.innerHTML = '<tr><td colspan="8" class="text-center text-xs text-gray-500 py-6">Loading reports…</td></tr>';
-  fetch('/api/reports.php?all=1', {credentials:'same-origin'})
+  fetch('/bankerise/api/reports.php?all=1', {credentials:'same-origin'})
     .then(function(r){ return r.json(); })
     .then(function(data){
       allReports = (data && data.reports) || [];
@@ -1909,7 +1909,7 @@ window.loadPartnerActivity = function(partnerId){
   if(threadsEl) threadsEl.innerHTML = '<p class="text-xs text-gray-500 text-center py-4">Loading chat threads…</p>';
 
   // Leads
-  fetch('/api/leads.php?partner_id='+partnerId, {credentials:'same-origin'})
+  fetch('/bankerise/api/leads.php?partner_id='+partnerId, {credentials:'same-origin'})
     .then(function(r){return r.json()})
     .then(function(data){
       if(paLoadedFor !== partnerId) return;
@@ -1946,7 +1946,7 @@ window.loadPartnerActivity = function(partnerId){
     .catch(function(){ if(leadsEl) leadsEl.innerHTML = '<p class="text-xs text-red-400 text-center py-4">Failed to load leads.</p>'; });
 
   // Reports
-  fetch('/api/reports.php?partner_id='+partnerId, {credentials:'same-origin'})
+  fetch('/bankerise/api/reports.php?partner_id='+partnerId, {credentials:'same-origin'})
     .then(function(r){return r.json()})
     .then(function(data){
       if(paLoadedFor !== partnerId) return;
@@ -1966,7 +1966,7 @@ window.loadPartnerActivity = function(partnerId){
     .catch(function(){ if(reportsEl) reportsEl.innerHTML = '<p class="text-xs text-red-400 text-center py-4">Failed to load reports.</p>'; });
 
   // Threads
-  fetch('/api/messages.php?partner_id='+partnerId+'&action=threads', {credentials:'same-origin'})
+  fetch('/bankerise/api/messages.php?partner_id='+partnerId+'&action=threads', {credentials:'same-origin'})
     .then(function(r){return r.json()})
     .then(function(data){
       if(paLoadedFor !== partnerId) return;
@@ -2032,7 +2032,7 @@ window.toggleAdminNotif = function(ev){
 function loadAdminNotifications(){
   var list = document.getElementById('anotif-list');
   var countEl = document.getElementById('anotif-count');
-  fetch('/api/notifications.php', {credentials:'same-origin'})
+  fetch('/bankerise/api/notifications.php', {credentials:'same-origin'})
     .then(function(r){ return r.json(); })
     .then(function(data){
       var items = (data && data.notifications) || [];
@@ -2064,7 +2064,7 @@ function loadAdminNotifications(){
 
 window.handleAdminNotifClick = function(id, el){
   // mark this one as read
-  fetch('/api/notifications.php', {
+  fetch('/bankerise/api/notifications.php', {
     method:'POST', credentials:'same-origin',
     headers:{'Content-Type':'application/json'},
     body: JSON.stringify({action:'mark_read', id:id})
@@ -2080,7 +2080,7 @@ window.handleAdminNotifClick = function(id, el){
 };
 
 window.markAllAdminNotifRead = function(){
-  fetch('/api/notifications.php', {
+  fetch('/bankerise/api/notifications.php', {
     method:'POST', credentials:'same-origin',
     headers:{'Content-Type':'application/json'},
     body: JSON.stringify({action:'mark_read'})
